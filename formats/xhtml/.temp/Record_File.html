@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>EPOC32 file converted by psiconv</title>
+<style type="text/css">
+body {background-color:transparant;padding-left:0.000000cm;padding-right:0.000000cm;text-indent:0.000000cm;font-style:left;padding-top:0.000000pt;padding-bottom:0.000000pt;border-right-style:none;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-width:1.000000pt;border-bottom-width:1.000000pt;border-top-width:1.000000pt;border-left-width:1.000000pt;border-right-color:rgb(0,0,0);border-top-color:rgb(0,0,0);border-bottom-color:rgb(0,0,0);border-left-color:rgb(0,0,0);color:rgb(0,0,0);background-color:transparant;font-size:10.000000pt;font-style:normal;font-weight:normal;font-style:normal;text-decoration:none;font-family:serif}
+*.style_ {padding-bottom:5.000000pt;}
+*.style_Koptekst_1 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:14.000000pt;font-weight:bold;}
+*.style_Koptekst_2 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:12.000000pt;font-weight:bold;}
+*.style_Koptekst_3 {padding-bottom:5.000000pt;font-style:italic;text-decoration:underline;}
+*.style_Opsomteken {padding-bottom:5.000000pt;}
+</style>
+</head>
+<body>
+<p class="style_" style="font-size:12.000000pt;">[Record File]</p>
+<p class="style_" ><span style="font-size:16.000000pt;font-family:sans-serif">Record File</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">Both alarm sounds and normal record files use the same file format.</p>
+<p class="style_" style="font-size:12.000000pt;">Record files start with a &#xab;Header Section&#xbb; which starts with the following codes:</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Offset Size Data   Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0000 &#xab;ID&#xbb; 37 00 00 10  UID1: Header Section layout</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0004 &#xab;ID&#xbb; 6D 00 00 10  UID2: File kind</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0008 &#xab;ID&#xbb; 7E 00 00 10  UID3: Application ID</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">000C L  CF AC 08 55  UID4: Checksum of UID1, UID2 and UID3</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0010 &#xab;Section Table Offset Section&#xbb;</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0014</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"></p>
+<p class="style_" ><span style="font-size:12.000000pt;">The &#xab;Section Table Section&#xbb; may contain the following sections, usual in the given order.</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Identifier  Section         Always found</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">52 00 00 10  Offset of the &#xab;Record Section&#xbb;   Yes</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">89 00 00 10  Offset of the &#xab;Application ID Section&#xbb; Yes</p>
+<p class="style_" ></p>
+</body>
+</html>

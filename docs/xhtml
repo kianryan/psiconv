@@ -1,0 +1,6 @@
+This is the basic psiconv generator. It generates XHTML; all layout is 
+done using CSS. You need a newish browser to handle that correctly.
+
+Note that tabs, headers and footers are not rendered at all. Especially
+the omission of tabs can cause ugly layouts. Unfortunately, there is not
+a real solution for this.

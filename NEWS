@@ -1,0 +1,119 @@
+0.9.9  20141019  Bugfix in HTML4 target. Updated toolchain. 
+                 Support for GraphicsMagick. Updated manual page psiconv(1).
+
+0.9.8  20051115  Small bug fixes
+
+0.9.7  20050225  Support ImageMagick 6
+
+0.9.6  20040430  Compilation fixes for Solaris
+                 Compilation fixes for ImageMagick unavailability
+
+0.9.5  20040406  Bug fixes
+                 Compilation with gcc 2.95.x should work again
+
+0.9.4  20040316  Mostly bug fixes
+                 Minimum version required for AbiWord 2.1.1 and later
+
+0.9.3  20040226  Minimum version required for new AbiWord 2.1 plugin 
+                 Fixed a few minor bugs
+                 Added psiconv_unicode_from_list and psiconv_unicode_strstr
+                 Much better error and progress reporting in generators
+
+0.9.2.1 20040223 Quick fix for the library number mistake in 0.9.2
+
+0.9.2  20040223  Many bugfixes, among them some critical ones:
+                 * Package now builds without psiconv.conf files installed
+                 UTF8 Psion support might now actually work
+                 -c argument introduced for psiconv program
+
+0.9.1  20040209  Added the psiconv-config program.
+		 Fixed the installation of @includedir@/psiconv/general.h
+                 Added the forgotted psiconv_config_free function.
+		 Removed some small memory leaks.
+
+0.9.0  20040204  New major library version number breaks source compatibility:
+		 * All strings and characters are now stored in UCS-2
+                 * New config structure.
+                   - Call psiconv_config_default and psiconv_config_read at the
+                     start of your program
+                   - Almost all functions have a new psiconv_config parameter
+                   - All former global variables are now in this structure
+                 * Several minor changes in the functions defined in
+                   parse_routines.h and generate_routines.h
+                 * All generate_* routines have now a lev parameter except
+                   generate_file.
+                 * psiconv_sketch_section data representation changes
+                 * New verbosity level PSICONV_VERB_ERROR
+                 Use config files /etc/psiconv.conf and ~/.psiconv.conf
+                 Support automake 1.6, 1.7 and 1.8
+                 Support autoconf-2.50 and up
+                 Support ImageMagick 5.4.x and 5.5.x (API changed once again...)
+                 Support Unicode output in psiconv program (Keita Kawabe)
+                 Don't use features not present in plain sh (Keita Kawabe)
+                 Clean up some automake-related stuff.
+		 Format documentation is now installed too.
+                 Debian build support
+                 Embedded objects in Word are now properly parsed and generated
+                 Sketch file generation is added (stand-alone and as object)
+                 MBM and Clipart file generation is added
+                 Image files other than 2-bits greyscale are parsed and
+                   generated (experimental)
+                 Errors and warnings sanitized
+                 Rewrite of the psiconv program:
+                 * Outputs in UTF8, UCS2, ASCII or Psion encodings
+		 * XHTML target generates strict XHTML using CSS
+                 * HTML4 target generates traditional HTML without CSS
+                 * IMAGE target remains the same
+                 * LATEX and RTF targets are not supported anymore
+0.8.3  20020129  Extended sheet parsing support in library:
+                     all non-graph parts are now parsed.
+                 Support autoconf-2.52, libtool-1.4.2 (needs patch!), 
+                     automake-1.5
+                 Support ImageMagick-5.4.2-2 (older may not work)
+                 Fix header/footer potential segfault
+                 Fix large list-related memory leak and several smaller ones.
+0.8.2  20010717  Some sheet parsing support in library, for from complete,
+                     but good enough for basic Gnumeric support
+                 Added autogen.sh
+                 autoconf-2.50, automake-1.4-p4
+0.8.1  20010110  New enum screenfont_t
+                 New program rewrite in extra
+                 Added psiconv_empty_* functions
+                 Fixed a few minor generation bugs
+0.8.0  20001228  Fixed style inheritance from Normal
+                 Fixed warnings in layouts
+                 Added generation routines to libpsiconv
+                 Upgraded documentation to version 2.6
+                 Fixed several minor parse-related issues
+0.7.1  20001218  Maintenance release to be used with Abiword.
+                 Set proper interline defaults.
+0.7.0  20001215  Made libpsiconv C++ compatible.
+                 general.h is now installed properly (oops...)
+                 Revamped package directory structure and files.
+                 Include files contain now the correct paths.
+                 Fixed a nasty typo; larger files should now work.
+                 It seems psiconv_verbosity was never defined.
+                 Added message printing hook for applications to capture.
+                 All result codes are now tested, library is much more robust.
+                 Some internal data fields have been renamed.
+0.6.2  20001021  ImageMagick 5 now works. I hope.
+0.6.1  19991204  Added Clipart files. Several pictures in one file are now
+                 handled correctly.
+0.6.0  19991202  Renamed HTML to HTML3. Images can be handled through the
+                 ImageMagick library. Moved the generation routines out of
+                 libpsiconv.
+0.5.0  19990930  Automake, autoconf and libtool support. No functional changes.
+                 One small bug squashed in the parser.
+0.4.0  19990812  First release of libpsiconv. It now supports Word and
+                 TextEd files. Many internal things have changed, including
+                 the names of many functions.
+                 Renamed TEXT format to ASCII, and the -t option to -T.
+                 Psiconv is now linked against libpsiconv
+0.3.0  19990711  New target formats HTML4 and TEXT
+0.2.3  19990618  Nothing really.
+0.2.2  19990618  Small bugfixes. Word Status Section now completely read.
+0.2.1  19990614  Bug fix: No layout section needed in header/footer
+0.2.0  19990614  Much better progress and debug reports
+                 Page section now parsed (no HTML output for it though)
+                 Some small bugs removed
+0.1.0  19990610  Initial release

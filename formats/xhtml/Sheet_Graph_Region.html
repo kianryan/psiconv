@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>Sheet Graph Region</title>
+<style type="text/css">
+body {background-color:transparant;padding-left:0.000000cm;padding-right:0.000000cm;text-indent:0.000000cm;font-style:left;padding-top:0.000000pt;padding-bottom:0.000000pt;border-right-style:none;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-width:1.000000pt;border-bottom-width:1.000000pt;border-top-width:1.000000pt;border-left-width:1.000000pt;border-right-color:rgb(0,0,0);border-top-color:rgb(0,0,0);border-bottom-color:rgb(0,0,0);border-left-color:rgb(0,0,0);color:rgb(0,0,0);background-color:transparant;font-size:10.000000pt;font-style:normal;font-weight:normal;font-style:normal;text-decoration:none;font-family:serif}
+*.style_ {padding-bottom:5.000000pt;}
+*.style_Koptekst_1 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:14.000000pt;font-weight:bold;}
+*.style_Koptekst_2 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:12.000000pt;font-weight:bold;}
+*.style_Koptekst_3 {padding-bottom:5.000000pt;font-style:italic;text-decoration:underline;}
+*.style_Opsomteken {padding-bottom:5.000000pt;}
+</style>
+</head>
+<body>
+<p class="style_" style="font-size:12.000000pt;"><a name="Sheet Graph Region"/></p>
+<p class="style_" style="font-size:16.000000pt;font-family:sans-serif">Sheet Graph Region</p>
+<p class="style_" style="font-size:12.000000pt;">This section contains the full description of one graph region.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Data   Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B    Always 02</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B    Region visible (01) or not (00)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L    Topmost values row (row 1 = 0)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L    Leftmost values column (column A = 0)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L    Bottommost values row (row 1 = 0)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L    Rightmost values column (column A = 0)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L    Topmost labels row (row 1 = 0)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L    Leftmost labels column (column A = 0)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L    Bottommost labels row (row 1 = 0)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L    Rightmost labels column (column A = 0)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B    Label alignment (see below)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B    Labels: data values (00), defined range (01), none (02)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Basic_Structures.html#Color">Color</a>  Marking symbol color</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B    Marking symbol type</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Basic_Structures.html#Color">Color</a>  Borderline color</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B    Thickness of connecting line</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B    Connecting line on (01) or off (00)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Basic_Structures.html#Color">Color</a>  Fill color</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B    Fill pattern (see below)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Basic_Structures.html#String">String</a>  Region name </p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"></p>
+<p class="style_" ><span style="font-size:12.000000pt;">The following fill patterns are defined:</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">  </span><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Value  Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> </span> 00   solid</p>
+<p class="style_" >  01   horizontal lines</p>
+<p class="style_" >  02   vertical lines</p>
+<p class="style_" >  03   cross lines</p>
+<p class="style_" >  04   left diagonal lines</p>
+<p class="style_" >  05   right diagonal lines</p>
+<p class="style_" >  06   cross diagonal lines</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"></p>
+<p class="style_" ><span style="font-size:12.000000pt;">Label alignment can have the following values</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">  </span><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Value  Alignment (relative to marking)</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> </span> 00   above</p>
+<p class="style_" >  01   center</p>
+<p class="style_" >  02   right</p>
+<p class="style_" >  03   below</p>
+<p class="style_" >  04   left</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:12.000000pt;">Marking symbol type can have the following values</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">  </span><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Value  Alignment (relative to marking)</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> </span> 00   none</p>
+<p class="style_" >  01   diagonal cross</p>
+<p class="style_" >  02   square</p>
+<p class="style_" >  03   diamond</p>
+<p class="style_" >  04   cross</p>
+<p class="style_" >  05   circle</p>
+</body>
+</html>

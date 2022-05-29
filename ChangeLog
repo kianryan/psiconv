@@ -1,0 +1,2180 @@
+2014-10-29 10:17  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* debian/control, lib/psiconv/Makefile.am:
+	  (Frodo) Fix two build errors:
+	    * general.h is generated and should not be distributed
+	    * Only build Debian against graphicsmagick
+
+2014-10-27 13:28  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog:
+	  (Frodo) Update Changelog
+
+2014-10-27 13:21  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* debian/: README.Debian, changelog, compat, control, copyright,
+	  docs, libpsiconv-dev.install, libpsiconv6.copyright,
+	  libpsiconv6.docs, psiconv-dev.dirs, psiconv-dev.install,
+	  psiconv-doc.copyright, psiconv-doc.manpages, psiconv.manpages,
+	  rules, source/format:
+	  (Frodo) Update debian directory.
+
+2014-10-24 13:52  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/psiconv.conf.man.in,
+	  program/psiconv-config/psiconv-config.man.in:
+	  (Frodo) Fix two small errors in the manpage formatting (lintian)
+
+2014-10-22 21:53  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* compat/compat.h, compat/dummy.c, lib/psiconv/buffer.c,
+	  lib/psiconv/buffer.h, lib/psiconv/checkuid.c,
+	  lib/psiconv/common.h, lib/psiconv/configuration.c,
+	  lib/psiconv/configuration.h, lib/psiconv/data.c,
+	  lib/psiconv/data.h, lib/psiconv/error.c, lib/psiconv/error.h,
+	  lib/psiconv/generate.h, lib/psiconv/generate_common.c,
+	  lib/psiconv/generate_driver.c, lib/psiconv/generate_image.c,
+	  lib/psiconv/generate_layout.c, lib/psiconv/generate_page.c,
+	  lib/psiconv/generate_routines.h, lib/psiconv/generate_simple.c,
+	  lib/psiconv/generate_texted.c, lib/psiconv/generate_word.c,
+	  lib/psiconv/image.c, lib/psiconv/image.h, lib/psiconv/list.c,
+	  lib/psiconv/list.h, lib/psiconv/misc.c, lib/psiconv/parse.h,
+	  lib/psiconv/parse_common.c, lib/psiconv/parse_driver.c,
+	  lib/psiconv/parse_formula.c, lib/psiconv/parse_image.c,
+	  lib/psiconv/parse_layout.c, lib/psiconv/parse_page.c,
+	  lib/psiconv/parse_routines.h, lib/psiconv/parse_sheet.c,
+	  lib/psiconv/parse_simple.c, lib/psiconv/parse_texted.c,
+	  lib/psiconv/parse_word.c, lib/psiconv/unicode.c,
+	  lib/psiconv/unicode.h, program/extra/checkuid.c,
+	  program/extra/empty.c, program/extra/rewrite.c,
+	  program/psiconv/gen.h, program/psiconv/gen_html4.c,
+	  program/psiconv/gen_image.c, program/psiconv/gen_rtf.c,
+	  program/psiconv/gen_txt.c, program/psiconv/gen_xhtml.c,
+	  program/psiconv/general.c, program/psiconv/general.h,
+	  program/psiconv/magick-aux.c, program/psiconv/magick-aux.h,
+	  program/psiconv/psiconv.c, program/psiconv/psiconv.h:
+	  (Frodo) Update copyright year in all source files
+
+2014-10-22 21:53  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* configure.in, lib/psiconv/Makefile.am,
+	  lib/psiconv/psiconv.conf.man.in:
+	  (Frodo) Add manpage for psiconf.conf
+
+2014-10-22 14:37  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog:
+	  (Frodo) Update Changelog
+
+2014-10-22 14:10  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/generate_layout.c, lib/psiconv/parse_image.c,
+	  program/extra/checkuid.c, program/psiconv/gen_image.c,
+	  program/psiconv/magick-aux.c:
+	  (Frodo) Remove build warnings
+	    - generate_layout.c: remove confusion between vertical and
+	    horizontal align
+	  - parse_image.c: remove unused variable
+	    - checkuid.c: add <stdlib.h>
+	    - gen_image.c: use correct pointer type
+	    - magick-aux.c: use correct pointer type
+
+2014-10-20 13:52  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* INSTALL:
+	  (Frodo) INSTALL file is generated automatically, should not be in
+	  CVS
+
+2014-10-20 13:51  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* INSTALL, NEWS:
+	  (Frodo) Update NEWS
+
+2014-10-20 13:47  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv-config/psiconv-config:
+	  (Frodo) Program should not have been added to CVS; it is generated
+	  automatically
+
+2014-10-20 13:45  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, configure.in, program/psiconv-config/psiconv-config:
+	  (Frodo) Bump version to 0.9.9
+
+2014-10-20 13:44  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* INSTALL, configure.in, program/psiconv/gen_image.c,
+	  program/psiconv/magick-aux.c, program/psiconv/magick-aux.h:
+	  (Frodo) Support for GraphicsMagick library
+	    * Add IMAGEMAGICK_API 100 for GraphicsMagick and supporting code
+	    * Rewrite GetMagickFileList to return a null-terminated array of
+	      pointers (instead of using prev/next)
+
+2014-10-20 10:40  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* examples/Makefile.am:
+	  (Frodo) Forgotten file...
+
+2014-10-19 23:38  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/psiconv.man:
+	  (Frodo) Update manual page
+
+2014-10-19 21:42  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* INSTALL:
+	  (Frodo) Updated toolchain
+
+2014-10-19 21:35  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/gen_html4.c:
+	  (Frodo) Fix bug in generating HTML4: the last line was typically
+	          rendered empty.
+
+2007-08-10 14:15  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* debian/: changelog, control:
+	  (Frodo) Debian-only: updated to make compatible with etch
+
+2005-11-15 19:18  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* debian/control:
+	  (Frodo) Make it more pbuilder clean
+
+2005-11-15 18:06  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* debian/: changelog, control:
+	  (Frodo) Update of Debian environment for new version
+
+2005-11-15 17:54  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* debian/: control, libpsiconv-dev.dirs, libpsiconv-dev.install,
+	  libpsiconv-dev.manpages:
+	  (Frodo) Forgot a few files?!?
+
+2005-11-15 16:52  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* AUTHORS, INSTALL, Makefile.am, configure.in, compat/compat.h,
+	  compat/dummy.c, debian/control, debian/libpsiconv6.copyright,
+	  debian/psiconv-doc.copyright, lib/psiconv/buffer.c,
+	  lib/psiconv/buffer.h, lib/psiconv/checkuid.c,
+	  lib/psiconv/common.h, lib/psiconv/configuration.c,
+	  lib/psiconv/configuration.h, lib/psiconv/data.c,
+	  lib/psiconv/data.h, lib/psiconv/error.c, lib/psiconv/error.h,
+	  lib/psiconv/general.h.in, lib/psiconv/generate.h,
+	  lib/psiconv/generate_common.c, lib/psiconv/generate_driver.c,
+	  lib/psiconv/generate_image.c, lib/psiconv/generate_layout.c,
+	  lib/psiconv/generate_page.c, lib/psiconv/generate_routines.h,
+	  lib/psiconv/generate_simple.c, lib/psiconv/generate_texted.c,
+	  lib/psiconv/generate_word.c, lib/psiconv/image.c,
+	  lib/psiconv/image.h, lib/psiconv/list.c, lib/psiconv/list.h,
+	  lib/psiconv/misc.c, lib/psiconv/parse.h,
+	  lib/psiconv/parse_common.c, lib/psiconv/parse_driver.c,
+	  lib/psiconv/parse_formula.c, lib/psiconv/parse_image.c,
+	  lib/psiconv/parse_layout.c, lib/psiconv/parse_page.c,
+	  lib/psiconv/parse_routines.h, lib/psiconv/parse_sheet.c,
+	  lib/psiconv/parse_simple.c, lib/psiconv/parse_texted.c,
+	  lib/psiconv/parse_word.c, lib/psiconv/unicode.c,
+	  lib/psiconv/unicode.h, program/extra/checkuid.c,
+	  program/extra/empty.c, program/extra/rewrite.c,
+	  program/psiconv/gen.h, program/psiconv/gen_html4.c,
+	  program/psiconv/gen_image.c, program/psiconv/gen_rtf.c,
+	  program/psiconv/gen_txt.c, program/psiconv/gen_xhtml.c,
+	  program/psiconv/general.c, program/psiconv/general.h,
+	  program/psiconv/magick-aux.c, program/psiconv/magick-aux.h,
+	  program/psiconv/psiconv.c, program/psiconv/psiconv.h,
+	  program/psiconv/psiconv.man:
+	  (Frodo) Updated all copyright notices for 2005
+	          Changed email addresses
+	          Made the examples part of the archive
+
+2005-11-15 15:59  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog, NEWS, configure.in,
+	  program/psiconv-config/psiconv-config:
+	  (Frodo) Prepare for version 0.9.8
+
+2005-11-15 15:52  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: parse_common.c, unicode.c:
+	  (Frodo) Resolved a few spurious warnings
+
+2005-11-15 15:41  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/: gen_html4.c, gen_xhtml.c:
+	  (Frodo) Fixed compilation problem on newer systems: ffs was an
+	          already used symbol.
+
+2005-02-25 22:02  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog, NEWS, configure.in, debian/changelog,
+	  program/psiconv-config/psiconv-config:
+	  (Frodo) Update for 0.9.7
+
+2005-02-25 21:36  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* configure.in, program/psiconv/magick-aux.c,
+	  program/psiconv/magick-aux.h:
+	  (Frodo) Support ImageMagick 6
+
+2005-02-25 19:34  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* INSTALL, NEWS, debian/changelog:
+	  (Frodo) Pending changes
+
+2004-04-30 00:14  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog, configure.in, lib/psiconv/Makefile.am,
+	  program/psiconv-config/psiconv-config:
+	  (Frodo) Bump up the libary version and program version
+
+2004-04-30 00:05  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* configure.in, program/psiconv/gen_image.c,
+	  program/psiconv/magick-aux.h:
+	  (Frodo) Keep ImageMagick happy on Solaris
+
+	  It needs a #include <time.h>.
+
+2004-04-29 23:57  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* formats/html4_links.sh:
+	  (Frodo) And after the Solaris changes, it now works again on Linux
+
+	  Don't you love shell scripting?
+
+2004-04-29 23:43  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* formats/: generate_html4.sh, html4_links.sh, index_html.sh:
+	  (Frodo) Solaris /bin/sh compatibility updates
+
+	  /bin/sh on Solaris is just braindead, if you are used to bash (or
+	  even Sun's ksh)
+
+2004-04-29 21:40  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* compat/Makefile.am, program/psiconv/gen_image.c:
+	  (Frodo) Solaris build fixes
+
+	    * gen_image fixes (didn't I do these before?!?)
+	    * Building shared libs
+
+2004-04-28 23:28  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* compat/Makefile.am:
+	  (Frodo) Fixed compat directory LIBOBJS handling
+
+	  Mandated by newer autoconf/automake/libtool versions.
+
+2004-04-06 16:38  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog, NEWS, debian/changelog:
+	  (Frodo) Final 0.9.5 commit
+
+2004-04-06 16:27  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog, program/psiconv/psiconv.c:
+	  (Frodo) Fixed bug that made compiling with gcc 2.95.x impossible
+
+2004-03-22 21:08  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog, configure.in, lib/psiconv/Makefile.am,
+	  lib/psiconv/generate_image.c, lib/psiconv/parse_common.c,
+	  program/psiconv-config/psiconv-config:
+	  (Frodo) Fix in color generation algorithm
+
+	    * Update version to 0.9.5
+	    * Update patch level of library
+	    * For greyscale pictures, white was translated as black. Not good.
+
+2004-03-17 18:31  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog, NEWS, debian/changelog, lib/psiconv/Makefile.am:
+	  (Frodo) Final 0.9.4 commit
+
+2004-03-16 14:47  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog, lib/psiconv/data.c, lib/psiconv/data.h:
+	  (Frodo) Sync
+
+2004-03-09 00:20  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.c, data.h:
+	  (Frodo) Added forgotten function free_word_style_list
+
+2004-03-04 22:55  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* examples/Word, lib/psiconv/data.h, lib/psiconv/image.c,
+	  lib/psiconv/parse_image.c, program/psiconv-config/psiconv-config:
+	  (Frodo) Bug fixes
+	    * Image colors correction (scale 0.0 to 1.0, instead of 0.0 to
+	    less-than 1.0)
+	  * Bullet and indentation docs update
+	    * Update version number
+
+2004-02-28 18:09  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/parse_common.c:
+	  (Frodo) Simplify routine a bit by using the new
+	  psiconv_unicode_from_list
+
+2004-02-26 22:33  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* configure.in, lib/psiconv/Makefile.am,
+	  lib/psiconv/parse_driver.c:
+	  (Frodo) Version nrs, case-insensitive applid
+	    * Bump library patch level up by one
+	    * Update version number to 0.9.4
+	    * Make applid comparison case-insensitive
+
+2004-02-26 18:12  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog, NEWS, debian/changelog:
+	  (Frodo) Final 0.9.3 checkin
+
+2004-02-26 18:08  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/generate_common.c:
+	  (Frodo) Stupid typo-mistake
+
+2004-02-26 17:27  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: generate_common.c, generate_driver.c,
+	  generate_image.c, generate_layout.c, generate_page.c,
+	  generate_texted.c, generate_word.c, parse_common.c,
+	  parse_driver.c, parse_simple.c, parse_word.c:
+	  (Frodo) And even more error work.
+
+2004-02-26 16:58  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, lib/psiconv/generate_common.c,
+	  lib/psiconv/generate_simple.c:
+	  (Frodo) Even better errors and progress/debug info
+
+2004-02-25 21:57  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: generate_common.c, generate_driver.c,
+	  generate_image.c, generate_layout.c, generate_page.c,
+	  generate_simple.c, generate_texted.c, generate_word.c, unicode.c,
+	  unicode.h:
+	  (Frodo) Progress information while generating update
+
+	  Much better progress information now, and better error reporting.
+
+2004-02-25 21:56  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/parse_image.c:
+	  (Frodo) Modify debugging level
+
+	  The noise from parsing pictures was ridiculous. Now you have to edit
+	  the C code and #define LOUD to have it shout at you like that.
+
+2004-02-25 17:12  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/unicode.h:
+	  (Frodo) Fix on previous commit
+
+2004-02-25 17:11  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, configure.in, debian/changelog, lib/psiconv/Makefile.am,
+	  lib/psiconv/unicode.c, lib/psiconv/unicode.h,
+	  program/psiconv-config/psiconv-config:
+	  (Frodo) AbiWord work
+	    * Update version to 0.9.3
+	    * Update library version
+	    * New functions psiconv_unicode_from_list and
+	    psiconv_unicode_strstr
+
+2004-02-23 18:57  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog, NEWS, TODO, debian/changelog, docs/configuration:
+	  (Frodo) Final update for release 0.9.2
+
+2004-02-23 18:36  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* formats/generate_ascii.sh:
+	  (Frodo) Ouch. Forgot to add the -c arg to psiconv at the right place
+
+2004-02-23 18:23  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* TODO, lib/psiconv/generate_word.c:
+	  (Frodo) Solve a few small buglets
+
+2004-02-23 18:23  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* Makefile.am:
+	  (Frodo) Remove Debian from make dist
+
+2004-02-23 18:01  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: Makefile.am, misc.c, parse_layout.c:
+	  (Frodo) Buglets
+
+2004-02-23 14:34  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* formats/: Makefile.am, generate_ascii.sh, generate_html4.sh,
+	  generate_xhtml.sh, psiconv.conf:
+	  (Frodo) Added configuration file for formats
+	    Alls formats docs are now generated with a sane configfile.
+
+2004-02-23 14:33  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/configuration.c:
+	  (Frodo) Buglet in configfile parsing solved
+	    * Typo: eovar instead of eoval in one check
+
+2004-02-23 14:08  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* TODO, program/psiconv/psiconv.c:
+	  (Frodo) Psiconv program work
+	    * Added -c option
+
+2004-02-22 23:32  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/configuration.c:
+	  (Frodo) Default configuration bug fixed
+
+	    * Now properly initialize default_configuration
+
+2004-02-22 23:24  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* etc/psiconv.conf.eg, lib/psiconv/configuration.c,
+	  lib/psiconv/error.c, lib/psiconv/generate_common.c,
+	  lib/psiconv/generate_layout.c, lib/psiconv/generate_simple.c,
+	  lib/psiconv/generate_word.c, lib/psiconv/misc.c,
+	  lib/psiconv/parse_common.c, lib/psiconv/parse_layout.c,
+	  lib/psiconv/parse_simple.c, lib/psiconv/parse_word.c,
+	  lib/psiconv/unicode.c, lib/psiconv/unicode.h,
+	  program/psiconv/general.c:
+	  (Frodo) UTF8 work (it should now actually work!)
+
+	    * Replaced psiconv_unicode_from_char with psiconv_unicode_read_char
+	      and removed psiconv_unicode_from_chars
+	    * Replaced psiconv_unicode_to_char with psiconv_unicode_write_char
+	      and removed psiconv_unicode_to_chars
+	    * Rewrote psiconv_parse_text_section to be more sane, easier to
+	      read and to work with the above updates
+	    * Updated all places where the psiconv_unicode_from/to_char calls
+	      were used
+	    * Updated psiconv.conf.eg to reflect the correct character set
+	    numbers
+	  * Fixed a buglet that made it impossible to set verbosity to 5 in
+	    config
+	  * Removed strange code in make_printable
+	    * Rewrote the ENCODING_PSION option in the psiconv program to work
+	      with the new definitions.
+
+2004-02-21 14:24  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* formats/: generate_html4.sh, generate_xhtml.sh:
+	  (Frodo) Work around CDPATH bash bugs, as reported by Reuben Thomas
+
+2004-02-21 14:11  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* Makefile.am, debian/changelog, debian/control, debian/copyright,
+	  debian/libpsiconv6.copyright, debian/psiconv-doc.copyright,
+	  debian/psiconv-doc.dirs, debian/psiconv-doc.install,
+	  debian/rules:
+	  (Frodo) Debian stuff
+	    * psiconv-doc is now independent of other packages
+
+2004-02-21 13:10  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* Makefile.am, debian/changelog, debian/control, debian/rules,
+	  program/psiconv-config/psiconv-config:
+	  (Frodo) Debian stuff
+	    * Changed psiconv-dev to libpsiconv-dev
+	    * Bumped up the version number
+
+2004-02-21 12:48  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv-config/Makefile.am:
+	  (Frodo) Forgotten file
+
+2004-02-20 22:52  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* configure.in, lib/psiconv/configuration.h:
+	  (Frodo)
+	    * Bumped version numer to 0.9.2
+	    * Fixed error handler bug (returned void * instead of void)
+
+2004-02-10 18:24  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog, configure.in, debian/control, debian/psiconv-doc.dirs,
+	  debian/psiconv-doc.install, debian/psiconv.manpages,
+	  debian/rules, program/psiconv-config/psiconv-config.man.in:
+	  (Frodo) Final 0.9.1 commit
+	    * Added psiconv-config manpage
+	    * Updated Debian build
+
+2004-02-10 00:33  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog, NEWS, debian/changelog, debian/control,
+	  debian/libpsiconv6.dirs, debian/libpsiconv6.install,
+	  debian/psiconv-dev.dirs, debian/psiconv-dev.install:
+	  (Frodo) A few last-minute deb changes
+
+2004-02-10 00:12  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/configuration.c, lib/psiconv/configuration.h,
+	  lib/psiconv/data.c, lib/psiconv/generate_common.c,
+	  lib/psiconv/parse_common.c, lib/psiconv/parse_driver.c,
+	  program/extra/rewrite.c:
+	  (Frodo) Several (smallish) memory leaks resolved
+
+2004-02-09 23:09  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* Makefile.am, configure.in:
+	  (Frodo) Last fixes for the extra directory move
+
+2004-02-09 23:03  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/: Makefile.am, extra/Makefile.am:
+	  (Frodo) Move extra dir under programs
+
+2004-02-09 22:51  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* debian/: libpsiconv6.dirs, libpsiconv6.install:
+	  (Frodo) Add support in debian stuff for the new psiconv-config
+	  program
+
+2004-02-08 23:44  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, configure.in, lib/psiconv/Makefile.am,
+	  lib/psiconv/configuration.c, lib/psiconv/configuration.h,
+	  program/psiconv-config/psiconv-config,
+	  program/psiconv-config/psiconv-config.in:
+	  (Frodo) psiconv-config program plus bugfixes
+
+	    * Bumped up the version number to 0.9.1
+	    * Bumped up the library version to 0.6.1
+	    * Added the psiconv-config program (for autoconf use by third
+	    parties)
+	  * Added the psiconv_config_free function
+	    * Fixed the installation ($includedir/include/general.h)
+
+2004-02-04 18:37  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog, Makefile.am, TODO, debian/changelog,
+	  debian/libpsiconv6.dirs, debian/libpsiconv6.install,
+	  debian/rules, docs/Makefile.am, formats/Makefile.am:
+	  (Frodo) Last commit for 0.9.0.
+	    * Correct `make dist'
+	    * Correct Debian stuff
+
+2004-02-04 18:10  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* etc/: Makefile.am, psiconv.conf.eg:
+	  (Frodo) Update example psiconv.conf to correctly document latest
+	  settings
+
+2004-02-04 16:28  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* README, TODO, docs/ascii, docs/configuration, docs/html,
+	  docs/html4, docs/unicode, docs/xhtml,
+	  lib/psiconv/configuration.c:
+	  (Frodo) Documentation updates. Removed fatals.
+
+2004-02-04 15:37  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog:
+	  (Frodo) Nice Changelog
+
+2004-02-04 15:36  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* ChangeLog, etc/Makefile.am:
+	  (Frodo) Added Makefile.am
+
+2004-02-04 15:32  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* Makefile.am, configure.in, etc/psiconv.conf, etc/psiconv.conf.eg,
+	  lib/psiconv/Makefile.am, lib/psiconv/configuration.c:
+	  (Frodo) Configuration file installation and location
+
+	    * Add the --with-etcdir configuration option
+	    * Install psiconv.conf.eg and (if not yet present) psiconv.conf
+
+2004-02-04 13:19  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, TODO, compat/compat.h, compat/dummy.c,
+	  formats/psion/Introduction.psi, lib/psiconv/buffer.c,
+	  lib/psiconv/buffer.h, lib/psiconv/checkuid.c,
+	  lib/psiconv/common.h, lib/psiconv/configuration.c,
+	  lib/psiconv/configuration.h, lib/psiconv/data.c,
+	  lib/psiconv/data.h, lib/psiconv/error.c, lib/psiconv/error.h,
+	  lib/psiconv/generate.h, lib/psiconv/generate_common.c,
+	  lib/psiconv/generate_driver.c, lib/psiconv/generate_image.c,
+	  lib/psiconv/generate_layout.c, lib/psiconv/generate_page.c,
+	  lib/psiconv/generate_routines.h, lib/psiconv/generate_simple.c,
+	  lib/psiconv/generate_texted.c, lib/psiconv/generate_word.c,
+	  lib/psiconv/image.c, lib/psiconv/image.h, lib/psiconv/list.c,
+	  lib/psiconv/list.h, lib/psiconv/misc.c, lib/psiconv/parse.h,
+	  lib/psiconv/parse_common.c, lib/psiconv/parse_driver.c,
+	  program/extra/checkuid.c, program/extra/empty.c,
+	  program/extra/rewrite.c, lib/psiconv/parse_formula.c,
+	  lib/psiconv/parse_image.c, lib/psiconv/parse_layout.c,
+	  lib/psiconv/parse_page.c, lib/psiconv/parse_routines.h,
+	  lib/psiconv/parse_sheet.c, lib/psiconv/parse_simple.c,
+	  lib/psiconv/parse_texted.c, lib/psiconv/parse_word.c,
+	  lib/psiconv/unicode.c, lib/psiconv/unicode.h,
+	  program/psiconv/gen.h, program/psiconv/gen_html4.c,
+	  program/psiconv/gen_image.c, program/psiconv/gen_rtf.c,
+	  program/psiconv/gen_txt.c, program/psiconv/general.c,
+	  program/psiconv/magick-aux.c, program/psiconv/magick-aux.h,
+	  program/psiconv/psiconv.c, program/psiconv/psiconv.h:
+	  (Frodo) Copyright dates update
+
+2004-02-04 12:35  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* formats/generate_html4.sh, formats/generate_xhtml.sh,
+	  formats/html4_links.sh, formats/html_links.sh,
+	  formats/xhtml_links.sh, formats/psion/ASCII_Codes.psi,
+	  formats/psion/Application_ID_Section.psi,
+	  formats/psion/Basic_Elements.psi,
+	  formats/psion/Basic_Structures.psi,
+	  formats/psion/Clip_Art_File.psi,
+	  formats/psion/Embedded_Object_Section.psi,
+	  formats/psion/File_Structure.psi,
+	  formats/psion/Header_Section.psi, formats/psion/Identifiers.psi,
+	  formats/psion/Index.psi, formats/psion/Introduction.psi,
+	  formats/psion/Layout_Codes.psi, formats/psion/MBM_File.psi,
+	  formats/psion/Page_Layout_Section.psi,
+	  formats/psion/Paint_Data_Section.psi,
+	  formats/psion/Password_Section.psi,
+	  formats/psion/Record_Section.psi,
+	  formats/psion/Sheet_Basic_Structures.psi,
+	  formats/psion/Sheet_Cell_List.psi, formats/psion/Sheet_File.psi,
+	  formats/psion/Sheet_Formula_List.psi,
+	  formats/psion/Sheet_Graph_Section.psi,
+	  formats/psion/Sheet_Info_Section.psi,
+	  formats/psion/Sheet_Variable_List.psi,
+	  formats/psion/Sheet_Workbook_Section.psi,
+	  formats/psion/Sheet_Worksheet.psi,
+	  formats/psion/Sheet_Worksheet_List.psi,
+	  formats/psion/Sketch_Section.psi,
+	  formats/psion/Text_Layout_Section.psi,
+	  formats/psion/Text_Section.psi, formats/psion/Userdic_File.psi,
+	  formats/psion/Word_Status_Section.psi,
+	  formats/psion/Word_Styles_Section.psi,
+	  formats/psion/World_Data_File.psi, program/psiconv/gen_html4.c,
+	  program/psiconv/gen_xhtml.c:
+	  (Frodo) Format documentation work
+
+	    * Uploaded newest Format documentation
+	    * Split generate_html.sh into xhtml and html4 specific versions
+	    * Changed gen_xhtml and gen_html4 to combine spans that have the
+	      same layout codes
+	    * Changed gen_xhtml and gen_html4 not to emit empty spans
+
+2004-02-02 22:57  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* debian/: libpsiconv6.dirs, libpsiconv6.docs, libpsiconv6.install:
+	  (Frodo) Oops, forgot to add these files
+
+2004-02-02 22:56  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, configure.in, formats/Makefile.am,
+	  formats/generate_html.sh, formats/generate_html4.sh,
+	  formats/generate_rtf.sh, formats/generate_xhtml.sh,
+	  formats/html_links.sh, lib/psiconv/configuration.c,
+	  lib/psiconv/error.c, lib/psiconv/generate_layout.c,
+	  lib/psiconv/parse_common.c, lib/psiconv/unicode.c,
+	  program/psiconv/gen_html4.c, program/psiconv/gen_image.c,
+	  program/psiconv/gen_xhtml.c, program/psiconv/psiconv.c:
+	  (Frodo) Make the formats stuff work again
+
+	    * Amend the configure.in to select the right targets
+	    * Remove RTF support (it never worked anyway)
+	    * Update the links creation scripts
+
+	  And in the psiconv program and library:
+	    * Some fixes to reduce compiler warnings
+	    * Emit tabs as spaces in the HTML4/XHTML generators
+
+2004-02-02 21:43  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, TODO, debian/libpsiconv5.dirs, debian/libpsiconv5.docs,
+	  debian/libpsiconv5.install, lib/psiconv/data.h,
+	  lib/psiconv/unicode.c, program/psiconv/Makefile.am,
+	  program/psiconv/gen.h, program/psiconv/gen_html.c,
+	  program/psiconv/gen_html4.c, program/psiconv/gen_image.c,
+	  program/psiconv/gen_txt.c, program/psiconv/gen_xhtml.c,
+	  program/psiconv/general.c, program/psiconv/psiconv.c,
+	  program/psiconv/psiconv.h:
+	  (Frodo) Psiconv program update
+	    * Created html4 target
+	    * Update of xhtml target (print entities if ASCII, and others)
+	    * Made everything static that should not be exported
+	    * Renamed stuff to xhtml were appropriate
+	    * The fileformat data does now contain the supported Psion files
+	    to convert
+	  * This is also printed in the help text
+	    * ENCODING_ASCII_HTML introduced (only used internally)
+	    * Replaced debug, silent, verbose options with noise option
+	    * Default targets are XHTML and TIFF
+
+2004-01-28 21:18  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/gen_xhtml.c:
+	  (Frodo) XHTML output complete
+
+2004-01-26 22:56  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/: Makefile.am, gen_html.c, gen_xhtml.c,
+	  psiconv.c:
+	  (Frodo) XHTML work
+
+2004-01-26 15:00  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/: general.h, general.c:
+	  (Frodo) Update
+
+2004-01-26 13:59  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.h, generate_word.c, image.c, parse_routines.h,
+	  parse_simple.c, parse_word.c:
+	  (Frodo) Oops, forgot about image.c
+
+2004-01-18 20:58  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/: Makefile.am, gen_image.c, psiconv.c:
+	  (Frodo) Image generation active again in psiconv program
+
+2004-01-09 23:31  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* configure.in:
+	  (Frodo) Fixed autoconf problem with newer versions
+
+2004-01-09 23:20  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, TODO, etc/psiconv.conf, lib/psiconv/configuration.c,
+	  program/psiconv/Makefile.am, program/psiconv/encoding.h,
+	  program/psiconv/gen.h, program/psiconv/gen_txt.c,
+	  program/psiconv/general.c, program/psiconv/psiconv.c,
+	  program/psiconv/psiconv.h:
+	  (Frodo) Psiconv program rewrite start
+	    * Add support for different encodings
+	    * Restructure some things
+	    * Only ASCII support at the moment
+
+2004-01-06 21:15  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, TODO, etc/psiconv.conf, lib/psiconv/common.h,
+	  lib/psiconv/configuration.c, lib/psiconv/data.c,
+	  lib/psiconv/data.h, lib/psiconv/error.c, lib/psiconv/error.h,
+	  lib/psiconv/general.h, lib/psiconv/general.h.in,
+	  lib/psiconv/generate_common.c, lib/psiconv/generate_driver.c,
+	  lib/psiconv/generate_image.c, lib/psiconv/generate_layout.c,
+	  lib/psiconv/generate_page.c, lib/psiconv/generate_routines.h,
+	  lib/psiconv/generate_simple.c, lib/psiconv/generate_texted.c,
+	  lib/psiconv/generate_word.c, lib/psiconv/misc.c,
+	  lib/psiconv/parse_common.c, lib/psiconv/parse_driver.c,
+	  lib/psiconv/parse_formula.c, lib/psiconv/parse_image.c,
+	  lib/psiconv/parse_layout.c, lib/psiconv/parse_page.c,
+	  lib/psiconv/parse_routines.h, lib/psiconv/parse_sheet.c,
+	  lib/psiconv/parse_simple.c, lib/psiconv/parse_texted.c,
+	  lib/psiconv/parse_word.c, lib/psiconv/unicode.c,
+	  lib/psiconv/unicode.h:
+	  (Frodo) Unicode transition
+
+	  Note: this commit breaks psiconv. The programs in the extra
+	  directory should work properly.
+
+	    * Change all datastructures to use unicode for character encodings
+	    * Added psiconv_error function
+	    * Called psiconv_error at places where a warning was stupid
+	    * Added psiconv_progress in all generate functions
+	    * Added lev parameter to all generate functions
+	    * Removed general.h from CVS (we have general.h.in, after all)
+	    * Probably other stuff I forgot
+
+2004-01-04 23:20  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.h, parse_formula.c, parse_sheet.c:
+	  (Frodo) More preparations for the Unicode change. Use psiconv_string
+	          everywhere possible (no more char * stuff)
+
+2004-01-04 23:07  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: configuration.c, configuration.h, data.h,
+	  generate_layout.c, generate_routines.h, generate_simple.c,
+	  parse_layout.c, parse_simple.c, unicode.c:
+	  (Frodo) Move fontnames to psiconv_string type
+
+2004-01-04 16:47  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* TODO, docs/unicode, etc/psiconv.conf, lib/psiconv/Makefile.am,
+	  lib/psiconv/configuration.c, lib/psiconv/configuration.h,
+	  lib/psiconv/general.h, lib/psiconv/unicode.c,
+	  lib/psiconv/unicode.h:
+	  (Frodo) Preparation for the conversion to Unicode.
+
+2003-12-14 00:26  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, lib/psiconv/configuration.c, lib/psiconv/configuration.h,
+	  program/extra/empty.c, program/extra/rewrite.c,
+	  program/psiconv/psiconv.c:
+	  (Frodo) Add configuration file parsing support
+
+	  To do: install config file on installation of psiconv, also in
+	  Debian install
+
+2003-12-13 19:23  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, TODO, lib/psiconv/parse_image.c:
+	  (Frodo) Revamped and expanded image (paint data section) parsing
+
+	  Color images are now supported Colordepths besides 2 bit are now
+	  supported RLE12,16 and 24 are now supported All of the above are
+	  experimental
+
+	  Parsing of images takes some more memory, but the code structure is
+	  much simpler.
+
+2003-12-03 16:16  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: Makefile.am, generate_image.c, image.h,
+	  parse_image.c:
+	  (Frodo) Enhancing image parsing
+
+	  * Preparations in parse_image to do a pass-based decoding with
+	    support for all image formats
+	  * Moved some stuff to image.h/image.c that is used both for the
+	    generation and parsing of images
+	  * image.h is not installed
+
+2003-12-02 20:48  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* TODO, etc/psiconv.conf:
+	  (Frodo) Configuration file template. Not installed yet, not parsed
+	  yet.
+
+2003-12-02 20:47  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: configuration.c, configuration.h, generate_image.c:
+	  (Frodo) Picture generation now supports all RLE's and many more
+	          config items. Mostly untested, though.
+
+2003-11-27 21:55  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: generate_image.c, parse_image.c:
+	  (Frodo) RLE16/24 support, but not yet used
+
+2003-11-27 13:08  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, examples/Clipart, lib/psiconv/generate_driver.c,
+	  lib/psiconv/generate_image.c, lib/psiconv/generate_routines.h:
+	  (Frodo) Clipart generation
+
+2003-11-27 12:43  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, lib/psiconv/common.h, lib/psiconv/configuration.c,
+	  lib/psiconv/configuration.h, lib/psiconv/error.c,
+	  lib/psiconv/error.h, lib/psiconv/generate.h,
+	  lib/psiconv/generate_routines.h, lib/psiconv/list.h,
+	  lib/psiconv/parse.h, lib/psiconv/parse_routines.h:
+	  (Frodo) Move error_function to the config struct
+
+2003-11-26 21:56  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS:
+	  (Frodo) NEWS update
+
+2003-11-26 21:56  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, TODO, lib/psiconv/data.c, lib/psiconv/data.h,
+	  lib/psiconv/generate_driver.c, lib/psiconv/generate_image.c,
+	  lib/psiconv/generate_routines.h, lib/psiconv/misc.c,
+	  lib/psiconv/parse_simple.c:
+	  (Frodo) Support MBM output format
+
+2003-11-25 23:08  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: configuration.c, configuration.h,
+	  generate_common.c, generate_driver.c, generate_image.c,
+	  generate_routines.h, parse_driver.c:
+	  (Frodo) Generating of Sketch files, both stand-alone and as objects,
+	  works!
+
+	  No RLE encoding yet, we have to test higher colordepths.
+
+2003-11-25 18:59  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS:
+	  (Frodo) NEWS update
+
+2003-11-25 18:57  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* TODO, lib/psiconv/Makefile.am, lib/psiconv/configuration.c,
+	  lib/psiconv/configuration.h, lib/psiconv/error.c,
+	  lib/psiconv/error.h, lib/psiconv/generate.h,
+	  lib/psiconv/generate_common.c, lib/psiconv/generate_driver.c,
+	  lib/psiconv/generate_image.c, lib/psiconv/generate_layout.c,
+	  lib/psiconv/generate_page.c, lib/psiconv/generate_routines.h,
+	  lib/psiconv/generate_simple.c, lib/psiconv/generate_texted.c,
+	  lib/psiconv/generate_word.c, lib/psiconv/list.c,
+	  lib/psiconv/parse.h, lib/psiconv/parse_common.c,
+	  lib/psiconv/parse_driver.c, lib/psiconv/parse_formula.c,
+	  lib/psiconv/parse_image.c, lib/psiconv/parse_layout.c,
+	  lib/psiconv/parse_page.c, lib/psiconv/parse_routines.h,
+	  lib/psiconv/parse_sheet.c, lib/psiconv/parse_simple.c,
+	  lib/psiconv/parse_texted.c, lib/psiconv/parse_word.c,
+	  program/extra/empty.c, program/extra/rewrite.c,
+	  program/psiconv/psiconv.c:
+	  (Frodo) config stuff and image generation stuff
+
+	  * All parse and generate functions have a new config parameter
+	  * New files configuration.[ch] in the psiconv lib
+	  * Some image generation stuff (not ready, but won't do any harm)
+
+2003-11-23 22:47  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, lib/psiconv/data.c, lib/psiconv/data.h,
+	  lib/psiconv/generate_common.c, lib/psiconv/generate_routines.h,
+	  lib/psiconv/parse_common.c, lib/psiconv/parse_routines.h:
+	  (Frodo) Embedded object generation works!
+
+	  Not too useful though, we also need sketch or sheet generation; the
+	  only thing actually working at the moment is embedding word docs
+	  within word docs.  Oh well. It's a good start.
+
+2003-11-23 19:53  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, lib/psiconv/generate_driver.c:
+	  (Frodo) Generation change: psiconv_write_*_file no longer generates
+	  the header section This is now done in psiconv_write. This will help
+	  us create objects.
+
+2003-11-23 19:48  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/extra/rewrite.c:
+	  (Frodo) Explain rewrite syntax
+
+2003-11-22 23:24  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* debian/: control, rules:
+	  (Frodo) Updated Debian to new major lib number
+
+2003-11-22 23:17  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, configure.in, lib/psiconv/Makefile.am, lib/psiconv/data.c,
+	  lib/psiconv/data.h, lib/psiconv/parse_driver.c,
+	  lib/psiconv/parse_image.c, lib/psiconv/parse_routines.h:
+	  (Frodo) Some more work on objects:
+	    * Bumped up major library version
+	    * Corrected parsing of sketch_section, changed struct
+	    * parse_sketch_section does not have the is_object flag anymore
+
+2003-11-21 16:39  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, lib/psiconv/buffer.c, lib/psiconv/parse_common.c:
+	  (Frodo) Parsing of embedded objects in Word complete
+
+2003-11-21 00:45  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: parse_common.c, parse_routines.h:
+	  (Frodo) More embedded object work. Everytihng except the object data
+	          itself is now safely parsed.
+
+2003-11-20 23:14  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.h, parse_common.c, parse_driver.c,
+	  parse_routines.h:
+	  (Frodo) More work for embedded objects (not finished yet)
+
+2003-11-19 22:04  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.c, data.h, parse_common.c:
+	  (Frodo) Data structures for (Word) objects created.
+
+2003-11-18 12:25  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: buffer.c, buffer.h:
+	  (Frodo) Add function psiconv_buffer_subbuffer
+
+2003-11-12 15:36  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* debian/rules:
+	  (Frodo) Better shared libs deps in debian build
+
+2003-11-12 13:29  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* Makefile.am:
+	  (Frodo) 'make dist' includes Debian files too now
+
+2003-11-12 00:14  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* debian/: files, libpsiconv5.docs, psiconv.manpages, rules:
+	  (Frodo) Debian update
+
+2003-11-11 23:49  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* COPYING, INSTALL, debian/changelog, debian/compat,
+	  debian/control, debian/copyright, debian/files,
+	  debian/libpsiconv5.dirs, debian/libpsiconv5.docs,
+	  debian/libpsiconv5.install, debian/psiconv-dev.dirs,
+	  debian/psiconv-dev.install, debian/psiconv-doc.dirs,
+	  debian/psiconv-doc.install, debian/psiconv.dirs,
+	  debian/psiconv.install, debian/psiconv.manpages, debian/rules,
+	  program/psiconv/Makefile.am, program/psiconv/psiconv.man:
+	  (Frodo) New manpage and Debian support
+
+2003-11-11 21:41  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, autogen.sh:
+	  (Frodo) Correction autogen.sh
+
+2003-11-11 19:58  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* COPYING, ChangeLog, INSTALL, NEWS, README, autogen.sh,
+	  configure.in, formats/Makefile.am, lib/psiconv/Makefile.am,
+	  program/extra/Makefile.am, program/psiconv/magick-aux.c,
+	  program/psiconv/magick-aux.h, program/psiconv/psiconv.c:
+	  (Frodo) Many build updates:
+	    * Automake 1.6 and 1.7 support
+	    * Autoconf 2.5x support
+	    * ImageMagick 5.4.x and 5.5.x support
+	    * Format documentation will now be installed
+
+2003-06-16 19:48  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/parse_word.c:
+	  (Frodo) Buglet fixed in style section parsing, when number of
+	  hotkeys is not equal to the number of styles.
+
+2003-05-04 22:08  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* INSTALL, formats/psion/ASCII_Codes.psi,
+	  formats/psion/Introduction.psi,
+	  formats/psion/Paint_Data_Section.psi,
+	  formats/psion/Password_Section.psi:
+	  (Frodo) Update
+
+2002-05-10 18:15  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* AUTHORS, NEWS, formats/generate_ascii.sh,
+	  formats/generate_html.sh, formats/generate_html4.sh,
+	  formats/generate_rtf.sh, formats/html_links.sh,
+	  formats/index_html.sh:
+	  (Frodo) Compile on non-Linux platforms: Keitha Kawabe
+	  <keita.kawabe@mpq.mpg.de>
+
+2002-05-10 18:02  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* configure.in:
+	  (Frodo) Update to version 0.8.4
+
+2002-05-10 17:55  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* AUTHORS, COPYING, INSTALL, NEWS, configure.in,
+	  program/psiconv/encoding.h, program/psiconv/gen.h,
+	  program/psiconv/gen_html.c, program/psiconv/gen_html4.c,
+	  program/psiconv/gen_image.c, program/psiconv/gen_latex.c,
+	  program/psiconv/gen_rtf.c, program/psiconv/gen_txt.c,
+	  program/psiconv/psiconv.c, program/psiconv/psiconv.h:
+	  (Frodo) UTF-8 support (Keita Kawabe, keite.kawabe@mpq.mpg.de)
+
+2002-01-29 21:15  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/Makefile.am:
+	  (Frodo) Fixed lib version
+
+2002-01-29 21:08  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS:
+	  (Frodo) Update
+
+2002-01-29 19:49  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, program/extra/rewrite.c:
+	  (Frodo) Another smallish memory leak
+
+2002-01-29 19:47  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.c, parse_layout.c:
+	  (Frodo) Two memory-leaks fixed
+
+2002-01-29 19:38  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* configure.in, lib/psiconv/buffer.c, lib/psiconv/checkuid.c,
+	  lib/psiconv/data.c, lib/psiconv/error.c,
+	  lib/psiconv/generate_common.c, lib/psiconv/generate_driver.c,
+	  lib/psiconv/generate_image.c, lib/psiconv/generate_layout.c,
+	  lib/psiconv/generate_page.c, lib/psiconv/generate_simple.c,
+	  lib/psiconv/generate_texted.c, lib/psiconv/generate_word.c,
+	  lib/psiconv/list.c, lib/psiconv/misc.c,
+	  lib/psiconv/parse_common.c, lib/psiconv/parse_driver.c,
+	  lib/psiconv/parse_formula.c, lib/psiconv/parse_image.c,
+	  lib/psiconv/parse_layout.c, lib/psiconv/parse_page.c,
+	  lib/psiconv/parse_sheet.c, lib/psiconv/parse_simple.c,
+	  lib/psiconv/parse_texted.c, lib/psiconv/parse_word.c,
+	  program/extra/Makefile.am, program/extra/rewrite.c,
+	  program/psiconv/Makefile.am, program/psiconv/gen_html.c,
+	  program/psiconv/gen_html4.c, program/psiconv/gen_image.c,
+	  program/psiconv/gen_latex.c, program/psiconv/gen_rtf.c,
+	  program/psiconv/gen_txt.c, program/psiconv/magick-aux.c:
+	  (Frodo) DMALLOC support
+
+2002-01-28 22:04  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, lib/psiconv/list.c:
+	  (Frodo) Fix memory leak
+
+2002-01-22 22:45  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, lib/psiconv/parse_page.c, program/psiconv/gen_html4.c,
+	  program/psiconv/gen_txt.c:
+	  (Frodo) Fixed possible dangling pointers when no header/footer text
+	          was present, and added test to see whether any is present.
+
+2002-01-22 22:24  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS:
+	  (Frodo) Update
+
+2002-01-22 22:22  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/: gen_image.c, magick-aux.c, magick-aux.h:
+	  (Frodo) Update for newest ImageMagick
+
+2002-01-22 22:16  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* COPYING, INSTALL, autogen.sh:
+	  (Frodo) Synchronisation.
+
+2001-08-04 19:28  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, lib/psiconv/Makefile.am:
+	  (Frodo) Update libversion
+
+2001-07-28 15:13  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* formats/: Makefile.am, psion/Basic_Elements.psi, psion/Index.psi,
+	  psion/Introduction.psi, psion/Sheet_Basic_Structures.psi,
+	  psion/Sheet_Cell_List.psi, psion/Sheet_Formula_List.psi,
+	  psion/Sheet_Graph_Description.psi, psion/Sheet_Graph_Region.psi,
+	  psion/Sheet_Graph_Section.psi, psion/Sheet_Grid_Section.psi,
+	  psion/Sheet_Line_Section.psi, psion/Sheet_Variable_List.psi,
+	  psion/Sheet_Worksheet.psi:
+	  (Frodo) Update for version 2.8 of Psion_Files
+
+2001-07-25 13:49  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, lib/psiconv/data.c, lib/psiconv/data.h,
+	  lib/psiconv/parse_routines.h, lib/psiconv/parse_sheet.c:
+	  (Frodo) Sheet grid section support
+
+2001-07-25 00:50  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/parse_sheet.c:
+	  (Frodo) Added unknown section
+
+2001-07-25 00:44  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/parse_simple.c:
+	  (Frodo) Long strings now parsed correctly
+
+2001-07-25 00:31  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/parse_sheet.c:
+	  (Frodo) Fixed info section parse
+
+2001-07-24 22:36  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/parse_sheet.c:
+	  (Frodo) Whitespace cleanup
+
+2001-07-24 22:32  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.c, data.h, parse_formula.c, parse_routines.h,
+	  parse_sheet.c, parse_simple.c:
+	  (Frodo) Many new sheet things
+
+	    * Variable section and formula variable parsing
+	    * Info section
+	    * Name section
+	    * Better parsing of vararg functions
+
+2001-07-18 14:24  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.c, data.h, parse_routines.h, parse_sheet.c:
+	  (Frodo) Sheet line defaults added
+
+2001-07-16 19:51  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, configure.in:
+	  (Frodo) Preparation for release 0.8.2
+
+2001-07-11 00:38  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.c, data.h:
+	  (Frodo) New function psiconv_get_function
+
+2001-07-02 21:00  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* formats/psion/Sheet_Basic_Structures.psi:
+	  (Frodo) Forgot one file to add?
+
+2001-07-02 20:55  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* acconfig.h:
+	  (Frodo) Not needed anymore
+
+2001-07-01 22:40  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* examples/Sheet, lib/psiconv/data.h, lib/psiconv/parse_sheet.c:
+	  (Frodo) New example sheet
+
+2001-07-01 15:14  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.c, parse_routines.h, parse_sheet.c:
+	  (Frodo) Default cell layout will now be used
+
+2001-07-01 14:01  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/parse_sheet.c:
+	  (Frodo) Fixed segfault
+
+2001-06-30 22:36  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* examples/: MBM, Sketch:
+	  (Frodo) Example graphic files
+
+2001-06-30 15:36  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* Makefile.am, NEWS, autogen.sh, configure.in,
+	  lib/psiconv/parse_simple.c, program/psiconv/gen_image.c,
+	  program/psiconv/magick-aux.c:
+	  (Frodo) Now compiles again with newest ImageMagick.
+
+2001-06-17 20:47  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* Makefile.in, aclocal.m4, config.guess, config.h.in, config.sub,
+	  configure, install-sh, ltconfig, ltmain.sh, missing,
+	  mkinstalldirs, stamp-h.in, compat/Makefile.in, docs/Makefile.in,
+	  formats/Makefile.in, lib/Makefile.in, program/extra/Makefile.in,
+	  lib/psiconv/Makefile.in, program/Makefile.in,
+	  program/psiconv/Makefile.in:
+	  (Frodo) Make us depend fully on autogen.sh
+
+2001-06-17 20:44  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* Makefile.in, aclocal.m4, autogen.sh, config.guess, config.h.in,
+	  config.sub, configure, configure.in, ltconfig, ltmain.sh,
+	  compat/Makefile.in, docs/Makefile.in, program/extra/Makefile.in,
+	  formats/Makefile.in, lib/Makefile.in, lib/psiconv/Makefile.in,
+	  program/Makefile.in, program/psiconv/Makefile.in:
+	  (Frodo) Update to libtool-1.4, autoconf-2.50
+
+2001-03-11 21:06  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* AUTHORS, formats/Makefile.am, formats/Makefile.in:
+	  (Frodo) Sync
+
+2001-03-11 20:58  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* formats/psion/: Sheet_Cell_List.psi, Sheet_Formula_List.psi,
+	  Sheet_Info_Section.psi, World_Data_File.psi:
+	  (Frodo) Last updates for 2.7
+
+2001-03-11 20:39  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* formats/psion/: Basic_Structures.psi, Header_Section.psi,
+	  Index.psi, Introduction.psi, Layout_Codes.psi,
+	  Page_Layout_Section.psi, Sheet_Cell_List.psi, Sheet_File.psi,
+	  Sheet_Formula_List.psi, Sheet_Graph_Description.psi,
+	  Sheet_Grid_Section.psi, Sheet_Info_Section.psi,
+	  Sheet_Name_Section.psi, Sheet_Status_Section.psi,
+	  Sheet_Variable_List.psi, Sheet_Workbook_Section.psi,
+	  Sheet_Worksheet.psi, Sheet_Worksheet_List.psi,
+	  Text_Layout_Section.psi, Word_Status_Section.psi,
+	  World_Data_File.psi:
+	  (Frodo) Update to version 2.7 of datafiles
+
+2001-03-11 17:23  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/checkuid.c:
+	  (Frodo) Gert-Jan de Vos' patch for checkuid
+
+2001-03-07 00:59  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.c, data.h, parse_page.c, parse_routines.h,
+	  parse_sheet.c:
+	  (Frodo) Many changes to sheets
+
+2001-03-04 23:10  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.c, data.h, parse_formula.c, parse_layout.c,
+	  parse_routines.h, parse_sheet.c, parse_simple.c:
+	  (Frodo) Thomas Decsi's major sheet patch
+
+2001-02-16 19:49  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* examples/TextEd, examples/Word, program/psiconv/Makefile.am,
+	  program/psiconv/Makefile.in, program/psiconv/gen.h,
+	  program/psiconv/gen_latex.c, program/psiconv/psiconv.c:
+	  (Frodo) Jim Ottaway's gen_latex module, and two example files
+
+2001-02-15 22:54  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/parse_formula.c:
+	  (Frodo) Fixed formula numbers
+
+2001-02-08 21:03  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.h, parse_formula.c:
+	  (Frodo) Latest formula additions of Decsi
+
+2001-02-03 16:11  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/parse_formula.c:
+	  (Frodo) Vararg arguments now work. Formulas are complete (except for
+	          name references)!
+
+2001-02-02 22:07  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/parse_formula.c:
+	  (Frodo) Preparations for vararg functions
+
+2001-01-31 01:57  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.c, data.h, generate_layout.c, parse_formula.c,
+	  parse_layout.c:
+	  (Frodo) Applied Decsi's patch for wraps
+
+2001-01-31 01:41  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/parse_formula.c:
+	  (Frodo) Added strings to formulas
+
+2001-01-31 01:35  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.h, parse_formula.c:
+	  (Frodo) Added cell references and cell blocks
+
+2001-01-31 00:57  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.h, parse_formula.c, parse_routines.h,
+	  parse_simple.c:
+	  (Frodo) Added floats
+
+2001-01-31 00:15  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/parse_formula.c:
+	  (Frodo) Forgot to add parse_formula.c in the previous patch
+
+2001-01-30 22:37  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.c, data.h:
+	  (Frodo) Most formula work is completed
+
+2001-01-29 22:57  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: Makefile.am, Makefile.in, data.c, data.h, list.c,
+	  list.h, parse_routines.h, parse_sheet.c:
+	  (Frodo) Base formula work
+
+2001-01-22 21:36  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* configure, configure.in, compat/Makefile.am, compat/Makefile.in,
+	  lib/psiconv/data.c, lib/psiconv/data.h,
+	  lib/psiconv/parse_image.c, lib/psiconv/parse_routines.h,
+	  lib/psiconv/parse_sheet.c:
+	  (Frodo) Another small Sheet improvement: sheet formula list
+
+2001-01-21 01:06  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* config.guess, config.sub, ltconfig, ltmain.sh:
+	  (Frodo) Update to libtool 1.4
+
+2001-01-17 13:04  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, lib/psiconv/data.c, lib/psiconv/data.h,
+	  lib/psiconv/parse_driver.c, lib/psiconv/parse_routines.h,
+	  lib/psiconv/parse_sheet.c:
+	  (Frodo) A little more sheet work. Added a Sheet Workbook section,
+	          though nothing is really put into it yet.
+
+2001-01-17 01:05  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, configure, configure.in, docs/Makefile.am,
+	  docs/Makefile.in, lib/psiconv/Makefile.am,
+	  lib/psiconv/Makefile.in, lib/psiconv/data.c, lib/psiconv/data.h,
+	  lib/psiconv/parse_common.c, lib/psiconv/parse_driver.c,
+	  lib/psiconv/parse_routines.h, lib/psiconv/parse_sheet.c:
+	  (Frodo) Start of Sheet support: base types defined, page and status
+	          section parsed, supporting definitions in data.c
+
+2001-01-10 18:19  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* formats/psion/Introduction.psi:
+	  (Frodo) Corrected Decsi's name.
+
+2001-01-10 17:56  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* formats/psion/: Introduction.psi, Layout_Codes.psi:
+	  (Frodo) Make sure the Psion docs are up-to-date
+
+2001-01-10 17:39  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/data.h, program/psiconv/gen_html.c,
+	  program/psiconv/gen_html4.c, program/psiconv/gen_rtf.c:
+	  (Frodo) Abstracted screenfont into enum
+
+2001-01-07 21:30  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/generate_common.c:
+	  (Frodo) Sanitaized the input for layout section generation; it
+	          should now work more often.
+
+2000-12-31 02:36  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/extra/Makefile.am, program/extra/Makefile.in,
+	  program/extra/empty.c, lib/psiconv/data.c,
+	  lib/psiconv/generate_common.c:
+	  (Frodo) Empty Word and TextEd documents work!
+
+2000-12-30 23:17  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* AUTHORS, NEWS, lib/psiconv/Makefile.am, lib/psiconv/Makefile.in,
+	  lib/psiconv/data.c, lib/psiconv/data.h:
+	  (Frodo) Added psiconv_empty_* routines
+
+2000-12-28 16:49  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* formats/Makefile.am, formats/Makefile.in,
+	  formats/psion/Embedded_Object_Section.psi,
+	  formats/psion/Fonts.psi, formats/psion/Identifiers.psi,
+	  formats/psion/Index.psi, formats/psion/Introduction.psi,
+	  formats/psion/Layout_Codes.psi,
+	  formats/psion/Page_Layout_Section.psi,
+	  formats/psion/Paint_Data_Section.psi,
+	  formats/psion/Password_Section.psi,
+	  formats/psion/Section_Table_Section.psi,
+	  formats/psion/Sheet_File.psi,
+	  formats/psion/Sheet_Graph_Description.psi,
+	  formats/psion/Sheet_Graph_List_Section.psi,
+	  formats/psion/Sheet_Graph_Region.psi,
+	  formats/psion/Sheet_Graph_Section.psi,
+	  formats/psion/Sheet_Status_Section.psi,
+	  formats/psion/Sketch_Section.psi,
+	  formats/psion/Text_Layout_Section.psi,
+	  formats/psion/Userdic_File.psi,
+	  formats/psion/Word_Styles_Section.psi,
+	  formats/psion/World_Data_File.psi, lib/psiconv/Makefile.am,
+	  lib/psiconv/Makefile.in, lib/psiconv/generate_image.c,
+	  lib/psiconv/parse_layout.c:
+	  (Frodo) Update of format description. Added some obscure layout
+	  codes.
+
+2000-12-28 01:29  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* TODO, lib/psiconv/generate_word.c:
+	  (Frodo) Life is beautiful: Word documents now seem to be generated
+	          flawlessly!
+
+2000-12-28 01:24  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* TODO, lib/psiconv/generate_layout.c, lib/psiconv/parse_layout.c:
+	  (Frodo) Fixed super/subscript generation, fixed border warnings in
+	  parsing
+
+2000-12-28 00:56  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: generate_layout.c, generate_word.c, parse_word.c:
+	  (Frodo) Fixed a couple of bugs with bullets and styles - even in the
+	  parser
+
+2000-12-28 00:20  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: generate_driver.c, generate_routines.h,
+	  generate_word.c, parse_word.c:
+	  (Frodo) Not yet perfect; but we actually rewrote a Psion Word file!
+
+2000-12-27 03:13  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/Makefile.in, lib/psiconv/generate.h, program/Makefile.in:
+	  (Frodo) Some forgotten files
+
+2000-12-27 03:12  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/extra/rewrite.c, lib/psiconv/buffer.c,
+	  lib/psiconv/buffer.h, lib/psiconv/generate_common.c,
+	  lib/psiconv/generate_driver.c, lib/psiconv/generate_layout.c,
+	  lib/psiconv/generate_page.c, lib/psiconv/generate_routines.h,
+	  lib/psiconv/generate_simple.c, lib/psiconv/generate_texted.c,
+	  lib/psiconv/list.c, lib/psiconv/list.h,
+	  program/psiconv/psiconv.c:
+	  (Frodo) Many changes. Layout sections now work!
+
+	  * Added list_empty, list_replace
+	  * Added relocation to buffers, removed base address
+	  * Added buffer_resolve, buffer_add_reference, buffer_add_target,
+	    psiconv_unique_id functions
+	  * Modifified other buffer functions to work with references
+	  * Added comments to buffer.h
+	  * Added write_offset function
+	  * Added reference support in functions where needed
+	  * Corrected extra/rewrite error message
+	  * Corrected numerous bugs to make layouts work.
+
+2000-12-25 23:25  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* configure, configure.in, lib/psiconv/Makefile.am,
+	  lib/psiconv/Makefile.in, lib/psiconv/buffer.c,
+	  lib/psiconv/buffer.h, lib/psiconv/common.h,
+	  lib/psiconv/generate_common.c, lib/psiconv/generate_driver.c,
+	  lib/psiconv/generate_layout.c, lib/psiconv/generate_page.c,
+	  lib/psiconv/generate_routines.h, lib/psiconv/generate_simple.c,
+	  lib/psiconv/generate_texted.c, lib/psiconv/generate_word.c,
+	  lib/psiconv/list.c, lib/psiconv/list.h, lib/psiconv/parse.h,
+	  lib/psiconv/parse_common.c, lib/psiconv/parse_routines.h,
+	  lib/psiconv/parse_simple.c, program/extra/rewrite.c,
+	  program/psiconv/psiconv.c:
+	  (Frodo) Added a complete buffer abstraction
+
+2000-12-25 15:34  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.c, data.h, generate_layout.c:
+	  (Frodo) Added compare functions for layout elements
+
+2000-12-25 01:29  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/generate_routines.h:
+	  (Frodo) Completed generate_routines.h
+
+2000-12-25 01:26  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/Makefile.am, lib/psiconv/Makefile.in,
+	  lib/psiconv/data.h, lib/psiconv/generate_common.c,
+	  lib/psiconv/generate_driver.c, lib/psiconv/generate_layout.c,
+	  lib/psiconv/generate_page.c, lib/psiconv/generate_routines.h,
+	  lib/psiconv/generate_texted.c, lib/psiconv/generate_word.c,
+	  lib/psiconv/list.c, lib/psiconv/parse_page.c,
+	  program/extra/rewrite.c:
+	  (Frodo) Added word-specific generation routines
+
+2000-12-24 18:26  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* Makefile.am, Makefile.in, configure, configure.in,
+	  lib/psiconv/Makefile.am, lib/psiconv/Makefile.in,
+	  lib/psiconv/generate_common.c, lib/psiconv/generate_driver.c,
+	  lib/psiconv/generate_routines.h, program/extra/Makefile.am,
+	  program/extra/Makefile.in, program/extra/README,
+	  program/extra/checkuid.c, program/extra/rewrite.c:
+	  (Frodo) Several things:
+
+	   * Added the extra directory to the build process, added a README.
+	   * Made checkuid compile cleanly
+	   * Added rewrite utility
+
+2000-12-24 17:34  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/list.c, lib/psiconv/list.h,
+	  program/psiconv/psiconv.c:
+	  (Frodo) New list functions fread_all and fwrite_all
+
+2000-12-24 17:03  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: Makefile.am, Makefile.in, generate_common.c,
+	  generate_driver.c, generate_page.c, generate_routines.h,
+	  generate_texted.c:
+	  (Frodo) We should now have enough to generate TextEd sections!
+
+2000-12-23 21:21  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* TODO, lib/psiconv/Makefile.am, lib/psiconv/Makefile.in,
+	  lib/psiconv/common.h, lib/psiconv/generate_layout.c,
+	  lib/psiconv/generate_routines.h, lib/psiconv/generate_simple.c,
+	  lib/psiconv/list.c, lib/psiconv/list.h:
+	  (Frodo) New generation routines in generate_layout
+
+2000-12-22 23:31  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: Makefile.am, Makefile.in, checkuid.c, common.h,
+	  error.c, error.h, general.h, generate_routines.h,
+	  generate_simple.c, list.c, misc.c, parse.h, parse_common.c,
+	  parse_driver.c, parse_image.c, parse_layout.c, parse_page.c,
+	  parse_routines.h, parse_simple.c, parse_texted.c, parse_word.c:
+	  (Frodo) First generate routines! Reshuffled a few things to make it
+	  all work out
+
+2000-12-20 23:07  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, configure, configure.in, lib/psiconv/Makefile.am,
+	  lib/psiconv/Makefile.in, lib/psiconv/list.c, lib/psiconv/list.h,
+	  lib/psiconv/parse_common.c, lib/psiconv/parse_driver.c,
+	  lib/psiconv/parse_word.c:
+	  (Frodo) Fixed style inheritance from Normal
+
+2000-12-16 17:27  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/data.c:
+	  (Frodo) Fixed error in not setting default linespacing
+
+2000-12-15 19:52  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, lib/psiconv/data.c, lib/psiconv/data.h,
+	  lib/psiconv/parse_layout.c, program/psiconv/gen_html.c,
+	  program/psiconv/gen_html4.c, program/psiconv/gen_rtf.c:
+	  (Frodo) 0-7-0 release
+
+2000-12-15 18:17  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, TODO, configure, configure.in, lib/psiconv/parse_driver.c,
+	  program/psiconv/gen_image.c, program/psiconv/psiconv.c:
+	  (Frodo) All formats tested, with a little luck most problems are now
+	  caught
+
+2000-12-15 02:16  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/error.c, lib/psiconv/list.c,
+	  lib/psiconv/parse_common.c, lib/psiconv/parse_image.c,
+	  lib/psiconv/parse_layout.c, lib/psiconv/parse_page.c,
+	  program/psiconv/psiconv.c:
+	  (Frodo) First typos eliminated. Word files seem to work now. Need to
+	          test other types.
+
+2000-12-15 01:21  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* TODO, docs/parsing, lib/psiconv/parse.h,
+	  lib/psiconv/parse_common.c, lib/psiconv/parse_driver.c,
+	  lib/psiconv/parse_image.c, lib/psiconv/parse_layout.c,
+	  lib/psiconv/parse_page.c, lib/psiconv/parse_routines.h,
+	  lib/psiconv/parse_simple.c, lib/psiconv/parse_texted.c,
+	  lib/psiconv/parse_word.c:
+	  (Frodo) Massive update: theoretically, all return codes are now
+	          checked.  Untested - may have many typos.
+
+2000-12-13 17:30  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, TODO, compat/compat.h, compat/dummy.c,
+	  lib/psiconv/checkuid.c, lib/psiconv/data.c,
+	  program/extra/checkuid, lib/psiconv/data.h, lib/psiconv/list.c,
+	  lib/psiconv/list.h, lib/psiconv/misc.c, lib/psiconv/parse.h,
+	  lib/psiconv/parse_common.c, lib/psiconv/parse_driver.c,
+	  lib/psiconv/parse_image.c, lib/psiconv/parse_layout.c,
+	  lib/psiconv/parse_page.c, lib/psiconv/parse_routines.h,
+	  lib/psiconv/parse_simple.c, lib/psiconv/parse_texted.c,
+	  lib/psiconv/parse_word.c:
+	  (Frodo) Updated all copyright notices
+
+2000-12-13 17:17  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: Makefile.am, Makefile.in, data.c, data.h, error.c,
+	  error.h, list.c, list.h, misc.c, parse.h, parse_aux.c,
+	  parse_routines.h:
+	  (Frodo) Several important changes:
+	    * Created new misc.c, error.c and error.h files
+	    * Split parse_aux.c among them
+	    * Made list.c, data.c, error.c, checkuid.c and misc.c failsafe.
+
+2000-12-13 01:42  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, lib/psiconv/parse.h, lib/psiconv/parse_aux.c,
+	  lib/psiconv/parse_driver.c, program/psiconv/psiconv.c:
+	  (Frodo) Error printing can now be captured by another program
+
+2000-12-10 21:27  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/parse_driver.c:
+	  (Frodo) psiconv_verbosity was undefined!
+
+2000-12-10 17:53  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* formats/: generate_ascii.sh, generate_html.sh, generate_html4.sh,
+	  generate_rtf.sh:
+	  (Frodo) Now formats generation works too in the new structure
+
+2000-12-10 17:49  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* Makefile.am, Makefile.in, NEWS, configure, configure.in,
+	  formats/psion/Clip_Art_File.psi,
+	  formats/psion/File_Structure.psi,
+	  formats/psion/Section_Table_Offset_Section.psi,
+	  formats/psion/Sheet_File.psi, lib/Makefile.am,
+	  lib/psiconv/Makefile.am, lib/psiconv/Makefile.in,
+	  lib/psiconv/data.h, lib/psiconv/parse.h,
+	  lib/psiconv/parse_routines.h, program/psiconv/Makefile.am,
+	  program/psiconv/Makefile.in, program/psiconv/gen.h,
+	  program/psiconv/gen_html.c, program/psiconv/gen_html4.c,
+	  program/psiconv/gen_image.c, program/psiconv/gen_rtf.c,
+	  program/psiconv/gen_txt.c, program/psiconv/magick-aux.c,
+	  program/psiconv/magick-aux.h, program/psiconv/psiconv.c,
+	  program/psiconv/psiconv.h:
+	  (Frodo) Revamped directory structure, rescues a few files from CVS
+	  limbo
+
+2000-12-10 17:13  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* configure, configure.in, lib/psiconv/Makefile.am,
+	  lib/psiconv/Makefile.in:
+	  (Frodo) general.h is now installed
+
+2000-12-10 16:44  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/Makefile.am, lib/psiconv/Makefile.in,
+	  lib/psiconv/data.c, lib/psiconv/data.h, lib/psiconv/list.c,
+	  lib/psiconv/list.h, lib/psiconv/parse_common.c,
+	  program/psiconv/gen_html.c, program/psiconv/gen_html4.c,
+	  program/psiconv/gen_image.c, program/psiconv/gen_rtf.c,
+	  program/psiconv/gen_txt.c, program/psiconv/psiconv.c,
+	  program/psiconv/psiconv.h:
+	  (Frodo) Changed all struct definition to make them C++ compatible
+
+2000-12-10 03:17  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.h, list.h, parse.h, parse_routines.h:
+	  (Frodo) Added C++ extern statements
+
+2000-11-30 21:09  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, configure, configure.in, lib/psiconv/Makefile.am,
+	  lib/psiconv/Makefile.in, lib/psiconv/parse_simple.c,
+	  program/psiconv/Makefile.am, program/psiconv/Makefile.in:
+	  (Frodo) Important X-encoding-related bug that made psiconv fail on
+	          large documents
+
+2000-10-21 02:49  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* Makefile.in, configure, configure.in, compat/Makefile.in,
+	  docs/Makefile.in, formats/Makefile.in, lib/psiconv/Makefile.in,
+	  program/psiconv/Makefile.in, program/psiconv/gen.h,
+	  program/psiconv/gen_html.c, program/psiconv/gen_html4.c,
+	  program/psiconv/gen_image.c, program/psiconv/gen_rtf.c,
+	  program/psiconv/gen_txt.c, program/psiconv/psiconv.c,
+	  program/psiconv/psiconv.h:
+	  (Frodo) YES! Fixed everything - ImageMagick should now finally work!
+
+2000-10-04 21:02  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* configure, configure.in, program/psiconv/Makefile.am,
+	  program/psiconv/Makefile.in, program/psiconv/gen_image.c:
+	  (Frodo) Now finally ImageMagick 5 works correctly.
+
+2000-09-11 16:02  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/parse_common.c:
+	  (Frodo) Styles bug fixed
+
+2000-07-17 23:12  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* configure, configure.in:
+	  (Frodo) ImageMagick support should work now; at least, we have now a
+	          GetMagickInfo check. Now we wait for the new ImageMagick
+	          release.
+
+2000-07-14 22:44  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* INSTALL, Makefile.in, NEWS, TODO, aclocal.m4, configure,
+	  configure.in, compat/Makefile.in, docs/Makefile.in,
+	  formats/Makefile.in, lib/psiconv/Makefile.in,
+	  program/psiconv/Makefile.in, program/psiconv/gen_image.c:
+	  (Frodo) First stab at ImageMagick 5 support. Still problems with
+	          listing all filetypes, though.
+
+2000-02-04 21:33  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/gen_image.c:
+	  (Frodo) Patched compile-without-Imagemagick bug
+
+1999-12-04 22:46  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, README, configure, configure.in, formats/Makefile.am,
+	  formats/Makefile.in, formats/psion/Basic_Structures.psi,
+	  formats/psion/Embedded_Object_Section.psi,
+	  formats/psion/Header_Section.psi, formats/psion/Identifiers.psi,
+	  formats/psion/Index.psi, formats/psion/Introduction.psi,
+	  formats/psion/Layout_Codes.psi, formats/psion/MBM_File.psi,
+	  formats/psion/Paint_Data_Section.psi,
+	  formats/psion/Record_File.psi, formats/psion/Record_Section.psi,
+	  formats/psion/Sketch_File.psi, formats/psion/Sketch_Section.psi,
+	  formats/psion/TextEd_File.psi, formats/psion/Word_File.psi,
+	  formats/psion/Word_Styles_Section.psi, lib/psiconv/Makefile.am,
+	  lib/psiconv/Makefile.in, program/psiconv/psiconv.c:
+	  (Frodo) Final commit for 0.6.1
+
+	  New formats files
+
+1999-12-04 21:53  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: parse_driver.c, parse_image.c, parse_routines.h:
+	  (Frodo) Clip Art files now working correctly.
+
+1999-12-04 01:48  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/gen_image.c:
+	  (Frodo) Clipart generation done.
+
+	  Pictures are still offset a bit. To fix...
+
+1999-12-04 01:40  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.h, parse_common.c, parse_driver.c,
+	  parse_image.c, parse_routines.h:
+	  (Frodo) Clipart file parsing completed
+
+1999-12-04 00:13  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.c, data.h, parse_driver.c, parse_image.c,
+	  parse_routines.h:
+	  (Frodo) Renamed jumptable_mbm_section to jumptable_section
+
+	  Typecast buglet removed from data.c
+
+1999-12-03 01:59  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* TODO, lib/psiconv/Makefile.am, lib/psiconv/Makefile.in,
+	  lib/psiconv/data.c, lib/psiconv/data.h,
+	  lib/psiconv/parse_common.c, lib/psiconv/parse_driver.c,
+	  lib/psiconv/parse_routines.h:
+	  (Frodo) Some base work for ClipArt files
+
+1999-12-03 01:15  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/gen_image.c:
+	  (Frodo) Multiple images in a file are now supported.
+
+1999-12-03 00:36  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/gen_image.c:
+	  (Frodo) Multiple pictures conversion should be in. But no test-MBMs
+	  yet :-(
+
+1999-12-02 21:09  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/gen_image.c:
+	  (Frodo) Preparations for multiple images output
+
+1999-12-02 19:05  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* NEWS, README, TODO, config.h.in, configure, configure.in,
+	  formats/generate_html.sh, program/psiconv/Makefile.am,
+	  program/psiconv/Makefile.in, program/psiconv/gen_rtf.c:
+	  (Frodo) Release 0.6.0. Several minor things found when compiling.
+
+1999-12-02 18:19  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/psiconv.h:
+	  (Frodo) New file forgotten in last commit
+
+1999-12-02 18:18  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/: Makefile.am, Makefile.in, gen.h, gen_html.c,
+	  gen_html4.c, gen_image.c, gen_rtf.c, gen_txt.c, psiconv.c:
+	  (Frodo) Full ImageLib support!
+
+	  To do:
+	    * More than one picture in a file
+	    * Special features like clipping
+
+1999-11-30 01:26  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* Makefile.in, configure, compat/Makefile.in, docs/Makefile.in,
+	  formats/Makefile.in, lib/psiconv/Makefile.in,
+	  program/psiconv/Makefile.in:
+	  (Frodo) Force commit to update timestamps of autoconf/automake
+	  generated files
+
+1999-11-30 01:24  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/gen_image.c:
+	  (Frodo) Yet another forgotten file. This is getting boring...
+
+1999-11-30 01:22  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* compat/compat.h:
+	  (Frodo) And yet another file...
+
+1999-11-30 01:20  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* compat/: dummy.c, getopt.c, getopt.h, getopt1.c:
+	  (Frodo) Added several files that were forgotten in the compat
+	  section...
+
+1999-11-30 01:14  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* acconfig.h:
+	  (Frodo) Added acconfig.h file; I had forgotten about it :-(
+
+1999-11-30 01:12  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* AUTHORS, TODO, lib/psiconv/data.h:
+	  (Frodo) Corrected outline level definition
+
+1999-11-01 13:35  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.h, parse_layout.c, parse_word.c: (Kevin
+	  Wheatley) 5MX patches, mostly outline stuff
+
+1999-10-31 00:36  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* AUTHORS, TODO:
+	  (Frodo) Changed TODO and AUTHORS to include latest work and mention
+	          Wolfgang Szoecs
+
+1999-10-31 00:28  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.h, parse_common.c, parse_image.c:
+	  (Frodo) Parsing of both MBM and Sketch files finished and correct!
+
+	  To do:
+	    * Need to ask ImageMagick what output formats are available;
+	    * Need to display those formats in --help, and understand them on
+	      the command-line;
+	    * Need to generate the correct type of file;
+	    * Need to take a look at some special Sketch options (size, cuts,
+	    etc)
+	  * Sometimes, the file seems to be negative. Probably an ImageMagick
+	      problem.
+	    * Need to handle several images in one file elegantly
+
+1999-10-29 23:14  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: checkuid.c, data.c, data.h, parse_common.c,
+	  parse_driver.c, parse_image.c, parse_routines.h:
+	  (Frodo) Sketch files are now supported. That is, they are parsed,
+	          and generated, but generating still needs a lot of work. Untested.
+
+1999-10-28 23:23  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* compat/: Makefile.am, Makefile.in:
+	  (Frodo) Fix for SUNs: libcompat.a is now always created.
+
+1999-10-27 17:33  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* compat/: Makefile.am, Makefile.in:
+	  (Frodo) Fixed `make dist' to include latest additions in compat/
+
+1999-10-27 17:30  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* configure, configure.in, compat/Makefile.in, lib/psiconv/data.c:
+	  (Frodo) Added getopt_long support for systems without it, as well as
+	          a minor typo.
+
+1999-10-27 17:04  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/Makefile.am, lib/psiconv/Makefile.in,
+	  lib/psiconv/data.c, lib/psiconv/parse_common.c,
+	  program/psiconv/Makefile.am, program/psiconv/Makefile.in,
+	  program/psiconv/gen_html.c, program/psiconv/gen_rtf.c,
+	  program/psiconv/psiconv.c:
+	  (Frodo) Some IRIX compatibility issues fixed, as well as some
+	          compiler warnings
+
+1999-10-27 16:28  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* Makefile.in, configure, configure.in, compat/Makefile.in,
+	  docs/Makefile.in, formats/Makefile.in, lib/psiconv/Makefile.in,
+	  program/psiconv/Makefile.in:
+	  (Frodo) Added configuration options for more warnings
+
+1999-10-27 15:09  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.h, parse.h, parse_common.c, parse_driver.c:
+	  (Frodo) Several changes in header parsing
+
+	  The definition of header section is changed to exclude the long with
+	  the offset of the Section Table Section. This allows easier
+	  integration of Data-like file formats.
+
+	  psiconv_parse_{texted,word,mbm}_file now do not parse the header
+	  section.  This will allow easier integration for
+	  objects-within-objects. They start at the long with the offset of
+	  the Section Table Section.
+
+	  psiconv_file_type now returns the read header section, and its
+	  length.
+
+1999-10-13 21:15  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* program/psiconv/: Makefile.am, Makefile.in, gen.h, psiconv.c:
+	  (Frodo) Crude ImageMagick output
+
+	  Invoke with -T IMAGE. No selection of image types yet.
+
+1999-10-13 18:08  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* Makefile.in, config.h.in, configure, configure.in,
+	  compat/Makefile.in, docs/Makefile.in, formats/Makefile.in,
+	  lib/psiconv/Makefile.in, program/psiconv/Makefile.am,
+	  program/psiconv/Makefile.in:
+	  (Frodo) Added ImageMagick detection and configuration. No code to
+	  use it yet.
+
+1999-10-13 17:02  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* configure, configure.in, lib/psiconv/parse_image.c:
+	  (Frodo) Latest parse_paint_section changes
+
+	  It still is not perfect, but it is certainly coming along
+
+1999-10-11 21:17  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/Makefile.am, lib/psiconv/Makefile.in,
+	  lib/psiconv/gen.h, lib/psiconv/gen_html.c,
+	  lib/psiconv/gen_html4.c, lib/psiconv/gen_rtf.c,
+	  lib/psiconv/gen_txt.c, program/psiconv/Makefile.am,
+	  program/psiconv/Makefile.in, program/psiconv/gen.h,
+	  program/psiconv/gen_html.c, program/psiconv/gen_html4.c,
+	  program/psiconv/gen_rtf.c, program/psiconv/gen_txt.c:
+	  (Frodo) Moved generation stuff out of the library into psiconv
+
+1999-10-11 20:19  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.c, parse_driver.c, parse_image.c:
+	  (Frodo) Current status images: Parsing kind of works, but the number
+	          of pixels does not match. What am I doing wrong?
+
+1999-10-11 18:15  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.c, data.h, parse_common.c, parse_driver.c,
+	  parse_image.c, parse_routines.h:
+	  (Frodo) Full MBM support - untested
+
+1999-10-11 17:17  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: data.h, gen_html.c, parse_image.c,
+	  parse_routines.h:
+	  (Frodo) Now image stuff compiles.
+
+	  Only psiconv_parse_paint_data_section is defined at this moment, it
+	  is not yet called.
+
+1999-10-11 17:06  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/: Makefile.am, Makefile.in, parse_image.c:
+	  (Frodo) First stap at image parsing. Won't compile yet - too bad
+
+1999-10-05 17:33  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/gen_rtf.c:
+	  (Frodo) Perhaps even slightly functional RTF generator
+
+	  Most stubs are in, and it should even do something. The generated
+	  code is not validated yet, so it will probably not work. Still many
+	  things to do.
+
+1999-10-05 17:32  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/gen_html.c:
+	  (Frodo) Small bug fix
+
+	  Instead of the contents of `font', the font pointers were compared;
+	  so they were often inequal, leading to too many font emitions.
+
+1999-10-04 20:19  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* configure, configure.in, formats/Makefile.am,
+	  formats/Makefile.in, formats/generate_rtf.sh:
+	  (Frodo) Added --enable-rtf-docs flag in configure, and scripts
+	          needed to generate RTF docs
+
+	  No substitution of links is done yet.
+
+1999-10-04 20:13  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/gen_rtf.c:
+	  (Frodo) Start of RTF generator
+
+	  Font tables and color tables are generated.
+
+1999-10-04 18:38  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* lib/psiconv/Makefile.am, lib/psiconv/Makefile.in,
+	  lib/psiconv/gen.h, lib/psiconv/gen_rtf.c,
+	  program/psiconv/psiconv.c:
+	  (Frodo) Stubs for RTF output
+
+1999-10-03 23:10  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* AUTHORS, ChangeLog, Makefile.am, Makefile.in, NEWS, config.guess,
+	  configure, configure.in, install-sh, missing, mkinstalldirs,
+	  COPYING, INSTALL, README, TODO, aclocal.m4, config.h.in,
+	  config.sub, ltconfig, ltmain.sh, stamp-h.in, formats/Makefile.am,
+	  formats/generate_html4.sh, formats/html_links.sh,
+	  formats/index_html.sh, formats/Makefile.in,
+	  formats/generate_ascii.sh, formats/generate_html.sh,
+	  formats/psion/ASCII_Codes.psi,
+	  formats/psion/Application_ID_Section.psi,
+	  formats/psion/Basic_Elements.psi,
+	  formats/psion/Basic_Structures.psi,
+	  formats/psion/Embedded_Object_Section.psi,
+	  formats/psion/Fonts.psi, formats/psion/Header_Section.psi,
+	  formats/psion/Identifiers.psi, formats/psion/Index.psi,
+	  formats/psion/Introduction.psi, formats/psion/Layout_Codes.psi,
+	  formats/psion/MBM_File.psi,
+	  formats/psion/Page_Layout_Section.psi,
+	  formats/psion/Paint_Data_Section.psi,
+	  formats/psion/Password_Section.psi,
+	  formats/psion/Record_File.psi, formats/psion/Record_Section.psi,
+	  formats/psion/Section_Table_Section.psi,
+	  formats/psion/Sketch_File.psi, formats/psion/Sketch_Section.psi,
+	  formats/psion/Substitutions.psi, formats/psion/TextEd_File.psi,
+	  formats/psion/TextEd_Section.psi,
+	  formats/psion/Text_Layout_Section.psi,
+	  formats/psion/Text_Section.psi, formats/psion/Word_File.psi,
+	  formats/psion/Word_Status_Section.psi,
+	  formats/psion/Word_Styles_Section.psi, lib/psiconv/Makefile.am,
+	  lib/psiconv/Makefile.in, lib/psiconv/checkuid.c,
+	  lib/psiconv/data.c, lib/psiconv/data.h, lib/psiconv/gen.h,
+	  lib/psiconv/gen_html.c, lib/psiconv/gen_html4.c,
+	  lib/psiconv/gen_txt.c, lib/psiconv/general.h.in,
+	  lib/psiconv/list.c, lib/psiconv/list.h, lib/psiconv/parse.h,
+	  lib/psiconv/parse_aux.c, lib/psiconv/parse_common.c,
+	  lib/psiconv/parse_driver.c, lib/psiconv/parse_layout.c,
+	  lib/psiconv/parse_page.c, lib/psiconv/parse_routines.h,
+	  lib/psiconv/parse_simple.c, lib/psiconv/parse_texted.c,
+	  lib/psiconv/parse_word.c, program/psiconv/Makefile.in,
+	  compat/Makefile.am, compat/Makefile.in, compat/strdup.c,
+	  docs/Makefile.am, docs/Makefile.in, docs/ascii, docs/html,
+	  docs/html4, program/extra/checkuid, program/extra/checkuid.c,
+	  program/psiconv/Makefile.am, program/psiconv/psiconv.c: Imported
+	  sources
+
+1999-10-03 23:10  Frodo Looijaard  <frodo@frodo.looijaard.name>
+
+	* AUTHORS, ChangeLog, Makefile.am, Makefile.in, NEWS, config.guess,
+	  configure, configure.in, install-sh, missing, mkinstalldirs,
+	  COPYING, INSTALL, README, TODO, aclocal.m4, config.h.in,
+	  config.sub, ltconfig, ltmain.sh, stamp-h.in, formats/Makefile.am,
+	  formats/generate_html4.sh, formats/html_links.sh,
+	  formats/index_html.sh, formats/Makefile.in,
+	  formats/generate_ascii.sh, formats/generate_html.sh,
+	  formats/psion/ASCII_Codes.psi,
+	  formats/psion/Application_ID_Section.psi,
+	  formats/psion/Basic_Elements.psi,
+	  formats/psion/Basic_Structures.psi,
+	  formats/psion/Embedded_Object_Section.psi,
+	  formats/psion/Fonts.psi, formats/psion/Header_Section.psi,
+	  formats/psion/Identifiers.psi, formats/psion/Index.psi,
+	  formats/psion/Introduction.psi, formats/psion/Layout_Codes.psi,
+	  formats/psion/MBM_File.psi,
+	  formats/psion/Page_Layout_Section.psi,
+	  formats/psion/Paint_Data_Section.psi,
+	  formats/psion/Password_Section.psi,
+	  formats/psion/Record_File.psi, formats/psion/Record_Section.psi,
+	  formats/psion/Section_Table_Section.psi,
+	  formats/psion/Sketch_File.psi, formats/psion/Sketch_Section.psi,
+	  formats/psion/Substitutions.psi, formats/psion/TextEd_File.psi,
+	  formats/psion/TextEd_Section.psi,
+	  formats/psion/Text_Layout_Section.psi,
+	  formats/psion/Text_Section.psi, formats/psion/Word_File.psi,
+	  formats/psion/Word_Status_Section.psi,
+	  formats/psion/Word_Styles_Section.psi, lib/psiconv/Makefile.am,
+	  lib/psiconv/Makefile.in, lib/psiconv/checkuid.c,
+	  lib/psiconv/data.c, lib/psiconv/data.h, lib/psiconv/gen.h,
+	  lib/psiconv/gen_html.c, lib/psiconv/gen_html4.c,
+	  lib/psiconv/gen_txt.c, lib/psiconv/general.h.in,
+	  lib/psiconv/list.c, lib/psiconv/list.h, lib/psiconv/parse.h,
+	  lib/psiconv/parse_aux.c, lib/psiconv/parse_common.c,
+	  lib/psiconv/parse_driver.c, lib/psiconv/parse_layout.c,
+	  lib/psiconv/parse_page.c, lib/psiconv/parse_routines.h,
+	  lib/psiconv/parse_simple.c, lib/psiconv/parse_texted.c,
+	  lib/psiconv/parse_word.c, program/psiconv/Makefile.in,
+	  compat/Makefile.am, compat/Makefile.in, compat/strdup.c,
+	  docs/Makefile.am, docs/Makefile.in, docs/ascii, docs/html,
+	  docs/html4, program/extra/checkuid, program/extra/checkuid.c,
+	  program/psiconv/Makefile.am, program/psiconv/psiconv.c: Initial
+	  revision
+

@@ -1,0 +1,4 @@
+This directory contains several auxiliary programs, that have been used
+by the authors of this package to test features. The programs are not
+very well-documented, and are of no use to the general public. They may
+not even compile for you. Have fun.

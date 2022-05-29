@@ -1,0 +1,3 @@
+This psiconv generator just grabs all text from a document. No ASCII layout
+tricks are used: you will get all text, without any layout considerations
+(other than paragraph ends).

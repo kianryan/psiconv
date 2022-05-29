@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>Identifiers</title>
+<style type="text/css">
+body {background-color:transparant;padding-left:0.000000cm;padding-right:0.000000cm;text-indent:0.000000cm;font-style:left;padding-top:0.000000pt;padding-bottom:0.000000pt;border-right-style:none;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-width:1.000000pt;border-bottom-width:1.000000pt;border-top-width:1.000000pt;border-left-width:1.000000pt;border-right-color:rgb(0,0,0);border-top-color:rgb(0,0,0);border-bottom-color:rgb(0,0,0);border-left-color:rgb(0,0,0);color:rgb(0,0,0);background-color:transparant;font-size:10.000000pt;font-style:normal;font-weight:normal;font-style:normal;text-decoration:none;font-family:serif}
+*.style_ {padding-bottom:5.000000pt;}
+*.style_Koptekst_1 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:14.000000pt;font-weight:bold;}
+*.style_Koptekst_2 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:12.000000pt;font-weight:bold;}
+*.style_Koptekst_3 {padding-bottom:5.000000pt;font-style:italic;text-decoration:underline;}
+*.style_Opsomteken {padding-bottom:5.000000pt;}
+</style>
+</head>
+<body>
+<p class="style_" style="font-size:12.000000pt;"><a name="Identifiers"/><a name="IDs"/><a name="ID"/></p>
+<p class="style_" ><span style="font-size:16.000000pt;font-family:sans-serif">Identifiers</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">At many places. identifiers are used. They are encoded in a long, of which the last byte usually equals 10. Identifiers are assigned by Psion for all kinds of tasks; the central registration of them ensures none are used double.</p>
+<p class="style_" style="font-size:12.000000pt;">Below is a list of all identifiers I have found.</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Identifier Location      Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">37 00 00 10 <a href="Header_Section.html#Header Section">Header Section</a>    UID1: <a href="File_Structure.html#ID 10000037 File">ID 10000037 File</a></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">40 00 00 10 <a href="Header_Section.html#Header Section">Header Section</a>    UID1: <a href="Clip_Art_File.html#Clip Art File">Clip Art File</a></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">41 00 00 10 <a href="Clip_Art_File.html#Clip Art Item">Clip Art Item</a>    <a href="Clip_Art_File.html#Clip Art Item">Clip Art Item</a> marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">42 00 00 10 <a href="Header_Section.html#Header Section">Header Section</a>    UID2: <a href="MBM_File.html#MBM File">MBM File</a></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">46 00 00 10 <a href="Header_Section.html#Header Section">Header Section</a>    UID1: <a href="World_Data_File.html#World Data File">World Data File</a></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">4C 00 00 10 <a href="Word_Styles_Section.html#Word Other Styles">Word Other Styles</a>   Non-removable style</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">4F 00 00 10 <a href="Word_Styles_Section.html#Word Other Styles">Word Other Styles</a>   Removable style</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">50 00 00 10 <a href="Header_Section.html#Header Section">Header Section</a>    UID1: <a href="File_Structure.html#ID 10000050 File">ID 10000050 File</a></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">51 00 00 10 <a href="Text_Layout_Section.html#Text Layout Section">Text Layout Section</a>  Embedded Object marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">52 00 00 10 <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a>  <a href="Record_Section.html#Record Section">Record Section</a> offset marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">5C 00 00 10 <a href="TextEd_Section.html#TextEd Section">TextEd Section</a>    TextEd Section marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">5F 00 00 10 <a href="TextEd_Section.html#Text Replacement Section">Text Replacement Section</a> Substitution kind: Time or date</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">60 00 00 10 <a href="TextEd_Section.html#Text Replacement Section">Text Replacement Section</a> Substitution kind: Page nr.</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">61 00 00 10 <a href="TextEd_Section.html#Text Replacement Section">Text Replacement Section</a> Substitution kind: Nr. of pages</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">62 00 00 10 <a href="TextEd_Section.html#Text Replacement Section">Text Replacement Section</a> Substitution kind: Filename</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">63 00 00 10 <a href="TextEd_Section.html#TextEd Jumptable">TextEd Jumptable</a>   <a href="TextEd_Section.html#Text Replacement Section">Text Replacement Section</a> offset marker</span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">64 00 00 10 <a href="TextEd_Section.html#TextEd Section">TextEd Section</a>    <a href="Text_Section.html#Text Section">Text Section</a> marker</span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">65 00 00 10 <a href="TextEd_Section.html#TextEd Jumptable">TextEd Jumptable</a>   Unknown offset marker</span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">66 00 00 10 <a href="TextEd_Section.html#TextEd Section">TextEd Section</a>    <a href="Text_Layout_Section.html#Text Layout Section">Text Layout Section</a> offset marker</span><span style="font-size:8.000000pt;text-decoration:underline;font-family:monospace"></span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">6D 00 00 10 <a href="Header_Section.html#Header Section">Header Section</a>    UID2: Data file</span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">7D 00 00 10 <a href="Application_ID_Section.html#Application ID Section">Application ID Section</a> Paint.app identifier</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">    <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a>  <a href="Sketch_Section.html#Sketch Section">Sketch Section</a> offset marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">7E 00 00 10 <a href="Application_ID_Section.html#Application ID Section">Application ID Section</a> RECORD.APP identifier</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">7F 00 00 10 <a href="Application_ID_Section.html#Application ID Section">Application ID Section</a> Word.app identifier</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">84 00 00 10 <a href="Application_ID_Section.html#Application ID Section">Application ID Section</a> Agenda.app identifier</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">85 00 00 10 <a href="Application_ID_Section.html#Application ID Section">Application ID Section</a> TextEd.app identifier</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">    <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a>  <a href="TextEd_Section.html#TextEd Section">TextEd Section</a> offset marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">86 00 00 10 <a href="Application_ID_Section.html#Application ID Section">Application ID Section</a> Data.app identifier</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">87 00 00 10 <a href="Application_ID_Section.html#Application ID Section">Application ID Section</a> Comms.app identifier</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">    <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a>  Comms Section offset marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">88 00 00 10 <a href="Application_ID_Section.html#Application ID Section">Application ID Section</a> Sheet.app identifier</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">89 00 00 10 <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a>  <a href="Application_ID_Section.html#Application ID Section">Application ID Section</a> offset marker</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">CD 00 00 10 <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a>  <a href="Password_Section.html#Password Section">Password Section</a> offset marker</span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">FD 00 00 10 <a href="Page_Layout_Section.html#Page Layout Section">Page Layout Section</a>  Page dimensions marker</span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">03 01 00 10 <a href="Password_Section.html#Password Section">Password Section</a>   Password block marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">04 01 00 10 <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a>  <a href="Word_Styles_Section.html#Word Styles Section">Word Styles Section</a> offset marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">05 01 00 10 <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a>  <a href="Text_Layout_Section.html#Text Layout Section">Text Layout Section</a> offset marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">06 01 00 10 <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a>  <a href="Text_Section.html#Text Section">Text Section</a> offset marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0E 01 00 00 <a href="Page_Layout_Section.html#Page Layout Section">Page Layout Section</a>  Page dimension marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">1D 01 00 10 <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a>  ??? offset marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">1F 01 00 10 <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a>  <a href="Sheet_Status_Section.html#Sheet Status Section">Sheet Status Section</a> offset marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">21 01 00 10 <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a>  <a href="Sheet_Graph_List_Section.html#Sheet Graph List Section">Sheet Graph List Section</a> offset marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">2A 01 00 00 <a href="Embedded_Object_Section.html#Embedded Object Section">Embedded Object Section</a> <a href="Embedded_Object_Section.html#Object Icon Section">Object Icon Section</a> offset marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">42 01 00 10 <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a>  <a href="Text_Layout_Section.html#Text Layout Section">Text Layout Section</a> offset marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">44 01 00 00 <a href="Embedded_Object_Section.html#Embedded Object Section">Embedded Object Section</a> <a href="Section_Table_Offset_Section.html#Section Table Offset Section">Section Table Offset Section</a> offset marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">46 01 00 00 <a href="Embedded_Object_Section.html#Embedded Object Section">Embedded Object Section</a> <a href="Embedded_Object_Section.html#Object Display Section">Object Display Section</a> offset marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">A1 01 00 10 <a href="Record_Section.html#Record Section">Record Section</a>    ADPCM compression selector</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">43 02 00 10 <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a>  <a href="Word_Status_Section.html#Word Status Section">Word Status Section</a> offset marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">EA oC 00 10 <a href="Application_ID_Section.html#Application ID Section">Application ID Section</a> Jotter.app identifier</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">    <a href="Header_Section.html#Header Section">Header Section</a>    UID3: Jotter files</span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">BE 0E 00 10 <a href="Header_Section.html#Header Section">Header Section</a>    UID2: Contacts store file</span></p>
+<p class="style_" ></p>
+</body>
+</html>

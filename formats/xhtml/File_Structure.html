@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>File Structure</title>
+<style type="text/css">
+body {background-color:transparant;padding-left:0.000000cm;padding-right:0.000000cm;text-indent:0.000000cm;font-style:left;padding-top:0.000000pt;padding-bottom:0.000000pt;border-right-style:none;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-width:1.000000pt;border-bottom-width:1.000000pt;border-top-width:1.000000pt;border-left-width:1.000000pt;border-right-color:rgb(0,0,0);border-top-color:rgb(0,0,0);border-bottom-color:rgb(0,0,0);border-left-color:rgb(0,0,0);color:rgb(0,0,0);background-color:transparant;font-size:10.000000pt;font-style:normal;font-weight:normal;font-style:normal;text-decoration:none;font-family:serif}
+*.style_ {padding-bottom:5.000000pt;}
+*.style_Koptekst_1 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:14.000000pt;font-weight:bold;}
+*.style_Koptekst_2 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:12.000000pt;font-weight:bold;}
+*.style_Koptekst_3 {padding-bottom:5.000000pt;font-style:italic;text-decoration:underline;}
+*.style_Opsomteken {padding-bottom:5.000000pt;}
+</style>
+</head>
+<body>
+<p class="style_" style="font-size:12.000000pt;"><a name="File Structure"/></p>
+<p class="style_" ><span style="font-size:16.000000pt;font-weight:bold;font-family:sans-serif">File Structure</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">All Psion files start with a block of 4 longs: the <a href="Header_Section.html#Header Section">Header Section</a>. The first three describe what kind of file this is, the last is a checksum.</p>
+<p class="style_" style="font-size:12.000000pt;">The exact structure of the remaining file depends on what kind of file this is. But some general things can be said.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;"><a name="ID 10000037 Files"/><a name="ID 10000037 File"/></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">ID 10000037 files</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">Examples of these files are the <a href="Word_File.html#Word File">Word File</a> and <a href="Sheet_File.html#Sheet File">Sheet File</a>.</p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Address Size  Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0000  L   UID1: 10000037</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0004  L   UID2</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0008  L   UID3</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">000C  L   UID4: Checksum of UID1, UID2 and UID3</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0010  <a href="Basic_Structures.html#Offset">Offset</a> Offset of <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a></p>
+<p class="style_" style="font-size:12.000000pt;">At offset 0010, usually a long is found with the address of the <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a>. The <a href="Section_Table_Section.html#Section Table Section">Section Table Section</a> contains a list of section identifiers and their addresses.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;"><a name="ID 10000050 Files"/><a name="ID 10000050 File"/></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">ID 10000050 files</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;font-weight:bold;">NOTE: BELOW DATA IS INCOMPETE AND PARTIALLY INCORRECT! SORRY...</p>
+<p class="style_" style="font-size:12.000000pt;font-weight:bold;"></p>
+<p class="style_" style="font-size:12.000000pt;">Examples of these files are the Data File and Agenda File.</p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Address Size  Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0000  L   UID1: 10000050</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0004  L   UID2</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0008  L   UID3</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">000C  L   UID4: Checksum of UID1, UID2 and UID3</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0010  L   Unknown</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0014  L   Unknown: always 00 00 00 00 ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0018  <a href="Basic_Elements.html#LListB">LListB</a> The file data</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">   <a href="Basic_Elements.html#LListE">LListE</a> Section start table</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">There are two ways in which you can see this structure. On the one hand, it contains, starting on address 0018, a sequence of a <a href="Basic_Elements.html#LListB">LListB</a>, a word and a <a href="Basic_Elements.html#LListE">LListE</a>. The <a href="Basic_Elements.html#LListB">LListB</a> contains the bulk data, the <a href="Basic_Elements.html#LListE">LListE</a> contains 5 byte elements with offsets, relative to address 001E, in each last long where all sections start.</p>
+<p class="style_" ><span style="font-size:12.000000pt;">On the other hand, at address 001E a list of sections start. Each section starts with a word encoding the length of the section. Seen in this way, the Section Start Table is part of just another of these sections.</span></p>
+</body>
+</html>

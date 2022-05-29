@@ -1,0 +1,55 @@
+Major parsing routines are built according to this template:
+
+      int psiconv_parse_TYPE (const psiconv_buffer buf, int lev,
+                              psiconv_u32 off, int *length,
+                              psiconv_TYPE *result)
+      {
+       int res = 0;
+       int len = 0;
+       int leng;
+
+        psiconv_progress(lev+1,off,"Going to parse TYPE");
+        if (!(*result = malloc(sizeof(**result)))) 
+          goto ERROR1;
+
+        /* Example of calling some other parse function */
+        if ((res = psiconv_parse_TYPE2(buf,lev+2,off+len,&leng,
+                                        &(*result)->FIELD2)))
+          goto ERROR2;
+        psiconv_debug(lev+2,off+len,"Some helpful message");
+        len += leng;
+
+        /* Example of reading some bytes directly */
+        (*result)->FIELD1 = psiconv_read_u8(buf,lev+2,off+len,&res);
+        if (!res)
+          goto ERROR3;
+        psiconv_debug(lev+2,off+len,"Some helpful message");
+        len ++;
+
+        psiconv_debug(lev+2,off+len,"Some helpful message");
+        if (length)
+          *length = len;
+        psiconv_progress(lev+1,off+len-1,"End of TYPE (total length: %08x)",
+                         len);
+        return 0;
+
+      ERROR3:
+        free ((*result)->FIELD2)
+      ERROR2:
+        free (*result);
+      ERROR1:
+        psiconv_warn(lev+1,off,"Reading of TYPE failed");
+        if (length)
+          *length = 0;
+        if (!res)
+          return -PSICONV_E_NOMEM;
+        else
+          return res;
+      }
+
+If something unexpected happens half-way, but you can recover from it
+(for example, an unexpected value in some well-defined field), call
+psiconv_warn, but do not return with an error. The rule is that if
+the result code of a procedure is not 0, you may assume that things
+are hopeless, that nothing was allocated, and that every field contains
+nonsense.

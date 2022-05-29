@@ -1,0 +1,34 @@
+Data formats:
+* Understand the password section
+* Understand and document 10000050 file types (Agenda, Data, etc)
+
+Parser:
+* Incorporate the replacement section. Stubs are already in place.
+* Check image parsing works for other things than 2-bits greyscale.
+* Complete Sheet
+* Add more file formats
+
+Generator:
+* Add audio file support.
+* Check image file generation works for other things than 2 bits greyscale
+* Add Sheet
+* Add more file formats
+
+Psiconv program:
+* HTML: Verify generated code, to see whether it is HTML-4.01 compatible
+* XHTML: Verify generated code, to see whether it is XHTML compatible
+* HTML,XHTML: Add support for images
+* RTF: Make it usable. Not nearly finished at the moment. Dead project.
+* LATEX: re-enable or delete. Dead project.
+* IMAGE: support for special things like clipping is still lacking at the
+         generator side. 
+
+Config files:
+* Add hex parsing
+
+General:
+* Many common values are returned as int. Perhaps change this to long,
+  for better behaviour on very large files on some architectures?
+* Use libaudiofile for audio conversions?
+* Look at portability (headers)
+* Add more comments in data.h

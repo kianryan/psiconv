@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>Text Layout Section</title>
+<style type="text/css">
+body {background-color:transparant;padding-left:0.000000cm;padding-right:0.000000cm;text-indent:0.000000cm;font-style:left;padding-top:0.000000pt;padding-bottom:0.000000pt;border-right-style:none;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-width:1.000000pt;border-bottom-width:1.000000pt;border-top-width:1.000000pt;border-left-width:1.000000pt;border-right-color:rgb(0,0,0);border-top-color:rgb(0,0,0);border-bottom-color:rgb(0,0,0);border-left-color:rgb(0,0,0);color:rgb(0,0,0);background-color:transparant;font-size:10.000000pt;font-style:normal;font-weight:normal;font-style:normal;text-decoration:none;font-family:serif}
+*.style_ {padding-bottom:5.000000pt;}
+*.style_Koptekst_1 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:14.000000pt;font-weight:bold;}
+*.style_Koptekst_2 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:12.000000pt;font-weight:bold;}
+*.style_Koptekst_3 {padding-bottom:5.000000pt;font-style:italic;text-decoration:underline;}
+*.style_Opsomteken {padding-bottom:5.000000pt;}
+</style>
+</head>
+<body>
+<p class="style_" style="font-size:12.000000pt;"><a name="Text Layout Section"/></p>
+<p class="style_" ><span style="font-size:16.000000pt;font-family:sans-serif">Text Layout Section</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">This section descibes how the text of a <a href="Text_Section.html#Text Section">Text Section</a> is formatted.</p>
+<p class="style_" style="font-size:12.000000pt;">There are a couple of levels on which the layout can be expressed. Most global are the styles. If available, they are described in the <a href="Word_Styles_Section.html#Word Styles Section">Word Styles Section</a>, and referenced here. But not each Text Layout Section uses styles.</p>
+<p class="style_" style="font-size:12.000000pt;">One down is the <a href="Text_Layout_Section.html#Text Layout Paragraph Type List">Text Layout Paragraph Type List</a>; it contains a sort of unnamed styles. They are generated automatically.</p>
+<p class="style_" style="font-size:12.000000pt;">Each paragraph is mentioned in the <a href="Text_Layout_Section.html#Text Layout Paragraph Element List">Text Layout Paragraph Element List</a>. It either contains a reference to a <a href="Text_Layout_Section.html#Text Layout Paragraph Type">Text Layout Paragraph Type</a> or it contains the <a href="Layout_Codes.html#Paragraph Layout Codes">Paragraph Layout Codes</a> and the number of <a href="Layout_Codes.html#Character Layout Codes">Character Layout Codes</a> for this paragraph.</p>
+<p class="style_" style="font-size:12.000000pt;">The whole list of <a href="Layout_Codes.html#Character Layout Codes">Character Layout Codes</a> is found at the end in the <a href="Text_Layout_Section.html#Text Layout Inline List">Text Layout Inline List</a>. These are the only way in which in-paragraph layouts can be expressed.</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"></p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Data      Description</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> W       Section with (01 00) or without (00 00) style indicators</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Text_Layout_Section.html#Text Layout Paragraph Type List">Text Layout Paragraph Type List</a></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Text_Layout_Section.html#Text Layout Paragraph Element List">Text Layout Paragraph Element List</a></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Text_Layout_Section.html#Text Layout Inline List">Text Layout Inline List</a></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">If the first word indicates that this is  style-less section, the <a href="Text_Layout_Section.html#Text Layout Paragraph Type List">Text Layout Paragraph Type List</a> and the <a href="Text_Layout_Section.html#Text Layout Paragraph Element List">Text Layout Paragraph Element List</a> contain no style references.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;"><a name="Text Layout Paragraph Type List"/><a name="Text Layout Paragraph Type"/><a name="Text Layout Paragraph Types"/></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Paragraph Type List</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" ><span style="font-size:12.000000pt;">These are a sort of unnamed styles. They are referenced in the <a href="Text_Layout_Section.html#Text Layout Paragraph Element List">Text Layout Paragraph Element List</a>. They are only used for paragraphs whose characters all have the same layout.</span><span style="font-size:12.000000pt;text-decoration:underline;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">This is a <a href="Basic_Elements.html#BListE">BListE</a> of the following Paragraph Type elements:</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Data      Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L       Type number</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Layout_Codes.html#Paragraph Layout List">Paragraph Layout List</a>  Layout codes</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">(*) <a href="Word_Styles_Section.html#Word Style ID">Word Style ID</a>    Style indicator</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Layout_Codes.html#Character Layout List">Character Layout List</a>  Layout codes</p>
+<p class="style_" style="font-size:12.000000pt;">All Paragraph Type elements have a unique number, as expressed in the Type number. Normally, they are simply numbered from 01 00 00 00 upwards.</p>
+<p class="style_" style="font-size:12.000000pt;">The Style indicator is only present if this list is part of a <a href="Text_Layout_Section.html#Text Layout Section">Text Layout Section</a> with styles. If so, it expresses a style on which this Paragraph Type is based. Anything not overruled here is taken from that style.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:12.000000pt;"><a name="Text Layout Paragraph Element List"/><a name="Text Layout Paragraph Element"/><a name="Text Layout Paragraph Elements"/></span><span style="font-size:12.000000pt;text-decoration:underline;"></span></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Paragraph Element List</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">This is a LListE. Each paragraph has an entry here.</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">   Data  Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">   L   Number of text characters in paragraph</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">   B   Paragraph type, as in the <a href="Text_Layout_Section.html#Text Layout Paragraph Type List">Text Layout Paragraph Type List</a></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> (**) <a href="Layout_Codes.html#Paragraph Layout List">Paragraph Layout List</a></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">(*) (**) <a href="Word_Styles_Section.html#Word Style ID">Word Style ID</a>  Style indicator</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> (**) L    Number of <a href="Text_Layout_Section.html#Text Layout Inline List">Text Layout Inline List</a> elements for this paragraph</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">Each paragraph of the <a href="Text_Section.html#Text Section">Text Section</a> is mentioned here in order.</p>
+<p class="style_" style="font-size:12.000000pt;">The number of text characters for a paragraph should concur with the number of characters as found in the <a href="Text_Section.html#Text Section">Text Section</a></p>
+<p class="style_" style="font-size:12.000000pt;">The entries marked (**) are only present if the paragraph type is set to 00, meaning it is not based on a <a href="Text_Layout_Section.html#Text Layout Paragraph Type">Text Layout Paragraph Type</a>.</p>
+<p class="style_" style="font-size:12.000000pt;">The Style indicator is only present if this list is part of a <a href="Text_Layout_Section.html#Text Layout Section">Text Layout Section</a> with styles. If so, it expresses a style on which this Paragraph Element is based. Anything not overruled here is taken from that style.</p>
+<p class="style_" style="font-size:12.000000pt;">It is forbidden for a paragraph to have exactly one inline element.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;"><a name="Text Layout Inline List"/></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Inline List</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">This is a <a href="Basic_Elements.html#LListE">LListE</a> of the following elements:</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> </span><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Data      Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B       Type: 01 for objects, 00 for normal layout</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L       Number of characters this layout element applies to</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Layout_Codes.html#Character Layout List">Character Layout List</a></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">(*) <a href="Identifiers.html#ID">ID</a>      Always 51 00 00 10 ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">(*) <a href="Basic_Structures.html#Offset">Offset</a>     Offset of <a href="Embedded_Object_Section.html#Embedded Object Section">Embedded Object Section</a></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">(*) <a href="Basic_Structures.html#Length">Length</a>     Object size horizontal</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">(*) <a href="Basic_Structures.html#Length">Length</a>     Object size vertical</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">(*) Only for type 01 (objects)</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">For each paragraph that has inline elements at all, it should have enough elements that each character in the paragraph belongs to exactly one element.</p>
+<p class="style_" style="font-size:12.000000pt;">For the layout list, not specified means back to the default for this paragraph, for italic, bold, super/subscript, strike-out and underline (and probably all other layouts too).</p>
+<p class="style_" style="font-size:12.000000pt;">The sizes are the size the object will be displayed with. If the object is displayed as an icon, for example, the size of the icon is put here; if it is cropped and/or scaled, the resulting size is found.</p>
+<p class="style_" ><span style="font-size:12.000000pt;">The sizes found here are the same as those in the <a href="Embedded_Object_Section.html#Object Display Section">Object Display Section</a>.</span></p>
+</body>
+</html>

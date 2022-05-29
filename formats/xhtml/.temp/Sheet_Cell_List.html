@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>EPOC32 file converted by psiconv</title>
+<style type="text/css">
+body {background-color:transparant;padding-left:0.000000cm;padding-right:0.000000cm;text-indent:0.000000cm;font-style:left;padding-top:0.000000pt;padding-bottom:0.000000pt;border-right-style:none;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-width:1.000000pt;border-bottom-width:1.000000pt;border-top-width:1.000000pt;border-left-width:1.000000pt;border-right-color:rgb(0,0,0);border-top-color:rgb(0,0,0);border-bottom-color:rgb(0,0,0);border-left-color:rgb(0,0,0);color:rgb(0,0,0);background-color:transparant;font-size:10.000000pt;font-style:normal;font-weight:normal;font-style:normal;text-decoration:none;font-family:serif}
+*.style_ {padding-bottom:5.000000pt;}
+*.style_Koptekst_1 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:14.000000pt;font-weight:bold;}
+*.style_Koptekst_2 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:12.000000pt;font-weight:bold;}
+*.style_Koptekst_3 {padding-bottom:5.000000pt;font-style:italic;text-decoration:underline;}
+*.style_Opsomteken {padding-bottom:5.000000pt;}
+</style>
+</head>
+<body>
+<p class="style_" style="font-size:12.000000pt;">[Sheet Cell List]</p>
+<p class="style_" style="font-size:16.000000pt;font-family:sans-serif">Sheet Cell List</p>
+<p class="style_" ><span style="font-size:12.000000pt;">This contains a description of all cells in a worksheet.</span><span style="font-size:16.000000pt;font-family:sans-serif"></span></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Data  Description</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B   unknown, always 02 ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B   unknown, always 00 ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> XListE  List of &#xab;Sheet Cells&#xbb;</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">[Sheet Cell][Sheet Cells]</p>
+<p class="style_" style="font-size:16.000000pt;font-family:sans-serif">Sheet Cell</p>
+<p class="style_" ><span style="font-size:12.000000pt;">Note that a calculated cell (through a formula) still has its resulting value here.</span><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"></span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">  </span><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Data  Description</span><span style="font-size:8.000000pt;text-decoration:underline;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  3B   cell position (see below)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  B   cell flags (see below)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  ?B   cell value (see below)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">(*)  ?B   &#xab;Sheet Cell Layout&#xbb;</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">(**) XInt  formula reference number</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">The cell position is encoded as follows:</p>
+<p class="style_" ><span style="font-size:12.000000pt;">  </span><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Begin   End    Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  0000 bit 0 0000 bit 1 Unknown (always 0 ?)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  0000 bit 2 0001 bit 2 Column number (column A = 00)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  0001 bit 3 0002 bit 7 Row number (row 1 = 00)</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">The cell flags contains the information below:</p>
+<p class="style_" ><span style="font-size:12.000000pt;">  </span><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Begin   End    Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  0000 bit 0 0000 bit 1 Unknown (always 0 ?)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  0000 bit 2     Cell is locked (0) or not (1) when sheet protected</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  0000 bit 3     Cell is calculated (1) or uncalculated (0)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  0000 bit 4     Cell layout is default (0) or specified (1)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  0000 bit 5 0000 bit 7 Cell content type (see below)</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:12.000000pt;">The following lists the content types, with the values corresponding to them.</span></p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"></p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> code type  value  description</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0  blank  -   a blank cell</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 1  integer &#xab;SInt&#xbb;  integer value</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 2  boolean B   TRUE (1) / FALSE (0)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 3  error  W   error, see error codes below</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 4  real  &#xab;Float&#xbb; IEEE double precision float</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> 5  string  &#xab;SListB&#xbb; simple text</span><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"></span></p>
+<p class="style_" >  </p>
+<p class="style_" >The following errors are used:</p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> code displayed  description</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0      no error</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 1  #NULL!   ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 2  #DIV/0!  division by zero</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 3  #VALUE!  illegal value</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 4  #REF!   ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 5  #NAME!   ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 6  #NUM!   ?</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> 7  #N/A!   not applicable</span><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"></span></p>
+<p class="style_" ></p>
+<p class="style_" ></p>
+</body>
+</html>

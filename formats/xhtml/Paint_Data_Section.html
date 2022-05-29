@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>Paint Data Section</title>
+<style type="text/css">
+body {background-color:transparant;padding-left:0.000000cm;padding-right:0.000000cm;text-indent:0.000000cm;font-style:left;padding-top:0.000000pt;padding-bottom:0.000000pt;border-right-style:none;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-width:1.000000pt;border-bottom-width:1.000000pt;border-top-width:1.000000pt;border-left-width:1.000000pt;border-right-color:rgb(0,0,0);border-top-color:rgb(0,0,0);border-bottom-color:rgb(0,0,0);border-left-color:rgb(0,0,0);color:rgb(0,0,0);background-color:transparant;font-size:10.000000pt;font-style:normal;font-weight:normal;font-style:normal;text-decoration:none;font-family:serif}
+*.style_ {padding-bottom:5.000000pt;}
+*.style_Koptekst_1 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:14.000000pt;font-weight:bold;}
+*.style_Koptekst_2 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:12.000000pt;font-weight:bold;}
+*.style_Koptekst_3 {padding-bottom:5.000000pt;font-style:italic;text-decoration:underline;}
+*.style_Opsomteken {padding-bottom:5.000000pt;}
+</style>
+</head>
+<body>
+<p class="style_" style="font-size:12.000000pt;"><a name="Paint Data Section"/></p>
+<p class="style_" ><span style="font-size:16.000000pt;font-family:sans-serif">Paint Data Section</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:12.000000pt;">This section contains all the data of a picture.</p>
+<p class="style_" ><span style="font-size:12.000000pt;">NB: the data on colour pictures and non-8 bit RLE encoding is still somewhat fuzzy.</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> </span><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Size  Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L   Size of <a href="Paint_Data_Section.html#Paint Data Section">Paint Data Section</a> (including this long)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L   Offset within <a href="Paint_Data_Section.html#Paint Data Section">Paint Data Section</a> of pixel data. Always 28 00 00 00 ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L   X Size of picture in dots</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L   Y Size of picture in dots</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Basic_Structures.html#Length">Length</a> X Size of the picture in twips. 00 00 00 00 means unspecified.</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Basic_Structures.html#Length">Length</a> Y Size of the picture in twips. 00 00 00 00 means unspecified.</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L   Number of bits in a dot. Usually 02 00 00 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L   00 00 00 00 for greyscale pictures, 01 00 00 00 for colour (?)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L   Always 00 00 00 00 ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L   Encoding (see table below)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L (CA)  Always FF FF FF FF ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L (CA)  Always 44 00 00 00 ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> Pixel data</p>
+<p class="style_" style="font-size:12.000000pt;">The two longs marked (CA) are only found in  a <a href="Clip_Art_File.html#Clip Art File">Clip Art File</a>. Their use is unknown. They are not included in the size of the section (first long) and the offset of the pixel data (second long): you should add 8 to both of them.</p>
+<p class="style_" ><span style="font-size:12.000000pt;">There are several ways an image may be encoded:</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> </span><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Vlaue   Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 00 00 00 00  Plain data</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 01 00 00 00  8-bit RLE encoding</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 02 00 00 00  12-bit RLE encoding</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 03 00 00 00  16-bit RLE encoding</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> 04 00 00 00  24-bit RLE encoding</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">Though all lines have the same length, this length can be a little larger than the picture X size. The remaining padding should be discarded. The length of a line is always a whole number of longs (after RLE decoding).</p>
+<p class="style_" style="font-size:12.000000pt;">8-bit RLE encoding consists of sequences of marker bytes with data bytes. A marker byte of 00 to 7F means that the next byte should be repeated that many times and once more. A marker byte of 80 to FF means that (100-marker) bytes of data follow.</p>
+<p class="style_" style="font-size:12.000000pt;">12-bit RLE encoding consists of words. The 4 most significant bits hold the number of repetitions minus 1 of the 12 least significant bits.</p>
+<p class="style_" style="font-size:12.000000pt;">16-bit RLE and 24-bit RLE are similar to 8-bit RLE. A marker byte of 00 to 7F means that the next pixel (2 resp. 3 bytes) should be repeated that many times and once more. A marker byte of 80 to FF means that (100-marker) pixels (2 resp. 3 bytes each) of data follow.</p>
+<p class="style_" style="font-size:12.000000pt;">After RLE decoding (or right at the start if this was plain data), you are left with a series of bytes. Depending on the number of bits per pixel, you can get any number of colours. Least significant bits are leftmost pixels, and for colour pictures, blue is usually least significant, green is in the middle, and red is most significant.</p>
+<p class="style_" style="font-size:12.000000pt;">If the number of bits per pixel equals 2, each byte encodes four pixels. A pixel is two bits wide, and can range from black to invisible:</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Value  Color</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0   Black</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 1   Dark grey</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 2   Light grey</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> 3   Invisible</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">If the number of bits per pixel equals 4, a palette is used for colour images as follows:</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Value  RGB  Color</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0   00 00 00  Black</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 1   55 55 55  Dark grey</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 2   80 00 00  Dark red</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 3   80 80 00  Dark yellow</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 4   00 80 00  Dark green</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 5   FF 00 00  Red</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 6   00 FF 00  Green</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 7   FF FF 00  Yellow</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 8   FF 00 FF  Magenta</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 9   00 FF 00  Blue</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> A   00 FF FF  Cyan</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B   80 00 80  Dark magenta</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> C   00 00 80  Dark blue</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> D   00 80 80  Dark magenta</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> E   AA AA AA  Light grey</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> F   FF FF FF  Whitew</p>
+<p class="style_" >A 8-bit colour palette as below has been found:</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Value  RGB </span></p>
+<p class="style_" > <span style="font-size:8.000000pt;font-family:monospace">00   00 00 00</span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 01   33 00 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 02   66 00 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 03   99 00 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 04   CC 00 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 05   FF 00 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 06   00 33 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 07   33 33 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 08   66 33 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 09   99 33 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0A   CC 33 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0B   FF 33 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0C   00 66 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0D   33 66 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0E   66 66 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0F   99 66 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 10   CC 66 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 11   FF 66 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 12   00 99 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 13   33 99 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 14   66 99 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 15   99 99 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 16   CC 99 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 17   FF 99 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 18   00 CC 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 19   33 CC 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 1A   66 CC 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 1B   99 CC 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 1C   CC CC 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 1D   FF CC 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 1E   00 FF 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 1F   33 FF 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 20   66 FF 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 21   99 FF 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 22   CC FF 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 23   FF FF 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 24   00 00 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 25   33 00 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 26   66 00 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 27   99 00 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 28   CC 00 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 29   FF 00 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 2A   00 33 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 2B   33 33 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 2C   66 33 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 2D   99 33 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 2E   CC 33 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 2F   FF 33 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 30   00 66 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 31   33 66 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 32   66 66 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 33   99 66 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 34   CC 66 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 35   FF 66 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 36   00 99 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 37   33 99 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 38   66 99 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 39   99 99 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 3A   CC 99 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 3B   FF 99 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 3C   00 CC 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 3D   33 CC 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 3E   66 CC 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 3F   99 CC 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 40   CC CC 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 41   FF CC 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 42   00 FF 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 43   33 FF 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 44   66 FF 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 45   99 FF 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 46   CC FF 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 47   FF FF 33</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 48   00 00 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 49   33 00 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 4A   66 00 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 4B   99 00 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 4C   CC 00 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 4D   FF 00 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 4E   00 33 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 4F   33 33 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 50   66 33 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 51   99 33 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 52   CC 33 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 53   FF 33 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 54   00 66 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 55   33 66 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 56   66 66 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 57   99 66 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 58   CC 66 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 59   FF 66 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 5A   00 99 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 5B   33 99 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 5C   66 99 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 5D   99 99 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 5E   CC 99 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 5F   FF 99 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 60   00 CC 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 61   33 CC 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 62   66 CC 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 63   99 CC 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 64   CC CC 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 65   FF CC 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 66   00 FF 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 67   33 FF 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 68   66 FF 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 69   99 FF 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 6A   CC FF 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 6B   FF FF 66</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 6C   11 11 11</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 6D   22 22 22</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 6E   44 44 44</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 6F   55 55 55</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 70   77 77 77</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 71   11 00 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 72   22 00 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 73   44 00 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 74   55 00 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 75   77 00 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 76   00 11 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 77   00 22 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 78   00 44 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 79   00 55 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 7A   00 77 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 7B   00 00 11</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 7C   00 00 22</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 7D   00 00 44</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 7E   00 00 55</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 7F   00 00 77</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 80   00 00 88</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 81   00 00 AA</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 82   00 00 BB</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 83   00 00 DD</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 84   00 00 EE</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 85   00 88 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 86   00 AA 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 87   00 BB 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 88   00 DD 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 89   00 EE 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 8A   88 00 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 8B   AA 00 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 8C   BB 00 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 8D   DD 00 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 8E   EE 00 00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 8F   88 88 88</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 90   AA AA AA</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 91   BB BB BB</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 92   DD DD DD</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 93   EE EE EE</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 94   00 00 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 95   33 00 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 96   66 00 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 97   99 00 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 98   CC 00 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 99   FF 00 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 9A   00 33 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 9B   33 33 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 9C   66 33 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 9D   99 33 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 9E   CC 33 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 9F   FF 33 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> A0   00 66 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> A1   33 66 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> A2   66 66 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> A3   99 66 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> A4   CC 66 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> A5   FF 66 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> A6   00 99 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> A7   33 99 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> A8   66 99 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> A9   99 99 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> AA   CC 99 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> AB   FF 99 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> AC   00 CC 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> AD   33 CC 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> AE   66 CC 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> AF   99 CC 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B0   CC CC 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B1   FF CC 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B2   00 FF 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B3   33 FF 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B4   66 FF 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B5   99 FF 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B6   CC FF 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B7   FF FF 99</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B8   00 00 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B9   33 00 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> BA   66 00 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> BB   99 00 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> BC   CC 00 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> BD   FF 00 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> BE   00 33 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> BF   33 33 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> C0   66 33 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> C1   99 33 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> C2   CC 33 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> C3   FF 33 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> C4   00 66 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> C5   33 66 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> C6   66 66 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> C7   99 66 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> C8   CC 66 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> C9   FF 66 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> CA   00 99 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> CB   33 99 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> CC   66 99 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> CD   99 99 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> CE   CC 99 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> CF   FF 99 CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> D0   00 CC CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> D1   33 CC CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> D2   66 CC CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> D3   99 CC CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> D4   CC CC CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> D5   FF CC CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> D6   00 FF CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> D7   33 FF CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> D8   66 FF CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> D9   99 FF CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> DA   CC FF CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> DB   FF FF CC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> DC   00 00 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> DD   33 00 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> DE   66 00 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> DF   99 00 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> E0   CC 00 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> E1   FF 00 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> E2   00 33 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> E3   33 33 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> E4   66 33 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> E5   99 33 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> E6   CC 33 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> E7   FF 33 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> E8   00 66 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> E9   33 66 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> EA   66 66 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> EB   99 66 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> EC   CC 66 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> ED   FF 66 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> EE   00 99 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> EF   33 99 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> F0   66 99 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> F1   99 99 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> F2   CC 99 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> F3   FF 99 FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> F4   00 CC FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> F5   33 CC FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> F6   66 CC FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> F7   99 CC FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> F8   CC CC FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> F9   FF CC FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> FA   00 FF FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> FB   33 FF FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> FC   66 FF FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> FD   99 FF FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> FE   CC FF FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> FF   FF FF FF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"></p>
+<p class="style_" ></p>
+</body>
+</html>

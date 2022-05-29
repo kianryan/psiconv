@@ -1,0 +1,22 @@
+This package could not have been created without the help of many, many people.
+The most notable contributors are listed below. You are probably best of
+to mail <frodo@frodo.looijaard.name> if you have questions, suggestions or problems.
+
+* Frodo Looijaard <frodo@frodo.looijaard.name>
+  Started this project; has done anything not attributed to anyone else.
+* Andrew Johnson <anj@aps.anl.gov>
+  He wrote the plain text and HTML-4 targets for psiconv.
+* James <James000@jps.net>
+  He helped to puzzle out several obscure parts of Word files
+* Jwan-Luc Damnet <jldamnet@antall.com>
+  Like James, he helped with some Word file things.
+* Wolfgang Szoecs <wolfi@wolfi.munich.sgi.com>
+  His MBM reader helped me figure out how those graphic files are exactly
+  structured. 
+* Kevin Wheatley <hxpro@cinesite.co.uk>
+  5MX patches, and perhaps dynamically loadable converters in the future!
+* Tamas Decsi <moose@interware.hu>
+  He contributed much Sheet work, both in helping figuring out the file 
+  format and in writing the parsing code.
+* Keitha Kawabe <keita.kawabe@mpq.mpg.de>
+  Unicode support, compilation on non-Linux platforms

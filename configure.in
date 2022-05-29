@@ -1,0 +1,299 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT
+AC_CONFIG_SRCDIR([lib/psiconv])
+AM_INIT_AUTOMAKE(psiconv,0.9.9)
+
+AM_CONFIG_HEADER(config.h)
+
+dnl Checks for programs.
+AM_PROG_LIBTOOL
+
+dnl This is stolen from gnome-libs-1.0.14
+AC_ARG_ENABLE(compile-warnings, 
+[  --enable-compile-warnings=[no/minimum/yes]       Turn on compiler warnings.],
+,enable_compile_warnings=minimum)
+
+AC_MSG_CHECKING(what warning flags to pass to the C compiler)
+warnCFLAGS=
+if test "x$GCC" != xyes; then
+  enable_compile_warnings=no
+fi
+if test "x$enable_compile_warnings" != "xno"; then
+  if test "x$GCC" = "xyes"; then
+    case " $CFLAGS " in
+    *[\ \	]-Wall[\ \	]*) ;;
+    *) warnCFLAGS="-Wall -Wunused" ;;
+    esac
+
+    ## -W is not all that useful.  And it cannot be controlled
+    ## with individual -Wno-xxx flags, unlike -Wall
+    if test "x$enable_compile_warnings" = "xyes"; then
+      warnCFLAGS="$warnCFLAGS -Wmissing-prototypes -Wmissing-declarations -Wpointer-arith"
+    fi
+  fi
+fi
+AC_MSG_RESULT($warnCFLAGS)
+
+AC_ARG_ENABLE(iso-c,
+  [  --enable-iso-c          Try to warn if code is not ISO C ],,
+  enable_iso_c=no)
+
+AC_MSG_CHECKING(what language compliance flags to pass to the C compiler)
+complCFLAGS=
+if test "x$enable_iso_c" != "xno"; then
+  if test "x$GCC" = "xyes"; then
+    case " $CFLAGS " in
+    *[\ \	]-ansi[\ \	]*) ;;
+    *) complCFLAGS="$complCFLAGS -ansi" ;;
+    esac
+
+    case " $CFLAGS " in
+    *[\ \	]-pedantic[\ \	]*) ;;
+    *) complCFLAGS="$complCFLAGS -pedantic" ;;
+    esac
+  fi
+fi
+AC_MSG_RESULT($complCFLAGS)
+if test "x$cflags_set" != "xyes"; then
+  CFLAGS="$CFLAGS $warnCFLAGS $complCFLAGS"
+  cflags_set=yes
+  AC_SUBST(cflags_set)
+fi
+
+
+dnl Checks for libraries.
+AC_ARG_WITH(imagemagick,
+              [  --with-imagemagick      enable ImageMagick (default = yes)],
+              [IMAGEMAGICK=$withval],
+              [IMAGEMAGICK='yes'])
+if test x"$IMAGEMAGICK" != xno ; then
+  AC_CHECK_PROG(IMAGEMAGICK,Magick-config,yes,no)
+  if test x"$IMAGEMAGICK" != xno ; then
+    CFLAGS_OLD="$CFLAGS"
+    CPPFLAGS_OLD="$CPPFLAGS"
+    LDFLAGS_OLD="$LDFLAGS"
+    LIBS_OLD="$LIBS"
+    CFLAGS="$CFLAGS `Magick-config --cflags`"
+    CPPFLAGS="$CPPFLAGS `Magick-config --cppflags`"
+    LDFLAGS="$LDFLAGS `Magick-config --ldflags`"
+    LIBS="$LIBS `Magick-config --libs`"
+
+
+    AC_MSG_CHECKING(whether GetMagickInfo works and which API to use)
+    AC_TRY_RUN([ #include <stdio.h>
+                 #include <stdlib.h>
+                 #include <time.h>
+		 #include <magick/api.h>
+		 int main(void) {
+		 unsigned long number_formats;
+	         ExceptionInfo exception;
+	         GetExceptionInfo(&exception);
+	         OpenModules(&exception);
+	         GetMagickInfoList("*",&number_formats,&exception);
+	         return number_formats == 0; }],
+        IMAGEMAGICK=4,IMAGEMAGICK=no,IMAGEMAGICK=no)
+    if test x"$IMAGEMAGICK" = xno ; then
+      AC_TRY_RUN([ #include <stdio.h>
+                   #include <stdlib.h>
+                   #include <time.h>
+		   #include <magick/api.h>
+		   int main(void) {
+		   unsigned long number_formats;
+	           ExceptionInfo exception;
+	           GetExceptionInfo(&exception);
+	           OpenModules(&exception);
+	           GetMagickInfoList("*",&number_formats);
+	           return number_formats == 0; }],
+        IMAGEMAGICK=3,IMAGEMAGICK=no,IMAGEMAGICK=no)
+    fi
+    if test x"$IMAGEMAGICK" = xno ; then
+      AC_TRY_RUN([ #include <stdio.h>
+                   #include <stdlib.h>
+                   #include <time.h>
+  		 #include <magick/api.h>
+                   int main(void) { ExceptionInfo exception;
+                   GetExceptionInfo(&exception);
+                   OpenModules(&exception);
+                   return (NULL ==  GetMagickInfo(NULL,&exception)); }],
+          IMAGEMAGICK=2,IMAGEMAGICK=no,IMAGEMAGICK=no)
+    fi
+    if test x"$IMAGEMAGICK" = xno ; then
+      AC_TRY_RUN([ #include <magick/magick.h>
+                   int main(void) { ExceptionInfo exception;
+                   GetExceptionInfo(&exception);
+                   OpenModules(&exception);
+                   return (NULL ==  GetMagickInfo(NULL,&exception)); }],
+          IMAGEMAGICK=1,IMAGEMAGICK=no,IMAGEMAGICK=no)
+    fi
+    if test x"$IMAGEMAGICK" = xno ; then
+      # 100 equals GraphicsMagick
+      AC_TRY_RUN([ #include <magick/api.h>
+                   int main(void) {
+                     MagickInfo **formats;
+                     ExceptionInfo exception;
+                     InitializeMagick(NULL);
+                     GetExceptionInfo(&exception);
+                     return (NULL == GetMagickInfoArray(&exception)); }],
+          IMAGEMAGICK=100,IMAGEMAGICK=no,IMAGEMAGICK=no)
+    fi
+
+    AC_MSG_RESULT("Version $IMAGEMAGICK")
+    LDFLAGS="$LDFLAGS_OLD"
+    LIBS="$LIBS_OLD"
+dnl Note: CFLAGS can't be set for single directories, so we propagate them
+    if test x"$IMAGEMAGICK" = xno ; then
+      CFLAGS="$CFLAGS_OLD"
+      CPPFLAGS="$CPPFLAGS_OLD"
+    fi
+  fi
+fi
+if test x"$IMAGEMAGICK" != xno ; then
+  LIB_MAGICK="`Magick-config --libs` `Magick-config --ldflags`"
+  AC_DEFINE(IMAGEMAGICK, 1 ,[ImageMagick availability])
+  AC_DEFINE_UNQUOTED(IMAGEMAGICK_API, $IMAGEMAGICK, [ImageMagick API version])
+else
+  LIB_MAGICK=
+fi
+AC_SUBST(LIB_MAGICK)
+
+dnl Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS(unistd.h)
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+AC_TYPE_SIZE_T
+
+dnl Here we check for large enough integer types. This is not quite
+dnl good enough, but it should work almost always.
+
+AC_CHECK_SIZEOF(char,1)
+AC_CHECK_SIZEOF(short,1)
+AC_CHECK_SIZEOF(int,2)
+AC_CHECK_SIZEOF(long,4)
+
+AC_MSG_CHECKING(for an 8 bit integer type)
+if test $ac_cv_sizeof_char -ge 1 ; then
+  INT_8_BIT=char
+  AC_MSG_RESULT(char)
+elif test $ac_cv_sizeof_short -ge 1 ; then
+  INT_8_BIT=short
+  AC_MSG_RESULT(short)
+elif test $ac_cv_sizeof_int -ge 1 ; then
+  AC_MSG_RESULT(int)
+elif test $ac_cv_sizeof_long -ge 1 ; then
+  INT_8_BIT=long
+  AC_MSG_RESULT(long)
+else
+  AC_MSG_ERROR(No integer type of at least 8 bits found)
+fi
+
+AC_MSG_CHECKING(for a 16 bit integer type)
+if test $ac_cv_sizeof_char -ge 2 ; then
+  INT_16_BIT=char
+  AC_MSG_RESULT(char)
+elif test $ac_cv_sizeof_short -ge 2 ; then
+  INT_16_BIT=short
+  AC_MSG_RESULT(short)
+elif test $ac_cv_sizeof_int -ge 2 ; then
+  INT_16_BIT=int
+  AC_MSG_RESULT(int)
+elif test $ac_cv_sizeof_long -ge 2 ; then
+  INT_16_BIT=long
+  AC_MSG_RESULT(long)
+else
+  AC_MSG_ERROR(No integer type of at least 16 bits found)
+fi
+
+AC_MSG_CHECKING(for a 32 bit integer type)
+if test $ac_cv_sizeof_char -ge 4 ; then
+  INT_32_BIT=char
+  AC_MSG_RESULT(char)
+elif test $ac_cv_sizeof_short -ge 4 ; then
+  INT_32_BIT=short
+  AC_MSG_RESULT(short)
+elif test $ac_cv_sizeof_int -ge 4 ; then
+  INT_32_BIT=int
+  AC_MSG_RESULT(int)
+elif test $ac_cv_sizeof_long -ge 4 ; then
+  INT_32_BIT=long
+  AC_MSG_RESULT(long)
+else
+  AC_MSG_ERROR(No integer type of at least 32 bits found)
+fi
+
+AC_SUBST(INT_8_BIT)
+AC_SUBST(INT_16_BIT)
+AC_SUBST(INT_32_BIT)
+
+dnl Checks for library functions.
+AC_FUNC_VPRINTF
+AC_REPLACE_FUNCS(strdup)
+AC_CHECK_FUNC(getopt_long,getopt=yes,getopt=no)
+if test $getopt = no; then
+  AC_LIBOBJ([getopt])
+  AC_LIBOBJ([getopt1])
+fi
+
+AC_ARG_ENABLE(dmalloc,
+[  --enable-dmalloc        Enable dmalloc for developers (default:off)],
+[case "${enableval}" in
+  yes) dmalloc=yes ;;
+  no)  dmalloc=no ;;
+  *)  AC_MSG_ERROR(bad value ${enableval} for --enable-dmalloc) ;;
+esac],[dmalloc=false])
+if test x"$dmalloc" = xyes; then
+  AC_CHECK_LIB(dmalloc,malloc,dmalloc=yes,dmalloc=no)
+fi
+if test x"$dmalloc" = xyes; then
+AC_CHECK_HEADER(dmalloc.h,dmalloc=yes,dmalloc=no)
+fi
+if test x"$dmalloc" = xyes ; then
+  LIB_DMALLOC=-ldmalloc
+  AC_DEFINE(DMALLOC,1,[DMalloc availability])
+else
+  LIB_DMALLOC=
+fi
+AC_SUBST(LIB_DMALLOC)
+
+dnl With and without functions
+AC_ARG_ENABLE(xhtml-docs,
+[  --disable-xhtml-docs    Disable generation of XHTML docs (default: on)],
+[case "${enableval}" in
+  yes) xhtmldocs=true ;;
+  no)  xhtmldocs=false ;;
+  *)  AC_MSG_ERROR(bad value ${enableval} for --enable-xhtml-docs) ;;
+esac],[xhtmldocs=true])
+AM_CONDITIONAL(XHTMLDOCS,test x$xhtmldocs = xtrue)
+
+AC_ARG_ENABLE(html4-docs,
+[  --enable-html4-docs     Enable generation of HTML 4 docs (default: off)],
+[case "${enableval}" in
+  yes) html4docs=true ;;
+  no)  html4docs=false ;;
+  *)  AC_MSG_ERROR(bad value ${enableval} for --enable-html4-docs) ;;
+esac],[html4docs=false])
+AM_CONDITIONAL(HTML4DOCS,test x$html4docs = xtrue)
+
+AC_ARG_ENABLE(ascii-docs,
+[  --enable-ascii-docs     Enable generation of ASCII docs (default: off)],
+[case "${enableval}" in
+  yes) asciidocs=true ;;
+  no)  asciidocs=false ;;
+  *)  AC_MSG_ERROR(bad value ${enableval} for --enable-ascii-docs) ;;
+esac],[asciidocs=false])
+AM_CONDITIONAL(ASCIIDOCS,test x$asciidocs = xtrue)
+
+AC_ARG_WITH(etcdir,
+	       [  --with-etcdir=DIR       Set configfile dir (default: SYSCONFDIR/psiconv)],
+	       [PSICONVETCDIR=${withval}],
+	       [PSICONVETCDIR=${sysconfdir}/psiconv])
+AC_SUBST(PSICONVETCDIR)
+
+AC_ARG_WITH(imagemagick,
+              [  --with-imagemagick      enable ImageMagick (default = yes)],
+              [IMAGEMAGICK=$withval],
+              [IMAGEMAGICK='yes'])
+
+AC_CONFIG_FILES([Makefile compat/Makefile lib/Makefile lib/psiconv/Makefile lib/psiconv/psiconv.conf.man program/Makefile program/psiconv/Makefile program/psiconv-config/Makefile program/psiconv-config/psiconv-config program/psiconv-config/psiconv-config.man lib/psiconv/general.h formats/Makefile docs/Makefile program/extra/Makefile etc/Makefile examples/Makefile])
+AC_OUTPUT

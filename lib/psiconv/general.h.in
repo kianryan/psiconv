@@ -1,0 +1,41 @@
+/*
+    data.h - Part of psiconv, a PSION 5 file formats converter
+    Copyright (c) 1999-2005  Frodo Looijaard <frodo@frodo.looijaard.name>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+*/
+
+/* All declarations which you may need to edit are here. At a later time,
+   this will be superseded by some automatic configuration script. */
+
+#ifndef PSICONV_GENERAL_H
+#define PSICONV_GENERAL_H
+
+/* Data types; s8 means `signed 8-bit integer', u32 means `unsigned 32-bits
+   integer'. Configure figures out which types to use.
+*/
+
+typedef signed @INT_8_BIT@ psiconv_s8;
+typedef unsigned @INT_8_BIT@ psiconv_u8;
+
+typedef signed @INT_16_BIT@ psiconv_s16;
+typedef unsigned @INT_16_BIT@ psiconv_u16;
+
+typedef signed @INT_32_BIT@ psiconv_s32;
+typedef unsigned @INT_32_BIT@ psiconv_u32;
+
+typedef psiconv_u16 psiconv_ucs2;
+
+#endif /* def PSICONV_GENERAL_H */

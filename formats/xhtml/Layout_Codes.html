@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>Layout Codes</title>
+<style type="text/css">
+body {background-color:transparant;padding-left:0.000000cm;padding-right:0.000000cm;text-indent:0.000000cm;font-style:left;padding-top:0.000000pt;padding-bottom:0.000000pt;border-right-style:none;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-width:1.000000pt;border-bottom-width:1.000000pt;border-top-width:1.000000pt;border-left-width:1.000000pt;border-right-color:rgb(0,0,0);border-top-color:rgb(0,0,0);border-bottom-color:rgb(0,0,0);border-left-color:rgb(0,0,0);color:rgb(0,0,0);background-color:transparant;font-size:10.000000pt;font-style:normal;font-weight:normal;font-style:normal;text-decoration:none;font-family:serif}
+*.style_ {padding-bottom:5.000000pt;}
+*.style_Koptekst_1 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:14.000000pt;font-weight:bold;}
+*.style_Koptekst_2 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:12.000000pt;font-weight:bold;}
+*.style_Koptekst_3 {padding-bottom:5.000000pt;font-style:italic;text-decoration:underline;}
+*.style_Opsomteken {padding-bottom:5.000000pt;}
+</style>
+</head>
+<body>
+<p class="style_" style="font-size:12.000000pt;"><a name="Layout Codes"/></p>
+<p class="style_" style="font-size:16.000000pt;font-family:sans-serif">Layout Codes</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">There are two kinds of layout codes: those which always modify a whole pragraph, and those which modify one or more characters. They are always kept strictly separate. A layout code consists of a type byte, followed by one or more modifier bytes. All rcognized codes are listed below.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;"><a name="Paragraph Layout List"/></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Paragraph Layout List</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">A Paragraph Layout List is a <a href="Basic_Elements.html#LListB">LListB</a> of <a href="Layout_Codes.html#Paragraph Layout Codes">Paragraph Layout Codes</a>. Paragraph Layout Codes are almost always found in this form.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;"><a name="Paragraph Layout Codes"/><a name="Paragraph Layout Code"/></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Paragraph Layout Codes</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">As explained above, a Paragraph Layout Code consists of a type byte, telling what kind of layout code this is, followed by a type-dependent amount of data.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Type Size Data  Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">01  3B  <a href="Basic_Structures.html#Color">Color</a> Background color</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">02  L , <a href="Basic_Structures.html#Length">Length</a> Indent left</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">03  L  <a href="Basic_Structures.html#Length">Length</a> Indent right</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">04  L  <a href="Basic_Structures.html#Length">Length</a> (Un)indent first line (length relative to indent left setting)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">05  B     Hor. justify left (00), centre (01), right (02) or full (03)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">06  B     Vert. justify top (00) centre (01) or bottom (02) </p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">07  L  <a href="Basic_Structures.html#Size">Size</a>  Interline distance</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">08  B     Interline distance is minimum (00) or exact (01)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">09  L  <a href="Basic_Structures.html#Size">Size</a>  Line distance before paragraph start</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0A  L  <a href="Basic_Structures.html#Size">Size</a>  Line distance after paragraph end</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0B  B     Line distance options: Keep on one page on (01) or off (00)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0C  B     Line distance options: Keep together with on (01) or off (00)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0D  B     Line distance options: On next page on (01) or off (00)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0E  B     Protection vs. single lines on pages disable (01) or enable (00)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0F  B     Wrap data to fill sheet cell limits on (01) or off (00)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">10  L  <a href="Basic_Structures.html#Length">Length</a>  Distance of borders from text</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">11  9B  <a href="Layout_Codes.html#Border">Border</a> Top border</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">12  9B  <a href="Layout_Codes.html#Border">Border</a> Bottom border</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">13  9B  <a href="Layout_Codes.html#Border">Border</a> Left border</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">14  9B  <a href="Layout_Codes.html#Border">Border</a> Right border</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">15  *  <a href="Layout_Codes.html#Bullet">Bullet</a> Bullets</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">16  L  <a href="Basic_Structures.html#Length">Length</a> Set standard (left) tabs interval</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">17  5B  <a href="Layout_Codes.html#Tab">Tab</a>  Set extra tab</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">Some comments. The first line of a paragraph can have a different indentation than the other lines. This indentation length is always relative to the normal indentation, and can be positive (more to the right) or negative (more to the left). Combined with bulltes, things are slightly different (see there).</p>
+<p class="style_" style="font-size:12.000000pt;">Borders can be made to be drawn beyond the standard margins, by specifying the amount of space between them and the text. This is always a positive value.</p>
+<p class="style_" style="font-size:12.000000pt;">There always standard tab positions; they are placed at regular interfals as specified. These are always left tabs. Additional tabs can also be specified, but these are always in addition to the standard tab positions.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;"><a name="Borders"/><a name="Border"/></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Borders</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">The four possible borders are specified separately, through initial type bytes 11 to 14. The border structure is shown below.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Offset Data Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0000 B   Type (see below)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0001 L   Thickness (always 01 for types 02 to 06)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0005 <a href="Basic_Structures.html#Color">Color</a> Color of border</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0008 B   Unknown (always 00 or 01 ?)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0009</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"></p>
+<p class="style_" style="font-size:12.000000pt;">The border type can have the following values:</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Border Type  Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  00    None</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  01    Solid single line</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  02    Solid double line</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  03    Dotted line</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  04    Dashed line</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  05    Dotsdashed line</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">  06    Dotdotdashed line</p>
+<p class="style_" ><span style="font-size:12.000000pt;">The thickness can only be defined for solid lines. It is expressed in units of 1/14 point (1/20 decimal), just like <a href="Basic_Structures.html#Sizes">Sizes</a> and <a href="Basic_Structures.html#Lengths">Lengths</a>. The three Unknown bytes may be another color code, or something completely different. The function of the final byte is also unclear.</span></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;"><a name="Bullets"/><a name="Bullet"/></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Bullets</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">A Bullet description is a <a href="Basic_Elements.html#BListB">BListB</a>. The complete structure is given below, including the initial length byte excluding the initial type byte 15.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Offset Data  Description</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0000 B   Size of the remainder of this section in bytes</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0001 <a href="Basic_Structures.html#Size">Size</a>  Font size of bullet in points</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0005 B   Character used for bullet in <a href="ASCII_Codes.html#ASCII">ASCII</a></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0006 B   Indent after bullet on (01) or off (00)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0007 <a href="Basic_Structures.html#Color">Color</a> Color of bullet</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0008  <a href="Fonts.html#Font">Font</a>  Font from which the bullet is taken (always Swiss?)</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">The combination of indents and bullets is somewhat involved. If Indent After Bullet is off, everything works as expected: the bullet is located at the first line indent, and the text starts right after it. If it is on, the bullet is located at the minmum of first line indent and left indent; the text (including the first line) is located at the maximum of first line indent and left indent.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;"><a name="Tabs"/><a name="Tab"/></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Tabs</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">In addition to the default left tabs, which are found at regular intervals, more tabs can be defined. Each additional tab is specified in its own structure. Below this structure is shown, excluding the initial type byte 17.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Offset Data  Description</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0000 <a href="Basic_Structures.html#Length">Length</a> Location of the tab, relative to the left margin</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0004 B   Tab type (see below)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0005</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">There are three kinds of tabs. They specify the anchoring of the text just after the tab: either the first character, the centre character or the last character.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Tab type  Kind</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 1    Left</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 2    Centre</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> 3    Right</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;"><a name="Character Layout List"/></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Character Layout List</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">A Character Layout List is a <a href="Basic_Elements.html#LListB">LListB</a> of <a href="Layout_Codes.html#Character Layout Codes">Character Layout Codes</a>. Character Layout Codes are almost always found in this form.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;"><a name="Character Layout Codes"/><a name="Character Layout Code"/></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Character Layout Codes</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">As explained above, a Character Layout Code consists of a type byte, telling what kind of layout code this is, followed by a type-dependent amount of data.</p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Type Size Data  Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">18  B     Set ??? on (01) or off (00)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">19  3B  <a href="Basic_Structures.html#Color">Color</a> Set text color</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">1A  3B  <a href="Basic_Structures.html#Color">Color</a> Set ??? color (background?)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">1B  B     Set ??? on (01) or off (00). Displayed with black background.</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">1C  L  <a href="Basic_Structures.html#Size">Size</a>  Change character point size</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">1D  B     Italic on (01) or off (00)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">1E  B     Bold on (01) or off (00</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">1F  B     Superscript (01) or subscipt (02) or off (00)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">20  B     Underline on (01) or off (00)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">21  B     Strikethrough on (01) or off (00)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">22  *  <a href="Fonts.html#Font">Font</a>  Change character font</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">23  B     Unknown</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">24  B     Unknown (5MX only): always 00 ?</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">Some remarks: several of the above codes are sometimes found in Word documents (especially after a clipboard copy from another program), but seem te be ignored by Word. This is more or less true for codes 18, 1A, 1B, 23 and 24. None of them can be generated directly by a Word user.</p>
+<p class="style_" ></p>
+</body>
+</html>

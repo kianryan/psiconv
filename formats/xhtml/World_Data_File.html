@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>World Data File</title>
+<style type="text/css">
+body {background-color:transparant;padding-left:0.000000cm;padding-right:0.000000cm;text-indent:0.000000cm;font-style:left;padding-top:0.000000pt;padding-bottom:0.000000pt;border-right-style:none;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-width:1.000000pt;border-bottom-width:1.000000pt;border-top-width:1.000000pt;border-left-width:1.000000pt;border-right-color:rgb(0,0,0);border-top-color:rgb(0,0,0);border-bottom-color:rgb(0,0,0);border-left-color:rgb(0,0,0);color:rgb(0,0,0);background-color:transparant;font-size:10.000000pt;font-style:normal;font-weight:normal;font-style:normal;text-decoration:none;font-family:serif}
+*.style_ {padding-bottom:5.000000pt;}
+*.style_Heading_1 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:14.000000pt;font-weight:bold;}
+*.style_Heading_2 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:12.000000pt;font-weight:bold;}
+*.style_Heading_3 {padding-bottom:5.000000pt;font-weight:bold;}
+</style>
+</head>
+<body>
+<p class="style_" style="font-size:12.000000pt;"><a name="World Data File"/></p>
+<p class="style_" ><span style="font-size:16.000000pt;font-family:sans-serif">World Data File</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">This file is used by the Time program to save data about new or modified countries and cities. It is usually located in C:\System\Data and called WLD_DATA.DBW.</p>
+<p class="style_" style="font-size:12.000000pt;">Note that simply changing this file does not change the data within the Time program; a soft reset should do the trick, though.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">The World Data File starts with a <a href="Header_Section.html#Header Section">Header Section</a> which contains:</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Offset Size Data   Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0000 <a href="Identifiers.html#ID">ID</a> 46 00 00 10  UID1: World Data File</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0004 <a href="Identifiers.html#ID">ID</a> 00 00 00 00  UID2: Unused</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0008 <a href="Identifiers.html#ID">ID</a> 00 00 00 00  UID3: Unused</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">000C L  F1 E7 5A 04  UID4: Checksum of UID1, UID2 and UID3</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0010</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">The remaining file is structured as follows:</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Size Data   Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">L  01 00 00 00  Marker to start the city section</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">LListE     <a href="World_Data_File.html#World Data City Section">World Data City Section</a></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">L  00 00 00 00  Marker to start the country section</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">LListE     <a href="World_Data_File.html#World Data Country Section">World Data Country Section</a></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;"><a name="World Data City Section"/></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">World Data City Section</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">This is an LListE.</p>
+<p class="style_" style="font-size:12.000000pt;">City section elements are structured as follows:</p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Size   Description</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"><a href="Basic_Structures.html#String">String</a>  New city name</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"><a href="Basic_Structures.html#String">String</a>  New country name</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"><a href="Basic_Structures.html#String">String</a>  Original city name (empty string if this is a new city)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"><a href="Basic_Structures.html#String">String</a>  Original country name (empty string if this is a new city)</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">8B    City data</span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"><a href="Basic_Structures.html#String">String</a>  Area code</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"></p>
+<p class="style_" style="font-size:12.000000pt;">The city data is very compact, probably to save space:</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Start  End   Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0000 bit 0 0001 bit 0 Horizontal map position (left=000, right=17b)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0001 bit 1 0001 bit 2 Unused?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0001 bit 3 0002 bit 7 Latitude in minutes (South is negative)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0003 bit 0 0003 bit 7 Vertical map position (top=00, bottom=cf)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0004 bit 0 0005 bit 6 Longitude in minutes (East is negative)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0005 bit 7 0007 bit 1 GMT offset in minutes</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0007 bit 2 0007 bit 3 Summertime zone (0=none,1=europe, 2=northern, 3=southern)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0007 bit 4 0007 bit 7 Unused?</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"><br/></span><span style="font-size:12.000000pt;">Longitude, Latitude and GMT offsets are encoded as <a href="Basic_Structures.html#Signed Integers">Signed Integers</a>,</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;"><a name="World Data Country Section"/></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">World Data Country Section</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">This is an LListE.</p>
+<p class="style_" style="font-size:12.000000pt;">Note that if you change the name of a country, all its cities are also put into the <a href="World_Data_File.html#World Data City Section">World Data City Section</a>.</p>
+<p class="style_" style="font-size:12.000000pt;">Country section elements are structured as follows:</p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Size   Description</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"><a href="Basic_Structures.html#String">String</a>  New capital city name</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"><a href="Basic_Structures.html#String">String</a>  New country name</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"><a href="Basic_Structures.html#String">String</a>  Original country name (empty string if this is a new country)</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"><a href="Basic_Structures.html#String">String</a>  National code</span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"><a href="Basic_Structures.html#String">String</a>  National prefix</span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"><a href="Basic_Structures.html#String">String</a>  International prefix</span></p>
+</body>
+</html>

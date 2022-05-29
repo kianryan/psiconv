@@ -1,0 +1,117 @@
+INTRODUCTION
+============
+
+This package is meant to make the Psion 5 series of PDAs, as well as other
+small computers running EPOC 32, more usable to non-Windows users. But even
+they may profit from the data I collected.
+
+The package consists of several parts:
+  * Documentation about Psion 5 data formats;
+  * A library which can be linked against application that have to read
+    and write Psion 5 files;
+  * An example command-line program which reads Psion files and writes
+    more commonly used formats.
+
+
+DATA FORMATS
+============
+
+As far as I know, and have gathered from the newsgroups, Psion does not want
+or is not able to release the data formats of the saved files of their
+internal applications. I am trying to reverse engineer these data formats
+and to document them for general use. At this moment, I understand their 
+Word, Sheet, TextEd, Sketch, MBM, Clipart and Record files, as well as a 
+few other less important formats. I want this information to be available
+to everyone, in order to write better file conversion utilities for popular
+(non-)Windows programs.
+
+All documentation is written in Psion 5 Word. Fortunately, the utilities
+in this package can translate it to HTML and other formats.
+
+Unlike all other files in this package, the *.psi files in the directory
+formats/psion are completely public domain. I ask anybody who reproduces
+them, or uses their information in other programs, kindly to attribute
+them to me.
+
+The documentation files are not installed on a `make install'; you can
+find them in the subdirectories of the formats directory.
+
+
+THE LIBRARY
+===========
+
+libpsiconv is a library of routines that you can link against your own
+application. It allows you to read and write Psion 5 files. Note that
+it comes under the GNU General Public License; that means that you can
+only link it to programs which are also covered by that license. You can
+contact me if you need other license terms.
+
+The following formats are supported at this moment:
+  Word      (R+W) Word processor files
+  TextEd    (R+W) OPL editor files
+  Sketch    (R+W) Picture files
+  MBM       (R+W) Alternate picture format; can contain several pictures
+  ClipArt   (R+W) Internal picture format; can contain several pictures
+  Sheet     (R)   Spreadsheet files
+
+Documentation is scarce; please examine the source code or the example
+psiconv program. Some things may also be found in the doc subdirectory.
+
+
+THE PROGRAM
+===========
+
+Psiconv is a command-line converter that reads Psiconv files and outputs
+more commonly used formats. It is linked against libpsiconv, and can
+handle anything that it can.
+
+Please enter `psiconv --help' if you want to know about its syntax.
+
+The current HTML4 target is not very ideal. HTML is just not made to 
+represent detailed layout considerations: it is a document description
+language. Still, the output is quite readable already. Of course, headers
+and footers are not displayed, because there is no notion of pages in 
+HTML. Tabs are also difficult; they are not supported yet. This can be
+solved using tables, but it is quite hard to do it correctly. Some other
+things are just approximated too.
+
+The XHTML target uses cascading style sheets (CSS). You need a not-too-old
+browser for this to display correctly. Generally, the output of this
+generator is of higher quality than the normal HTML generator's.
+
+A plain TEXT target just grabs all text, without any futher conversions.
+
+All ImageMagick graphic output formats are supported; depending on how
+you compiled ImageMagick, this is betwee 20 and 50 different formats.
+Your favorite one should be somewhere in there...
+
+In the past, my focus was on extending the number of output targets for
+this program; at the moment, I belief more in import/export filters for
+office applications like AbiWord, Gnumeric and the Gimp.
+
+Psiconv is licensed under the GPL. Please read the included file COPYING
+for exact licensing information. Please contact me if you need some other
+licensing terms.
+
+
+NEWS AND FUTURE DEVELOPMENTS
+============================
+
+Starting with version 0.2, psiconv should keep all namespaces unpoluted.
+Starting with version 0.4, the conversion routines are linked into a
+(static or shared) library. Version 0.5 has autoconf and libtool support,
+and should run on many more platforms. Version 0.6 has support for
+graphics. Version 0.8 can generate files and add Sheet support. Version 
+0.9 uses Unicode inside, add the psiconv.conf file and has many more
+enhancements.
+
+High on the TODO list are input routines for Record files. 
+Sheet files will be next. I am running into some trouble understanding 
+Data and Agenda files, but with a little luck, I'll figure it out after 
+all. This is more long-term though.
+
+
+INSTALLATION
+============
+
+Please read the file INSTALL for installation instructions.

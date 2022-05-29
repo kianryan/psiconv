@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>EPOC32 file converted by psiconv</title>
+<style type="text/css">
+body {background-color:transparant;padding-left:0.000000cm;padding-right:0.000000cm;text-indent:0.000000cm;font-style:left;padding-top:0.000000pt;padding-bottom:0.000000pt;border-right-style:none;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-width:1.000000pt;border-bottom-width:1.000000pt;border-top-width:1.000000pt;border-left-width:1.000000pt;border-right-color:rgb(0,0,0);border-top-color:rgb(0,0,0);border-bottom-color:rgb(0,0,0);border-left-color:rgb(0,0,0);color:rgb(0,0,0);background-color:transparant;font-size:10.000000pt;font-style:normal;font-weight:normal;font-style:normal;text-decoration:none;font-family:serif}
+*.style_ {padding-bottom:5.000000pt;}
+*.style_Koptekst_1 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:14.000000pt;font-weight:bold;}
+*.style_Koptekst_2 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:12.000000pt;font-weight:bold;}
+*.style_Koptekst_3 {padding-bottom:5.000000pt;font-style:italic;text-decoration:underline;}
+*.style_Opsomteken {padding-bottom:5.000000pt;}
+</style>
+</head>
+<body>
+<p class="style_" style="font-size:12.000000pt;">[Header Section]</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:16.000000pt;font-weight:bold;font-family:sans-serif">Header Section</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">10 bytes header data. This section is guaranteed to be found at the very start of the file. It is the only section that starts at an unchanging offset.</p>
+<p class="style_" style="font-size:12.000000pt;">The first long determines the layout of this section. The following values are found:</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Value ID 1  Description</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">37 00 00 10  &#xab;ID 10000037 File&#xbb;, with a &#xab;Section Table Section&#xbb;</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">41 00 00 10  &#xab;Clip Art File&#xbb;</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">50 00 00 10  &#xab;ID 10000050 File&#xbb;, structured as a list of sections.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">Files starting with ID 37 00 00 10 have a &#xab;Section Table Offset Section&#xbb; with the offset of the &#xab;Section Table Section&#xbb; directly after the &#xab;Header Section&#xbb;. This is better described in the &#xab;File Structure&#xbb; chapter.</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Offset Data Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0000 &#xab;ID&#xbb; UID1: 37 00 00 10: Header Section layout</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0004 &#xab;ID&#xbb; UID2: File kind</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0008 &#xab;ID&#xbb; UID3: Application ID</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">000C L  UID4: Checksum of UID1, UID2 and UID3 </p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0010</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">UID2 tells what kind of file is found. The values below are known:</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> UID2   UID1   Desciption</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> 6D 00 00 10  37 00 00 10  Data file </span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">UID3 is the Application ID. It is the same as used in the &#xab;Application ID Section&#xbb;.</p>
+<p class="style_" style="font-size:12.000000pt;">UID4 is a checksum of UID1 to UID3. It is computed by taking the exclusive-or (xor) of the values found it the tables below. Each value is only used when the corresponding bit is set to one.</p>
+<p class="style_" style="font-size:12.000000pt;">UID4 can also be computed by using OPL function CheckUID$.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">UID1 bit  Value</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 0   0x000045A0</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 1   0x00008B40</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 2    0x000006A1</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 3   0x00000D42</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 4   0x00001A84</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 5   0x00003508</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 6   0x00006A10</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 7   0x0000D420</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 8   0x45A00000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 9   0x8B400000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 10   0x06A10000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 11   0x0D420000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 12   0x1A840000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 13   0x35080000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 14   0x6A100000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 15   0xD4200000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 16   0x0000AA51</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 17   0x00004483</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 18   0x00008906</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 19   0x0000022D</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 20   0x0000045A</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 21   0x000008B4</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 22   0x00001168</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 23   0x000022D0</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 24   0xAA510000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 25   0x44830000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 26   0x89060000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 27   0x022D0000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 28   0x045A0000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 29   0x08B40000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 30   0x11680000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 31   0x22D00000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"></p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">UID2 bit  Value</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 0   0x000076B4</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 1    0x0000ED68</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 2    0x0000CAF1</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 3    0x000085C3</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 4    0x00001BA7</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 5    0x0000374E</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 6    0x00006E9C</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 7    0x0000DD38</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 8    0x76B40000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 9    0xED680000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 10   0xCAF10000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 11   0x85C30000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 12   0x1BA70000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 13   0x374E0000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 14   0x6E9C0000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 15   0xDD380000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 16   0x00003730</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 17   0x00006E60</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 18   0x0000DCC0</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 19   0x0000A9A1</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 20   0x00004363</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 21   0x000086C6</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 22   0x00001DAD</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 23   0x00003B5A</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 24   0x37300000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 25   0x6E600000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 26   0xDCC00000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 27   0xA9A10000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 28   0x43630000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 29   0x86C60000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 30   0x1DAD0000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 31   0x3B5A0000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"></p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">UID3 bit  Value</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 0    0x00003331</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 1    0x00006662</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 2    0x0000CCC4</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 3    0x000089A9</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 4    0x00000373</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 5    0x000006E6</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 6    0x00000DCC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 7    0x00001B98</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 8    0x33310000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 9    0x66620000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 10   0xCCC40000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 11   0x89A90000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 12   0x03730000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 13   0x06E60000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 14   0x0DCC0000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 15   0x1B980000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 16   0x00001021</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 17   0x00002042</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 18   0x00004084</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 19   0x00008108</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 20   0x00001231</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 21   0x00002462</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 22   0x000048C4</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 23   0x00009188</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 24   0x10210000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 25   0x20420000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 26   0x40840000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 27   0x81080000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 28   0x12310000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 29   0x24620000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 30   0x48C40000</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">bit 31   0x91880000</p>
+<p class="style_" ></p>
+</body>
+</html>

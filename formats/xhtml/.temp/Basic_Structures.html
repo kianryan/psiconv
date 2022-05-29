@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>EPOC32 file converted by psiconv</title>
+<style type="text/css">
+body {background-color:transparant;padding-left:0.000000cm;padding-right:0.000000cm;text-indent:0.000000cm;font-style:left;padding-top:0.000000pt;padding-bottom:0.000000pt;border-right-style:none;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-width:1.000000pt;border-bottom-width:1.000000pt;border-top-width:1.000000pt;border-left-width:1.000000pt;border-right-color:rgb(0,0,0);border-top-color:rgb(0,0,0);border-bottom-color:rgb(0,0,0);border-left-color:rgb(0,0,0);color:rgb(0,0,0);background-color:transparant;font-size:10.000000pt;font-style:normal;font-weight:normal;font-style:normal;text-decoration:none;font-family:serif}
+*.style_ {padding-bottom:5.000000pt;}
+*.style_Koptekst_1 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:14.000000pt;font-weight:bold;}
+*.style_Koptekst_2 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:12.000000pt;font-weight:bold;}
+*.style_Koptekst_3 {padding-bottom:5.000000pt;font-style:italic;text-decoration:underline;}
+*.style_Opsomteken {padding-bottom:5.000000pt;}
+</style>
+</head>
+<body>
+<p class="style_" style="font-size:12.000000pt;">[Basic Structures]</p>
+<p class="style_" ><span style="font-size:16.000000pt;font-family:sans-serif">Basic Structures</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">[Strings] [String]</p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Strings</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">A string is encoded as a &#xab;SListB&#xbb;.. Strings use &#xab;ASCII Codes&#xbb;..</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">[Offsets] [Offset]</p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Offsets</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">At many places, other locations in the file are referenced. These locations are given as Offsets: the number of bytes from the start of the file. Offsets are always encoded in Longs.</p>
+<p class="style_" style="font-size:12.000000pt;text-decoration:underline;"></p>
+<p class="style_" style="font-size:12.000000pt;">[Lengths] [Length]</p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Lengths</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">Lengths are encoded within longs. The unit is a twip, or 1/5A0 inch (1/1440 decimal). This means 237 (567 decimal) units correspond to 1 cm.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">[Sizes][Size]</p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Sizes</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">Font sizes are expressed within longs. The unit is a 1/14 point (1/20 decimal). As a point equals 1/48 twip (1/72 decimal), this is actually the same unit as used for &#xab;Lengths&#xbb;.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">[Colors][Color]</p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Colors</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">Colors are encoded within three bytes. Each byte ranges from 00 (black) to FF (white). This is clearly intended to be a RGB encoding, but the Psion 5 only has a greytone display. All three bytes should be equal to express a greytone, and in practice, only values 00 00 00, 55 55 55, AA AA AA and FF FF FF are seen.</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Signed Integers</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">[SInt][SInts][Signed Integer][Signed Integers]</p>
+<p class="style_" style="font-size:12.000000pt;">Signed integers are encoded in longs. The most significant bit is used as sign (0 for positive, 1 for negative). So +1 is encoded as 01 00 00 00, and -1 as 01 00 00 80.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Floating Point Numbers</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">[Float][Floats][Floating Point Numbers]</p>
+<p class="style_" style="font-size:12.000000pt;">Floating point numbers are encoded in 8 bytes. The most significant bit is used as sign (0 for positive, 1 for negative). The next B (11 decimal) bits are used as a two-complement exponent, and the remaining 34 (52 decimal) bits are used as the mantissa.</p>
+<p class="style_" ><span style="font-size:12.000000pt;">The complete number can be found through this C formula (>> means </span><span style="font-size:12.000000pt;font-style:italic;">shift right</span><span style="font-size:12.000000pt;">, ** means </span><span style="font-size:12.000000pt;font-style:italic;">to the power </span><span style="font-size:12.000000pt;">of, </span><span style="font-size:12.000000pt;font-style:italic;">Float</span><span style="font-size:12.000000pt;"> is the 8 byte unsigned integer representation):</span></p>
+<p class="style_" style="font-size:12.000000pt;"> (Float & 0x8000000000000000 ? -1 : 1) *</p>
+<p class="style_" style="font-size:12.000000pt;"> (1 + (Float & 0x000FFFFFFFFFFFFF) / 0x0010000000000000) *</p>
+<p class="style_" style="font-size:12.000000pt;"> (2 ** (((Float & 0x7FF0000000000000) >> 52) - 0x3FF)</p>
+<p class="style_" style="font-size:12.000000pt;">Some example representations:</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Number (decimal) Sign bit Exponent Mantissa   Complete</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 1.0     0   3FF   0000000000000  00 00 00 00 00 00 F0 3F</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 2.0     0   400   0000000000000  00 00 00 00 00 00 00 40</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 3.0     0   400   8000000000000  00 00 00 00 00 00 08 40</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 3.5     0   400   C000000000000  00 00 00 00 00 00 0C 40</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">-3.5     1   400   C000000000000  00 00 00 00 00 00 0C C0</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0.5     0   3FE   0000000000000  00 00 00 00 00 00 E0 3F</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0.0     0   000   0000000000000  00 00 00 00 00 00 00 00</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ></p>
+</body>
+</html>

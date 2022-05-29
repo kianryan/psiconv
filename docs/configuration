@@ -1,0 +1,15 @@
+Starting with version 0.9.0, all applications linked against libpsiconv
+(including the psiconv program in this package) will try to read a
+configuration file psiconv.conf. It is sought for in PSICONVETCDIR
+(--with-etcdir option in configure, defaults to PREFIX/etc) and in the
+homedirectory of the current user. Programs can add other location to
+this path. If more than one configuration file is found, they are all
+read in order (first the one in PSICONVETCDIR, then the one in ~, 
+finally any additional locations added by the program), and settings in
+later files overrule settings in earlier files.
+
+In PSICONVETCDIR an example configuration file psiconv.conf.eg is always
+installed. Older versions are overwritten. If no psiconv.conf file is
+present, a copy one will be created from the psiconv.conf.eg file. Be
+careful if you use DESTDIR to install at a temporary place, because it
+will not find the psiconv.conf file and install a new one.

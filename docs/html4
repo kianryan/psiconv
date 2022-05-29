@@ -1,0 +1,10 @@
+This README provides information about the psiconv HTML4 output generator.
+
+Output files generated using the options -T HTML use only HTML 4.01 to
+format their text. This has some drawbacks, as several layout options are
+not available in plain HTML. The good news is that almost any browser
+should accept the generated HTML and render the page in an acceptable way.
+
+Note that tabs, headers and footers are not rendered at all. Especially
+the omission of tabs can cause ugly layouts. Unfortunately, there is not
+a real solution for this.

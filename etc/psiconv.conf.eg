@@ -1,0 +1,110 @@
+# This is the configuration file for libpsiconv.
+# By default, the library looks for /etc/psiconv/psiconv.conf and 
+# ~/.psiconv.conf, but programs may add more entries to this searchpath.
+# Settings in later files overrule settings in earlier files (so everything
+# in .psiconv.conf is more important than /etc/psiconv/psiconv.conf).
+
+# All lines with only whitespace are ignored.
+# Comment lines start with a hash (#) and are ignored.
+# Comments are not allowed after statements.
+
+# Statements are of the form:
+#   VAR=VALUE
+# There may be whitespace around the = token.
+# Variable names are case-insensitive.
+
+
+##########################
+# ALL SETTINGS EXPLAINED #
+##########################
+
+####################
+# General settings #
+####################
+
+# The verbosity of the libary
+# This determines how much output the library generates, especially when it
+# is parsing Psion files.
+# There are four levels of verbosity; higher numbers generate more output:
+#   1: Only display fatal errors
+#   2: Display errors
+#   3: Display warnings
+#   4: Display progress information
+#   5: Display debug information
+# Programs can use their own error/information reporting routines; by default,
+# everything is logged to stderr.
+#Verbosity = 3
+
+####################
+# Display settings #
+####################
+
+# Display settings are used when generating image files.
+
+# Set Color to zero when you have a greyscale display, to one if you
+# have a color display
+#Color = 0
+
+# The number of bits used to encode colors.
+#ColorDepth = 2
+
+# If you have a color display, colors may be encoded either as RGB colors
+# or as entries in a palet. In the first case, set here the number of bits
+# used to encode red, green and blue. Make sure the sum of these bit numbers
+# equals the ColorDepth set above. To use one of the default palets,
+# set all three to zero.
+# If you have a greyscale display, these settings are ignored.
+#RedBits = 0
+#GreenBits = 0
+#BlueBits = 0
+
+############################
+# Character table settings #
+############################
+
+# Settings to determine the used character set 
+
+# The character set used in EPOC files (individual characters can be
+# changed below)
+# 0: Unicode (Eastern Psions)
+# 1: IBM Codepage 1252 (Western Europe Psions)
+# If you have another characterset, please let me know, and I will add it here.
+#CharacterSet = 0
+
+# if the character set specified above does not completely match, you can
+# change individual characters here. The number in the variable name is the
+# number of the EPOC format character; the number in the value is the
+# corresponding Unicode codepoint.
+#Char130 = 33304
+
+# The unknown character placeholder (EPOC format)
+# When translating from Unicode back to EPOC format, the Unicode character
+# may not be presentable. This is the Psion codepage character number to
+# use in this case. The default below is a question mark.
+# Allowed values: 0 to 255
+#UnknownEPOCChar = 63
+
+# The unknown character placeholder (Unicode format)
+# When translating from EPOC format to Unicode, the EPOC character
+# may not be known. This is the Unicode character number to
+# use in this case. The default below is a question mark.
+# Allowed values: 0 to 65535
+#UnknownUnicodeChar = 63
+
+
+####################################
+# DEFAULTS FOR THE PSION 5 AND 5MX #
+####################################
+
+Color = 0
+ColorDepth = 2
+#RedBits = 0
+#GreenBits = 0
+#BlueBits = 0
+CharacterSet = 1
+UnknownUnicodeChar = 63
+UnknownEPOCChar = 63
+
+###########################
+# ADD YOUR SETTINGS BELOW #
+###########################

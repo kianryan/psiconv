@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>Embedded Object Section</title>
+<style type="text/css">
+body {background-color:transparant;padding-left:0.000000cm;padding-right:0.000000cm;text-indent:0.000000cm;font-style:left;padding-top:0.000000pt;padding-bottom:0.000000pt;border-right-style:none;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-width:1.000000pt;border-bottom-width:1.000000pt;border-top-width:1.000000pt;border-left-width:1.000000pt;border-right-color:rgb(0,0,0);border-top-color:rgb(0,0,0);border-bottom-color:rgb(0,0,0);border-left-color:rgb(0,0,0);color:rgb(0,0,0);background-color:transparant;font-size:10.000000pt;font-style:normal;font-weight:normal;font-style:normal;text-decoration:none;font-family:serif}
+*.style_ {padding-bottom:5.000000pt;}
+*.style_Koptekst_1 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:14.000000pt;font-weight:bold;}
+*.style_Koptekst_2 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:12.000000pt;font-weight:bold;}
+*.style_Koptekst_3 {padding-bottom:5.000000pt;font-style:italic;text-decoration:underline;}
+*.style_Opsomteken {padding-bottom:5.000000pt;}
+</style>
+</head>
+<body>
+<p class="style_" style="font-size:12.000000pt;"><a name="Embedded Object Section"/></p>
+<p class="style_" ><span style="font-size:16.000000pt;font-family:sans-serif">Embedded Object Section</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">It is possible to embed files within other files. In this way, you can for example embed a picture within a text document.</p>
+<p class="style_" style="font-size:12.000000pt;">These objects are structured exactly like normal documents. Their data is embedded in the file of the master file. But offsets within their data are relative to the start of the object in the file, not to the start of the whole file! So if an object's data start at offset 00005432 of the master file, an offset of 00004321 within the object data corresponds to offset 00009753 in the master file.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">This section consists of one <a href="Basic_Elements.html#BListL">BListL</a> of pairs of longs: the first long is an <a href="Identifiers.html#ID">ID</a> containing the section identifier, the second is the <a href="Basic_Structures.html#Offset">Offset</a> within the file. It is likely that all three sections below need to be present in the shown order.</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Identifier  Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">46 01 00 10  Offset of the <a href="Embedded_Object_Section.html#Object Display Section">Object Display Section</a></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">2A 01 00 10  Offset of the <a href="Embedded_Object_Section.html#Object Icon Section">Object Icon Section</a></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace">44 01 00 10  Offset of the <a href="Section_Table_Offset_Section.html#Section Table Offset Section">Section Table Offset Section</a></span></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">The <a href="Section_Table_Offset_Section.html#Section Table Offset Section">Section Table Offset Section</a> is also the start of the embedded object; offsets within it are relative to its location.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;"><a name="Object Display Section"/></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Object Display Section</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Data  Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B   Display as icon (00) or full (01)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Basic_Structures.html#Length">Length</a> Object displayed horizontal size</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Basic_Structures.html#Length">Length</a> Object displayed vertical size</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L   Unknown; alsways 00 00 00 00 ?</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">The sizes are the size the object will be displayed with. If the object is displayed as an icon, for example, the size of the icon is put here; if it is cropped and/or scaled, the resulting size is found.</p>
+<p class="style_" style="font-size:12.000000pt;">If this is embedded in a <a href="Text_Layout_Section.html#Text Layout Inline List">Text Layout Inline List</a>, the sizes found here are the same as those in the inline list.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;"><a name="Object Icon Section"/></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Object Icon Section</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Data  Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Basic_Structures.html#String">String</a> Application name</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Basic_Structures.html#Length">Length</a> Icon horizontal size</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Basic_Structures.html#Length">Length</a> Icon vertical size</p>
+<p class="style_" ></p>
+<p class="style_" ><span style="font-size:12.000000pt;">If the object is displayed iconified, the sizes in the <a href="Embedded_Object_Section.html#Object Display Section">Object Display Section</a> and the <a href="Text_Layout_Section.html#Text Layout Inline List">Text Layout Inline List</a> (if the object is embedded in it) are the same as found here.</span></p>
+</body>
+</html>

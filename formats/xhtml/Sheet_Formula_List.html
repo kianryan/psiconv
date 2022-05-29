@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>Sheet Formula List</title>
+<style type="text/css">
+body {background-color:transparant;padding-left:0.000000cm;padding-right:0.000000cm;text-indent:0.000000cm;font-style:left;padding-top:0.000000pt;padding-bottom:0.000000pt;border-right-style:none;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-width:1.000000pt;border-bottom-width:1.000000pt;border-top-width:1.000000pt;border-left-width:1.000000pt;border-right-color:rgb(0,0,0);border-top-color:rgb(0,0,0);border-bottom-color:rgb(0,0,0);border-left-color:rgb(0,0,0);color:rgb(0,0,0);background-color:transparant;font-size:10.000000pt;font-style:normal;font-weight:normal;font-style:normal;text-decoration:none;font-family:serif}
+*.style_ {padding-bottom:5.000000pt;}
+*.style_Koptekst_1 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:14.000000pt;font-weight:bold;}
+*.style_Koptekst_2 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:12.000000pt;font-weight:bold;}
+*.style_Koptekst_3 {padding-bottom:5.000000pt;font-style:italic;text-decoration:underline;}
+*.style_Opsomteken {padding-bottom:5.000000pt;}
+</style>
+</head>
+<body>
+<p class="style_" style="font-size:12.000000pt;"><a name="Sheet Formula List"/></p>
+<p class="style_" ><span style="font-size:16.000000pt;font-family:sans-serif">Sheet Formula List</span><span style="font-size:12.000000pt;text-decoration:underline;"></span></p>
+<p class="style_" ><span style="font-size:12.000000pt;">All used formulas are put into this section, and referenced when used.</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Data  Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B   Always 02 ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Basic_Elements.html#XListE">XListE</a> List of <a href="Sheet_Formula_List.html#Sheet Formulas">Sheet Formulas</a></p>
+<p class="style_" style="font-size:12.000000pt;">When referenced, the formula number is counted from the tail of the list: the last entry is referenced as 00, the butlast as 02 etc. (X-numbered?).</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:12.000000pt;"><a name="Sheet Formula"/><a name="Sheet Formulas"/></span></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Sheet Formula</span></p>
+<p class="style_" ><span style="font-size:12.000000pt;">A formula is encoded as an SListB. The formula itself is layed out in memory in Reverse Polish Notation (RPN), and consists of <a href="Sheet_Formula_List.html#Sheet Formula Elements">Sheet Formula Elements</a>.</span></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Formula   Lay-out</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 1-5     1 5 -</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 1+2&#xd7;3    1 2 3 &#xd7; +</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> sin(10&#xd7;3)-4  10 3 &#xd7; sin 4 -</span></p>
+<p class="style_" > <span style="font-family:monospace">sum(1,2,3)  sum 1 2 3 sum</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;"><a name="Sheet Formula Element"/><a name="Sheet Formula Elements"/></p>
+<p class="style_" style="font-size:12.000000pt;text-decoration:underline;">Sheet Formula Elements</p>
+<p class="style_" style="font-size:12.000000pt;">Each formula element is identified by a marker, which is optionally followed by more data (for example, an integer is layed out as the marker 20 followed by the four bytes of a <a href="Basic_Structures.html#SInt">SInt</a>).</p>
+<p class="style_" ><span style="font-size:12.000000pt;">There are a few special markers. Each formula ends with marker 15. Markers 2A and 2B are used to separate the arguments of the var-arg operators (see below).</span></p>
+<p class="style_" ></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Marker  Data following</span><span style="font-size:8.000000pt;font-family:monospace">  </span><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Args Description</span> </p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">01          2 operator < (less than)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">02          2 operator <= (less than or equals)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">03          2 operator > (greater than)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">04          2 operator >= (greater than or equals)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">05          2 operator <> (not equals)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">06          2 operator = (equals)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">07          2 operator + (addition)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">08          2 operator - (subtraction)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">09          2 operator * (multiplication)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0A          2 operator / (division)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0B          2 operator ^ (power)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0C          1 operator + (positive prefix)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0D          1 operator - (negative prefix)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0E          1 operator NOT</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">0F          2 operator AND</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">10          2 operator OR</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">11          2 operator & (string concatenate)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">12          1 brackets () </p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">13</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">14</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">15          0 end-of-formula</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">16</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">17</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">18</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">19</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">1A</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">1B</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">1C</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">1D</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">1E</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">1F  <a href="Basic_Structures.html#Float">Float</a>      0 double precision floating point number (8 bytes)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">20  <a href="Basic_Structures.html#SInt">SInt</a>       0 signed integer number (4 bytes)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">21</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">22</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">23</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">24</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">25  Sheet Variable Reference 0 named variable</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">26  BListB       0 text string</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">27  <a href="Sheet_Basic_Structures.html#Sheet Cell Reference">Sheet Cell Reference</a>   0 single cell reference</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">28  <a href="Sheet_Basic_Structures.html#Sheet Cell Block">Sheet Cell Block</a>   0 cell block reference</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">29  <a href="Sheet_Basic_Structures.html#Sheet Cell Block">Sheet Cell Block</a>   0 same as 28, but appears within vararg functions</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">2A          0 operand separator within vararg functions</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">2B          0 vararg operand end marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">2C </p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">2D</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">2E</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">2F</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">30</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">31</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">32</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">33          0 FALSE</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">34          3 IF</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">35          0 TRUE</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">36          2 CELL</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">37          1 ERROR.TYPE</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">38          1 ISBLANK</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">39          1 ISERR</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">3A          1 ISERROR</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">3B          1 ISLOGICAL</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">3C          1 ISNA</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">3D          1 ISNONTEXT</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">3E          1 ISNUMBER</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">3F          1 ISTEXT</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">40          1 N</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">41          1 TYPE</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">42          2 ADDRESS</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">43          1 COLUMN</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">44          1 COLUMNS</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">45          3 HLOOKUP</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">46          3 INDEX</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">47          1 INDIRECT</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">48          3 LOOKUP</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">49          3 OFFSET</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">4A          1 ROW</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">4B          1 ROWS</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">4C          3 VLOOKUP</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">4D          1 CHAR</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">4E          1 CODE</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">4F          2 EXACT</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">50          3 FIND</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">51          2 LEFT</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">52          1 LEN</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">53          1 LOWER</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">54          3 MID</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">55          1 PROPER</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">56          4 REPLACE</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">57          2 REPT</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">58          2 RIGHT</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">59          2 STRING</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">5A          1 T</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">5B          1 TRIM</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">5C          1 UPPER</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">5D          1 VALUE</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">5E          3 DATE</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">5F          1 DATEVALUE</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">60          1 DAY</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">61          1 HOUR</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">62          1 MINUTE</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">63          1 MONTH</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">64          0 NOW</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">65          1 SECOND</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">66          0 TODAY</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">67          3 TIME</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">68          1 TIMEVALUE</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">69          1 YEAR</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">6A          1 ABS</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">6B          1 ACOS</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">6C          1 ASIN</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">6D          1 ATAN</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">6E          2 ATAN2</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">6F          1 COS</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">70          1 DEGREES</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">71          1 EXP</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">72          1 FACT</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">73          1 INT</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">74          1 LN</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">75          1 LOG10</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">76          2 MOD</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">77          0 PI</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">78          1 RADIANS</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">79          0 RAND</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">7A          2 ROUND</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">7B          1 SIGN</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">7C          1 SIN</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">7D          1 SQRT</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">7E          2 SUMPRODUCT</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">7F          1 TAN</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">80          1 TRUNC</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">81          3 CTERM</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">82          4 DDB</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">83          3 FV</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">84          2 IRR</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">85          2 NPV</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">86          3 PMT</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">87          3 PV</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">88          3 RATE</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">89          3 SLN</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">8A          4 SYD</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">8B          3 TERM</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">8C          2 COMBIN</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">8D          2 PERMUT</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">8E  <a href="Sheet_Formula_List.html#Sheet Formula Varargs">Sheet Formula Varargs</a>  0 AVERAGE</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">8F  <a href="Sheet_Formula_List.html#Sheet Formula Varargs">Sheet Formula Varargs</a>  0 CHOOSE</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">90  <a href="Sheet_Formula_List.html#Sheet Formula Varargs">Sheet Formula Varargs</a>  0 COUNT</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">91  <a href="Sheet_Formula_List.html#Sheet Formula Varargs">Sheet Formula Varargs</a>  0 COUNTA</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">92  <a href="Sheet_Formula_List.html#Sheet Formula Varargs">Sheet Formula Varargs</a>  0 COUNTBLANK</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">93  <a href="Sheet_Formula_List.html#Sheet Formula Varargs">Sheet Formula Varargs</a>  0 MAX</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">94  <a href="Sheet_Formula_List.html#Sheet Formula Varargs">Sheet Formula Varargs</a>  0 MIN</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">95  <a href="Sheet_Formula_List.html#Sheet Formula Varargs">Sheet Formula Varargs</a>  0 PRODUCT</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">96  <a href="Sheet_Formula_List.html#Sheet Formula Varargs">Sheet Formula Varargs</a>  0 STDEVP</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">97  <a href="Sheet_Formula_List.html#Sheet Formula Varargs">Sheet Formula Varargs</a>  0 STDEV</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">98  <a href="Sheet_Formula_List.html#Sheet Formula Varargs">Sheet Formula Varargs</a>  0 SUM</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">99  <a href="Sheet_Formula_List.html#Sheet Formula Varargs">Sheet Formula Varargs</a>  0 SUMSQ</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">9A  <a href="Sheet_Formula_List.html#Sheet Formula Varargs">Sheet Formula Varargs</a>  0 VARP</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">9B  <a href="Sheet_Formula_List.html#Sheet Formula Varargs">Sheet Formula Varargs</a>  0 VAR</p>
+<p class="style_" style="font-size:12.000000pt;">In the above table, args is the number of elements 'popped' from the stack before the result is 'pushed'. As you can see, funtions with a variable number of arguments are handled specially, and never pop previous values.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;text-decoration:underline;"><a name="Sheet Formula Varargs"/></p>
+<p class="style_" ><span style="font-size:12.000000pt;text-decoration:underline;">Sheet Formula Varargs</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">Some operators have a variable number of operands. Each operand  in its turn consists of <a href="Sheet_Formula_List.html#Sheet Formula Elements">Sheet Formula Elements</a> . The encoding is quite different from that used for normal operators. After the operator marker, the operands follow as formulas (without the initial length encoding and without the final 15 marker),  separated by the 2A marker. The last operand is followed by the 2B marker, and after this the operator marker is repeated, followed by a word with the number of parameters. Schematically:</p>
+<p class="style_" ></p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Size  Description</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> </span><span style="font-size:8.000000pt;font-family:monospace">B   Operator marker</span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">    Operand 1 (<a href="Sheet_Formula_List.html#Sheet Formula Elements">Sheet Formula Elements</a>)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B   2A marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">    Operand 2 (<a href="Sheet_Formula_List.html#Sheet Formula Elements">Sheet Formula Elements</a>)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace">    ....</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B   2A marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B   2B marker</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B   Operator marker</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> W   Number of operands</span></p>
+</body>
+</html>

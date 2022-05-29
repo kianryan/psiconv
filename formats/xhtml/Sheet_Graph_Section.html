@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>Sheet Graph Section</title>
+<style type="text/css">
+body {background-color:transparant;padding-left:0.000000cm;padding-right:0.000000cm;text-indent:0.000000cm;font-style:left;padding-top:0.000000pt;padding-bottom:0.000000pt;border-right-style:none;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-width:1.000000pt;border-bottom-width:1.000000pt;border-top-width:1.000000pt;border-left-width:1.000000pt;border-right-color:rgb(0,0,0);border-top-color:rgb(0,0,0);border-bottom-color:rgb(0,0,0);border-left-color:rgb(0,0,0);color:rgb(0,0,0);background-color:transparant;font-size:10.000000pt;font-style:normal;font-weight:normal;font-style:normal;text-decoration:none;font-family:serif}
+*.style_ {padding-bottom:5.000000pt;}
+*.style_Koptekst_1 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:14.000000pt;font-weight:bold;}
+*.style_Koptekst_2 {padding-top:12.000000pt;padding-bottom:3.000000pt;font-size:12.000000pt;font-weight:bold;}
+*.style_Koptekst_3 {padding-bottom:5.000000pt;font-style:italic;text-decoration:underline;}
+*.style_Opsomteken {padding-bottom:5.000000pt;}
+</style>
+</head>
+<body>
+<p class="style_" ><span style="font-size:12.000000pt;"><a name="Sheet Graph Section"/></span><span style="font-size:16.000000pt;font-family:sans-serif"></span></p>
+<p class="style_" style="font-size:16.000000pt;font-family:sans-serif">Sheet Graph Section</p>
+<p class="style_" style="font-size:12.000000pt;">This section contains the full description of one graph.</p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Data   Description</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B    Always 02</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Basic_Structures.html#Offset">Offset</a>  Offset of the <a href="Sheet_Graph_Description.html#Sheet Graph Description">Sheet Graph Description</a></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L    Number of regions used (length of list below)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L    Graph type (see below)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> List   List of <a href="Basic_Structures.html#Offsets">Offsets</a> to each <a href="Sheet_Graph_Region.html#Sheet Graph Region">Sheet Graph Region</a></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> W    Always 00/01 00 ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Fonts.html#Font">Font</a>   Axis: Font (default: Arial)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Basic_Structures.html#Size">Size</a>   Axis: Font size</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B    Axis: Font characteristics (see below)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 3B    Always 00 00 00 (axis colour?)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Fonts.html#Font">Font</a>   Title: Font (default: Arial)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> <a href="Basic_Structures.html#Size">Size</a>   Title: Font size</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B    Title: Font characteristics (see below)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 3B    Always 00 00 00 (title colour?)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B    Position of legend (see below)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> B    Always 02 ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L    Always 00 00 00 00 ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L    Always 00 00 00 00 ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L    Always 83 1A 00 00 ?</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> L    Always 00 0A 00 00 ?</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> <a href="Basic_Structures.html#String">String</a>  Graph title</span><span style="font-family:monospace"></span></p>
+<p class="style_" style="font-size:12.000000pt;"></p>
+<p class="style_" style="font-size:12.000000pt;">Regions can be seen as independent graphs that are displayed over each other or are otherwise combined.</p>
+<p class="style_" style="font-size:12.000000pt;">The following graph types are used:</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> </span><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace">Number Name      Region handling</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0   line graph    (separate line for each region)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 1   column graph   (separate column for each region)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 2   multi-column graph (one column for all regions)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 3   bar graph    (separate bar for each region)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 4   multi-bar graph  (one bar for all regions)</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 5:   scatter chart   (x-y pairs)</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> 6   pie chart    (shows first region only)</span></p>
+<p class="style_" style="font-size:12.000000pt;">The list of <a href="Basic_Structures.html#Offsets">Offsets</a> to each <a href="Sheet_Graph_Region.html#Sheet Graph Region">Sheet Graph Region</a> is in fact an <a href="Basic_Elements.html#LListL">LListL</a>, except that another long (containing the Graph Type) is between the list length and the list itself.</p>
+<p class="style_" style="font-size:12.000000pt;">The font characteristics are encoded as below. Note that some of the characteristics are instead found in the <a href="Sheet_Graph_Description.html#Sheet Graph Description">Sheet Graph Description</a>!</p>
+<p class="style_" style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Bit  Meaning</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 0   Italics</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 1   Bold</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 2   Superscript</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> 3   Subscript</span><span style="font-size:12.000000pt;"></span></p>
+<p class="style_" style="font-size:12.000000pt;">The three bytes after the font characteristics axis and title byte may well contain the text color for each of them; there seems to be a bug in Sheet which makes it ignore changes to them.</p>
+<p class="style_" style="font-size:12.000000pt;">The legend position is encoded as follows:</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-weight:bold;text-decoration:underline;font-family:monospace"> Number Location</span><span style="font-size:8.000000pt;font-family:monospace"></span></p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 00   off</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 01   north-west</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 02   north</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 03   north-east</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 04   east</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 05   south-east</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 06   south</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 07   south-west</p>
+<p class="style_" style="font-size:8.000000pt;font-family:monospace"> 08   west</p>
+<p class="style_" ><span style="font-size:8.000000pt;font-family:monospace"> 09   center</span></p>
+</body>
+</html>

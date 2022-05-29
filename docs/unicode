@@ -1,0 +1,16 @@
+Starting with psiconv 0.9.0, all strings are internally represented using
+Unicode, with the UCS2 encoding. This encodes every Unicode codepoint with
+a 16-bit unsigned integer.
+
+The codepoints 0x06 to 0x0f are treated specially. They are not translated, 
+and keep their Psion-specific meanings:
+  0x06: New paragraph
+  0x07: New line
+  0x08: Hard page
+  0x09: Tab
+  0x0a: Unbreakable tab
+  0x0b: Unbreakable hyphen
+  0x0c: Potential hyphen
+  0x0d: Unknown
+  0x0e: Object placeholder
+  0x0f: Visible space
