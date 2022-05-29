@@ -115,7 +115,7 @@ void print_version(void)
 void strtoupper(char *str)
 {
   int i;
-  for (i = 0; i < strlen(str); i ++) 
+  for (i = 0; i < strlen(str); i ++)
     str[i] = toupper(str[i]);
 }
 
@@ -159,6 +159,7 @@ int main(int argc, char *argv[])
   init_txt();
   init_xhtml();
   init_html4();
+  init_html5();
   init_image();
 
   while(1) {
@@ -169,19 +170,19 @@ int main(int argc, char *argv[])
       case 'h': print_help(); exit(0);
       case 'V': print_version(); exit(0);
       case 'n': switch(optarg[0]) {
-		  case '1': case 'F':case 'f': 
+		  case '1': case 'F':case 'f':
 		    verbosity=PSICONV_VERB_FATAL;
 		    break;
-		  case '2': case 'E':case 'e': 
+		  case '2': case 'E':case 'e':
 		    verbosity=PSICONV_VERB_ERROR;
 		    break;
-		  case '3': case 'W':case 'w': 
+		  case '3': case 'W':case 'w':
 		    verbosity=PSICONV_VERB_WARN;
 		    break;
-		  case '4': case 'P':case 'p': 
+		  case '4': case 'P':case 'p':
 		    verbosity=PSICONV_VERB_PROGRESS;
 		    break;
-		  case '5': case 'D':case 'd': 
+		  case '5': case 'D':case 'd':
 		    verbosity=PSICONV_VERB_DEBUG;
 		    break;
 		  default:
@@ -206,10 +207,10 @@ int main(int argc, char *argv[])
 		}
 		break;
       case 'c': extra_configfile = strdup(optarg); break;
-      case '?': case ':': fputs("Try `-h' for more information\n",stderr); 
+      case '?': case ':': fputs("Try `-h' for more information\n",stderr);
                           exit(1);
       default: fprintf(stderr,"Internal error: getopt_long returned character "
-                              "code 0%o ?? (contact the author)\n", c); 
+                              "code 0%o ?? (contact the author)\n", c);
                exit(1); break;
     }
   }
@@ -217,7 +218,7 @@ int main(int argc, char *argv[])
     fputs("I can only convert one file!\n"
           "Try `-h' for more information\n",stderr);
     exit(1);
-  } else if (optind == argc-1) 
+  } else if (optind == argc-1)
     if (!(inputfilename = strdup(argv[optind]))) {
       fputs("Out of memory error",stderr);
       exit(1);
@@ -229,7 +230,7 @@ int main(int argc, char *argv[])
     config->verbosity = verbosity;
 
   /* Open inputfile for reading */
-    
+
   if (strlen(inputfilename) != 0) {
     if(stat(inputfilename,&fbuf) < 0) {
       perror(inputfilename);
@@ -240,7 +241,7 @@ int main(int argc, char *argv[])
       perror(inputfilename);
       exit(1);
     }
-  } else 
+  } else
     f = stdin;
 
   if (!(buf = psiconv_buffer_new())) {
@@ -252,7 +253,7 @@ int main(int argc, char *argv[])
     exit(1);
   }
 
-  if (strlen(inputfilename) != 0) 
+  if (strlen(inputfilename) != 0)
     if (fclose(f)) {
       perror(inputfilename);
       exit(1);
@@ -310,7 +311,7 @@ int main(int argc, char *argv[])
       perror(inputfilename);
       exit(1);
     }
-  } else 
+  } else
     f = stdout;
 
   psiconv_list_fwrite_all(outputlist,f);

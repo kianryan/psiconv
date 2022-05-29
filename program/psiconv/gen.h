@@ -23,6 +23,8 @@
 #include "psiconv/data.h"
 #include "psiconv.h"
 
+void init_html5(void);
+
 void init_xhtml(void);
 
 void init_html4(void);
