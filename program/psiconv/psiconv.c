@@ -48,6 +48,8 @@ static void print_help(void);
 static void print_version(void);
 static void strtoupper(char *str);
 
+psiconv_list fileformat_list; /* of struct psiconv_fileformat */
+
 void print_help(void)
 {
   fileformat ff;
