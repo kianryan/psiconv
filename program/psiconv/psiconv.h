@@ -52,7 +52,7 @@ typedef struct fileformat_s {
   output_function *output;
 } *fileformat;
 
-psiconv_list fileformat_list; /* of struct psiconv_fileformat */
+extern psiconv_list fileformat_list; /* of struct psiconv_fileformat */
 
 
 #endif /* PSICONV_H */
